@@ -1,6 +1,0 @@
-[submodule "libreswan.wiki"]
-	path = wiki
-	url = git@github.com:libreswan/libreswan.wiki.git
-[submodule "github"]
-	path = github
-	url = git@github.com:libreswan/.github.git
