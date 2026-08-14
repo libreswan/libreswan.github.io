@@ -1,0 +1,182 @@
+link:./Support[Support]
+
+.link:./FAQ[FAQ]
+[%collapsible]
+====
+* link:./FAQ:-Common-Error-Messages[Common Error Messages]
+* link:./FAQ:-History[History]
+* link:./FAQ:-Implemented-Standards[Implemented Standards]
+* link:./FAQ:-Kernel-Support[Kernel Support]
+====
+
+.HOWTO
+[%collapsible]
+====
+* link:./HOWTO:-Additional-ipsec.conf-documentation[Additional ipsec.conf documentation]
+* link:./HOWTO:-AWS-Mesh[AWS Mesh]
+* link:./HOWTO:-brendans-Road-Warrior-Setup-at-Home[brendans Road Warrior Setup at Home]
+* link:./HOWTO:-Configuration-examples[Configuration examples]
+* link:./HOWTO:-Confuse-!?@:-github-wiki[Confuse !?@: github wiki]
+* link:./HOWTO:-Enterprise-cloud-encryption[Enterprise cloud encryption]
+* link:./HOWTO:-Entropy-matters[Entropy matters]
+* link:./HOWTO:-EoIP-shared-ethernet-LAN-using-IPsec[EoIP shared ethernet LAN using IPsec]
+* link:./HOWTO:-High-Availability-Fallover-VPN-in-AWS[High Availability Fallover VPN in AWS]
+* link:./HOWTO:-Host-to-host-VPN[Host to host VPN]
+* link:./HOWTO:-Host-to-host-VPN-with-PSK[Host to host VPN with PSK]
+* link:./HOWTO:-Libreswan-as-client-to-a-Cisco-ASA-or-VPN3000-server[Libreswan as client to a Cisco ASA or VPN3000 server]
+* link:./HOWTO:-Microsoft-Azure-configuration[Microsoft Azure configuration]
+* link:./HOWTO:-Migrate-from-IKEv1-DPD-to-IKEv2-LIVENESS[Migrate from IKEv1 DPD to IKEv2 LIVENESS]
+* link:./HOWTO:-Opportunistic-IPsec[Opportunistic IPsec]
+* link:./HOWTO:-Opportunistic-IPsec-using-LetsEncrypt[Opportunistic IPsec using LetsEncrypt]
+* link:./HOWTO:-Pluto-and-DNSSEC[Pluto and DNSSEC]
+* link:./HOWTO:-Read-status-output[Read status output]
+* link:./HOWTO:-Route-based-VPN[Route based VPN]
+* link:./HOWTO:-SElinux-and-Labeled-IPsec-VPN[SElinux and Labeled IPsec VPN]
+* link:./HOWTO:-Subnet-extrusion[Subnet extrusion]
+* link:./HOWTO:-Subnet-to-subnet-using-NAT[Subnet to subnet using NAT]
+* link:./HOWTO:-Subnet-to-subnet-VPN[Subnet to subnet VPN]
+* link:./HOWTO:-Subnet-to-subnet-VPN-with-PSK[Subnet to subnet VPN with PSK]
+* link:./HOWTO:-Unauthenticated-Opportunistic-IPsec[Unauthenticated Opportunistic IPsec]
+* link:./HOWTO:-Using-Apache-to-serve-PKCS[Using Apache to serve PKCS]
+* link:./HOWTO:-Using-NSS-Hardware-Tokens[Using NSS Hardware Tokens]
+* link:./HOWTO:-Using-NSS-with-libreswan[Using NSS with libreswan]
+* link:./HOWTO:-VPN-server-for-remote-clients-using-IKEv2[VPN server for remote clients using IKEv2]
+* link:./HOWTO:-VPN-server-for-remote-clients-using-IKEv2-split-VPN[VPN server for remote clients using IKEv2 split VPN]
+====
+
+.GSoC 2027
+[%collapsible]
+====
+* link:./GSoC-2027:-Code-Project-Ideas-DRAFT[Code Project Ideas DRAFT]
+* link:./GSoC-2027:-Contributor-Guidance-DRAFT[Contributor Guidance DRAFT]
+====
+
+.link:./Completed-Projects[Completed Projects]
+[%collapsible]
+====
+* link:./Completed-Projects:-2026-Add-HOST-TO-HOST-Support-on-BSD[2026 Add HOST TO HOST Support on BSD]
+* link:./Completed-Projects:-Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-ECC-EDDSA-support[Extend RFC 7427 Signature Authentication support to IKEv2 with ECC EDDSA support]
+* link:./Completed-Projects:-Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-ECDSA[Extend RFC 7427 Signature Authentication support to IKEv2 with ECDSA]
+* link:./Completed-Projects:-Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA[Extend RFC 7427 Signature Authentication support to IKEv2 with EDDSA]
+* link:./Completed-Projects:-IKE-Intermediate-Exchange[IKE Intermediate Exchange]
+* link:./Completed-Projects:-IKEv2-Interop-testing-with-OpenBSD[IKEv2 Interop testing with OpenBSD]
+* link:./Completed-Projects:-Libreswan-Opportunistic-IPsec-using-LetsEncrypt[Libreswan Opportunistic IPsec using LetsEncrypt]
+* link:./Completed-Projects:-Managing-Interface[Managing Interface]
+* link:./Completed-Projects:-Postquantum-Preshared-Keys[Postquantum Preshared Keys]
+* link:./Completed-Projects:-RFC-5685---Redirect-Mechanism[RFC 5685   Redirect Mechanism]
+* link:./Completed-Projects:-RSA-PSS-Support-in-compliance-with-RFC-7427-and-RFC-8247[RSA PSS Support in compliance with RFC 7427 and RFC 8247]
+* link:./Completed-Projects:-Session-Resumption[Session Resumption]
+* link:./Completed-Projects:-TCP-encapsulation-of-IKE-and-IPsec[TCP encapsulation of IKE and IPsec]
+====
+
+link:./IRC[IRC]
+
+.Hacking
+[%collapsible]
+====
+* link:./Hacking:-Documentation[Documentation]
+* link:./Hacking:-Git,-GitHub,-and-Pull-Requests[Git, GitHub, and Pull Requests]
+* link:./Hacking:-Merging-GitHub-Pull-Requests[Merging GitHub Pull Requests]
+* link:./Hacking:-Programming-Conventions[Programming Conventions]
+====
+
+.link:./Testing[Testing]
+[%collapsible]
+====
+* link:./Testing:-Docker[Docker]
+* link:./Testing:-KVM[KVM]
+* link:./Testing:-Namespace-Magic[Namespace Magic]
+* link:./Testing:-Namespaces[Namespaces]
+* link:./Testing:-Topology[Topology]
+====
+
+.link:./KVM-Test-Framework[KVM Test Framework]
+[%collapsible]
+====
+* link:./KVM-Test-Framework:-1.-Setup-The-Host[1. Setup The Host]
+* link:./KVM-Test-Framework:-2.-Configure-Testing[2. Configure Testing]
+* link:./KVM-Test-Framework:-3.-Compile-Libreswan[3. Compile Libreswan]
+* link:./KVM-Test-Framework:-4.-Test-Libreswan[4. Test Libreswan]
+* link:./KVM-Test-Framework:-5.-Accessing-The-Console[5. Accessing The Console]
+* link:./KVM-Test-Framework:-6.-Maintenance-and-Internals[6. Maintenance and Internals]
+* link:./KVM-Test-Framework:-Bisecting[Bisecting]
+* link:./KVM-Test-Framework:-Debugging-Pluto[Debugging Pluto]
+* link:./KVM-Test-Framework:-Logging-In-Using-SSH[Logging In Using SSH]
+* link:./KVM-Test-Framework:-Performance[Performance]
+* link:./KVM-Test-Framework:-Running-A-Custom-Kernel[Running A Custom Kernel]
+* link:./KVM-Test-Framework:-Running-A-Single-Test[Running A Single Test]
+* link:./KVM-Test-Framework:-Running-In-The-Background[Running In The Background]
+* link:./KVM-Test-Framework:-Setup-a-Web-Server[Setup a Web Server]
+* link:./KVM-Test-Framework:-Testing-Old-Branches[Testing Old Branches]
+* link:./KVM-Test-Framework:-Updating-Test-Results[Updating Test Results]
+====
+
+.Internals
+[%collapsible]
+====
+* link:./Internals:-3.14-X509[3.14 X509]
+* link:./Internals:-Benchmarking-and-Performance-testing[Benchmarking and Performance testing]
+* link:./Internals:-Cipher-suites-and-algorithm-support[Cipher suites and algorithm support]
+* link:./Internals:-Cloud-OE-ideas[Cloud OE ideas]
+* link:./Internals:-Compiling-with-AddressSanitizer[Compiling with AddressSanitizer]
+* link:./Internals:-Compliance-of-RFC-7427---Signature-Authentication-in-IKEv2[Compliance of RFC 7427   Signature Authentication in IKEv2]
+* link:./Internals:-Coverity[Coverity]
+* link:./Internals:-Cryptographic-Acceleration[Cryptographic Acceleration]
+* link:./Internals:-Developer-links-strongswan-android[Developer links strongswan android]
+* link:./Internals:-Discouraged-or-forbidden-C-functions[Discouraged or forbidden C functions]
+* link:./Internals:-IKEv2-Child-SA[IKEv2 Child SA]
+* link:./Internals:-IKEv2-CP-and-EAP-support[IKEv2 CP and EAP support]
+* link:./Internals:-Introduction[Introduction]
+* link:./Internals:-Libreswan-xfrm-kernel-support[Libreswan xfrm kernel support]
+* link:./Internals:-Logging-cleanup[Logging cleanup]
+* link:./Internals:-New-OE[New OE]
+* link:./Internals:-Pluto[Pluto]
+* link:./Internals:-Pluto-packet-processing[Pluto packet processing]
+* link:./Internals:-Proposed-ipsec-ca-command[Proposed ipsec ca command]
+* link:./Internals:-Retransmit-timings[Retransmit timings]
+* link:./Internals:-Road-Map[Road Map]
+* link:./Internals:-SAref-code[SAref code]
+* link:./Internals:-Setting-up-system-for-debug-logging[Setting up system for debug logging]
+* link:./Internals:-stf-status[stf status]
+* link:./Internals:-Testing-2017-Next-Generation[Testing 2017 Next Generation]
+* link:./Internals:-Unbound[Unbound]
+* link:./Internals:-Uncrustify[Uncrustify]
+* link:./Internals:-Use-Cases-and-Requirements-document[Use Cases and Requirements document]
+* link:./Internals:-Use-Cases-and-Requirements-document-for-ECC-ECDSA-support[Use Cases and Requirements document for ECC ECDSA support]
+* link:./Internals:-XFRM-Interface-Development-Notes[XFRM Interface Development Notes]
+* link:./Internals:-XFRM-pCPU[XFRM pCPU]
+* link:./Internals:-XFRM-pCPU-RSS[XFRM pCPU RSS]
+====
+
+.Security
+[%collapsible]
+====
+* link:./Security:-Crypto-boundary-and-certification[Crypto boundary and certification]
+* link:./Security:-Libreswan-and-Heartbleed[Libreswan and Heartbleed]
+* link:./Security:-Libreswan-and-TunnelCrack[Libreswan and TunnelCrack]
+* link:./Security:-Reporting-a-Vulnerability[Reporting a Vulnerability]
+* link:./Security:-Vulnerabilities[Vulnerabilities]
+====
+
+.Meetups
+[%collapsible]
+====
+* link:./Meetups:-2013-Helsinki[2013 Helsinki]
+* link:./Meetups:-2014-San-Francisco[2014 San Francisco]
+* link:./Meetups:-2014-Toronto[2014 Toronto]
+* link:./Meetups:-2018-Toronto[2018 Toronto]
+====
+
+.Obsolete HOWTOs
+[%collapsible]
+====
+* link:./Obsolete-HOWTOs:-IKEv1-XAUTH-with-FreeOTP-and-FreeIPA[IKEv1 XAUTH with FreeOTP and FreeIPA]
+* link:./Obsolete-HOWTOs:-IKEv1-XAUTH-with-Google-Authenticator-One-Time-Passwords[IKEv1 XAUTH with Google Authenticator One Time Passwords]
+* link:./Obsolete-HOWTOs:-Route-based-VPN-using-VTI[Route based VPN using VTI]
+* link:./Obsolete-HOWTOs:-Testing-Namespace[Testing Namespace]
+* link:./Obsolete-HOWTOs:-VPN-server-for-remote-clients-using-IKEv1-with-L2TP[VPN server for remote clients using IKEv1 with L2TP]
+* link:./Obsolete-HOWTOs:-VPN-server-for-remote-clients-using-IKEv1-XAUTH-with-Certificates[VPN server for remote clients using IKEv1 XAUTH with Certificates]
+* link:./Obsolete-HOWTOs:-VPN-server-for-remote-clients-using-IKEv1-XAUTH-with-PSK[VPN server for remote clients using IKEv1 XAUTH with PSK]
+====
+
+_This Sidebar was generated by running `make`._
