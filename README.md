@@ -13,9 +13,9 @@ Download: https://download.libreswan.org/
 [Git](https://github.com/libreswan/libreswan): `git clone
 https://github.com/libreswan/libreswan.git`
 
-Documentation: https://testing.libreswan.org/current/documentation
+[Documentation](https://testing.libreswan.org/current/documentation): https://testing.libreswan.org/current/documentation
 
-Wiki: https://github.com/libreswan/libreswan/wiki
+[Wiki](https://libreswan.github.io/wiki): https://libreswan.github.io/wiki
 
 _Libreswan was forked from Openswan 2.6.38, which was forked from
 FreeS/WAN 2.04.  See the CREDITS files for contributor
