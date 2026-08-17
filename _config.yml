@@ -1,4 +1,5 @@
 title: [Libreswan Wiki]
 remote_theme: pages-themes/minimal@v0.2.0
+logo: /assets/img/logo.png
 plugins:
 - jekyll-remote-theme
