@@ -61,7 +61,7 @@ sidebar:
 			done ; \
 		fi ; \
 		echo ; \
-	done > _sidebar.html
+	done > _includes/_sidebar.html
 
 # see
 # https://emacs.stackexchange.com/questions/59804/compilation-mode-and-next-error-confusion
