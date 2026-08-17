@@ -1,0 +1,36 @@
+- Web gui management interface
+- EAP
+- NetworkManager applet for ikev2 client
+- VTI interface reference counting for vti-shared=no
+- VTI policy routing support
+- Finalize IKEv2 Config Payload client support
+- Easy letsencrypt support
+- IKEv2 Session Resumption support (RFC5723)
+- IKE SA rekeying
+- MOBIKE Server and client support
+- Add RFC-7427 Signature Authentication support to IKEv2
+- curve25519 support
+- chacha20poly1305
+- eddsa
+- Implement TCP Encapsulation of IKE Packets
+- Implement TCP Encapsulation of IPsec Packets
+- xfrm acquires for Max bytes and Max packets
+- IKEv2 Config Payload Split DNS and domain support
+- Implement IKE/ESP over TLSv1.2+
+- Convert PAM auth to use helper processes
+- Populate from packet (PFP)
+- Netlink routing table read/write in pluto
+- Apple mobile profile support
+- Support mixed IPv4 and IPv6 tunnels in same config
+- IKEv1 auto disable when it is not used
+- Fixup ikev2= keywords to keyexchange=ikev\[12\]
+- Fixup narrowing bugs
+- Implement replacement for CK_INSTANCE of non-instance tunnels like
+  narrowing
+- Implement reauth and rekey as separate things
+- Make transport mode rfc compliant for ikev2
+- IKEv2 selinux labeled ipsec support
+- Port exceptions for Opportunistic IPsec
+- DBUS support for logging and configuration
+- OpenNRHP support
+- Kerberos/GSSAPI
