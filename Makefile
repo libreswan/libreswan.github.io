@@ -91,9 +91,8 @@ broken:
 .PHONY: unreachable
 unreachable:
 	set -eu ; \
-	find * -name '*.md' -print | while read md ; do \
-		f=$$(basename $${md} .md) ; \
-		grep -e '\(\./'"$${f}"'\)' *.md > /dev/null || \
-		grep -e 'link:\./'"$${f}"'\[' *.asciidoc > /dev/null || \
+	find * -name '*.md' -print | sed -e 's;.md$$;;' | while read md ; do \
+		grep -e "\(/$${md}\)" *.md > /dev/null || \
+		grep -e "'/$${md}" _includes/_sidebar.html > /dev/null || \
 		echo $$md ; \
 	done
