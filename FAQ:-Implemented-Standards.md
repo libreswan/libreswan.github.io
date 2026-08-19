@@ -28,7 +28,7 @@ _This table should track the "Active with the IESG Internet-Drafts" section of t
 
 | Standard | Area | Description | Status | Comments |
 |----------|------|-------------|--------|----------|
-| [RFC TBD](https://datatracker.ietf.org/doc/draft-ietf-ipsecme-ikev2-downgrade-prevention) | IKE | Downgrade Prevention for the Internet Key Exchange Protocol Version 2 (IKEv2) | yes-please | 2026-05-29, In Last Call (ends 2026-06-12)<br>
+| [RFC TBD](https://datatracker.ietf.org/doc/draft-ietf-ipsecme-ikev2-downgrade-prevention) | IKE | Downgrade Prevention for the Internet Key Exchange Protocol Version 2 (IKEv2) | [in-progress](https://github.com/orgs/libreswan/projects/19) | Vinnu124 <br> 2026-05-29, In Last Call (ends 2026-06-12)
 | [RFC TBD](https://datatracker.ietf.org/doc/draft-ietf-ipsecme-ikev2-pqc-auth) | IKE | Signature Authentication in the Internet Key Exchange Version 2 (IKEv2) using PQC | in-progress | Sahana <br> 2026-04-14, Publication Requested
 | [RFC TBD](https://datatracker.ietf.org/doc/draft-ietf-ipsecme-ikev2-mlkem) | IKE | Post-quantum Key Exchange with ML-KEM in the Internet Key Exchange Protocol Version 2 (IKEv2) | v5.4 | 2026-03-15, In Last Call (ends 2026-06-15)
 
@@ -45,12 +45,12 @@ IPSECME
 | [RFC 9867](https://datatracker.ietf.org/doc/rfc9867) | IKE | Mixing Preshared Keys in the IKE_INTERMEDIATE and CREATE_CHILD_SA Exchanges of the Internet Key Exchange Protocol Version 2 (IKEv2) for Post-Quantum Security | v5.2 | IKE_INTERMEDIATE: v5.2 <br/> CREATE_CHILD_SA: to-be-done
 | [RFC 9838](https://datatracker.ietf.org/doc/rfc9838) | IKE | Group Key Management Using the Internet Key Exchange Protocol Version 2 (IKEv2)
 | [RFC 9827](https://datatracker.ietf.org/doc/rfc9827) | IKE | Renaming the Extended Sequence Numbers (ESN) Transform Type in the Internet Key Exchange Protocol Version 2 (IKEv2) | v5.4
-| [RFC 9611](https://datatracker.ietf.org/doc/rfc9611) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Support for Per-Resource Child Security Associations (SAs) | in-progress | omoris
-| [RFC 9593](https://datatracker.ietf.org/doc/rfc9593) | IKE | Announcing Supported Authentication Methods in the Internet Key Exchange Protocol Version 2 (IKEv2) | in-progress | fazzel vukasink
+| [RFC 9611](https://datatracker.ietf.org/doc/rfc9611) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Support for Per-Resource Child Security Associations (SAs) | [in-progress](https://github.com/orgs/libreswan/projects/17) | omoris
+| [RFC 9593](https://datatracker.ietf.org/doc/rfc9593) | IKE | Announcing Supported Authentication Methods in the Internet Key Exchange Protocol Version 2 (IKEv2) | [in-progress](https://github.com/orgs/libreswan/projects/15) | fazzel vukasink
 | [RFC 9478](https://datatracker.ietf.org/doc/rfc9478) | IKE | Labeled IPsec Traffic Selector Support for the Internet Key Exchange Protocol Version 2 (IKEv2) | v4.4
 | [RFC 9464](https://datatracker.ietf.org/doc/rfc9464) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Configuration for Encrypted DNS
 | [RFC 9395](https://datatracker.ietf.org/doc/rfc9395) | IKE | Deprecation of the Internet Key Exchange Version 1 (IKEv1) Protocol and Obsoleted Algorithms
-| [RFC 9370](https://datatracker.ietf.org/doc/rfc9370) | IKE | Multiple Key Exchanges in the Internet Key Exchange Protocol Version 2 (IKEv2) | v5.4 <br> in-progress | addke1: v5.4 <br/> IKE_INTERMEDIATE: v4.0 <br/> IKE_FOLLOW_UP_KE (IKE): v5.4 <br/> IKE_FOLLOW_UP_KE (Child): daiki
+| [RFC 9370](https://datatracker.ietf.org/doc/rfc9370) | IKE | Multiple Key Exchanges in the Internet Key Exchange Protocol Version 2 (IKEv2) | v5.4 <br> [in-progress](https://github.com/orgs/libreswan/projects/16) | addke1: v5.4 <br/> IKE_INTERMEDIATE: v4.0 <br/> IKE_FOLLOW_UP_KE (IKE): v5.4 <br/> IKE_FOLLOW_UP_KE (Child): daiki
 | [RFC 9349](https://datatracker.ietf.org/doc/rfc9349) | IKE | Definitions of Managed Objects for IP Traffic Flow Security
 | [RFC 9348](https://datatracker.ietf.org/doc/rfc9348) | IKE | A YANG Data Model for IP Traffic Flow Security
 | [RFC 9347](https://datatracker.ietf.org/doc/rfc9347) | IKE | Aggregation and Fragmentation Mode for Encapsulating Security Payload (ESP) and Its Use for IP Traffic Flow Security (IP-TFS) | v5.2

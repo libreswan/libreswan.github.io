@@ -3,14 +3,15 @@
 ### Network:
 
 Each host and network is assigned a unique number:
-| | | NEW | OLD | contains
-|-|-|-----|-----|----------|
-| DARKNET  |  1 | 198.18.1  |         | rise set
-| INTERNET |  2 | 198.18.2  | 192.1.2 | nic east west
-| NICNET   |  3 | 198.18.3  | 192.1.3 | nic north road
-| NORTHNET | 66 | 198.18.66 | 192.0.3 | north pole
-| EASTNET  | 20 | 198.18.20 | 192.0.2 | east rise
-| WESTNET  | 40 | 198.18.40 | 192.0.1 | west set
+
+|          |    |           | RENAME TO | contains | Notes |
+|----------|----|-----------|-----------|----------|-------|
+| DARKNET  |  1 | 198.18.1  |           | rise set | it's dark between sunset and sunrise
+| INTERNET |  2 | 192.1.2   | 198.18.2  | nic east west | Owned by: raytheon.com
+| NICNET   |  3 | 192.1.3   | 198.18.3  | nic north road | Owned by: raytheon.com
+| NORTHNET | 66 | 198.18.66 |           | north pole | inside the arctic circle
+| EASTNET  | 20 | 192.0.2   | 198.18.20 | east rise | Rename TEST-NET-1; .23 is the ipsec interface subnet
+| WESTNET  | 40 | 192.0.1   | 198.18.40 | west set | Owned by: elevatedcomputing.com; .45 ipsec interface subnet
 
 | Host | IP suffix |
 |------|-----------|
@@ -94,14 +95,11 @@ LEFT                                                              RIGHT
                     198.18.66.90/24
                             |
                             v
-192.0.3.0/24 ---------------+----NORTHNET---------+---- 2001:db8:0:3::/64  Owned by: elevatedcomputing.com?
-198.18.66.0/24 -------------+----NORTHNET---------+---- 2001:db8:0:3::/64  NEW
+198.18.66.0/24 -------------+----NORTHNET---------+---- 2001:db8:66::/64
                                                   v
                                                   |
-                                      2001:db8:0:3::254/64 Owned by: elevatedcomputing.com?
-                                           192.0.3.254/24  Owned by: elevatedcomputing.com?
-                                      2001:db8:66::254/64  NEW
-                                         198.18.66.254/24  NEW
+                                      2001:db8:66::254/64
+                                         198.18.66.254/24
                                                 (eth0)
                  ROAD-[eth1]                    NORTH-[eth2]
                 (eth0)                          (eth1)
