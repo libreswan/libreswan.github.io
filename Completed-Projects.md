@@ -2,7 +2,7 @@
 
 - Student: Osema Fadhel - sponsored by Google Summer of Code 2026
 
-- Project page: [RFC 9593: Announcing Supported Authentication Methods in the IKEv2](/Completed-Projects/RFC%209593%3A%20Announcing%20Supported%20Authentication%20Methods%20in%20the%20IKEv2)
+- Project page: [RFC 9593: Announcing Supported Authentication Methods in the IKEv2](/Completed-Projects/RFC 9593---Announcing-Supported-Authentication-Methods-in-the-IKEv2.md)
 
 - Status: merged; full support will appear in Libreswan 5.5
 
