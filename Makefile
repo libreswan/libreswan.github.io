@@ -34,7 +34,11 @@ sidebar:
 		if test -d $${section} ; then \
 			echo '<details>' ; \
 			echo '  <summary>' ; \
-			echo "    <a href='/$${section}'>$${title}</a><br/>" ; \
+			if test -r $${section}.md ; then \
+				echo "    <a href='/$${section}'>$${title}</a><br/>" ; \
+			else \
+				echo "    $${title}" ; \
+			fi ; \
 			echo '  </summary>' ; \
 			ls $${section} | sort | while read subsection ; do \
 				href=$$(basename $${subsection} .md) ; \
