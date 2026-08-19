@@ -1,4 +1,4 @@
-![Host2host](/imagesHost2host.png)
+![Host2host](/images/Host2host.png)
 
 This example sets up an IPsec connection between two hosts. The names
 and IP addresses used here are also used in our [testing

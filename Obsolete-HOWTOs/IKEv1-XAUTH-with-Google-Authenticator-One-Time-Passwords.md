@@ -30,7 +30,7 @@ As root, create the user and generate their QRCODE / link:
     Do you want authentication tokens to be time-based (y/n) y
     https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/paul@vpn.nohats.ca%3Fsecret%3DEPS4O5H4YO665V2L
 
-    ![QR Code](/imagesQrcode.png)
+    ![QR Code](/images/Qrcode.png)
 
     Your new secret key is: EPS4O5H4YO665V2L
     Your verification code is 265293
@@ -60,7 +60,7 @@ As root, create the user and generate their QRCODE / link:
 The qrcode or the URL can be given to the user, for instance for their
 iphone google authenticator application
 
-![GAiphone](/imagesGAiphone.png)
+![GAiphone](/images/GAiphone.png)
 
 ### Using the OTP code
 

@@ -247,7 +247,7 @@ To get a list of script times:
 
 which can then be turned into a histogram:
 
-![Script times](/imagesTest-script-time-histogram.jpg)
+![Script times](/images/Test-script-time-histogram.jpg)
 
 ##### sleep
 
@@ -415,7 +415,7 @@ To reduce disk I/O, it is possible to store the test domain disks in ram
 using tmpfs and /tmp. Here's a nice graph illustrating what happens when
 the option is set:
 
-![Disk IO OPS per day](/imagesDiskstats_iops-day.png)
+![Disk IO OPS per day](/images/Diskstats_iops-day.png)
 
 #### Recommendations
 
@@ -430,14 +430,14 @@ The test system:
 Increasing the number of parallel tests, for a given number of reboot
 threads:
 
-![Parallel Threads vs Reboot threads](/imagesTests-vs-reboots.png)
+![Parallel Threads vs Reboot threads](/images/Tests-vs-reboots.png)
 
 - having \#cores/2 reboot threads has the greatest impact
 - having more than \#cores reboot threads seems to slow things down
 
 Increasing the number of reboots, for a given number of test threads:
 
-![Number of reboot threads vs Number of test threads](/imagesReboots-vs-tests.png)
+![Number of reboot threads vs Number of test threads](/images/Reboots-vs-tests.png)
 
 - adding a second test thread has a far greater impact than adding a
   second reboot thread - contrast top lines

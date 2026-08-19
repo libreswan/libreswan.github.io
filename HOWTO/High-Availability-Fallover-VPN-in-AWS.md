@@ -1,4 +1,4 @@
-![HA Fallover](/imagesHA-AWS-libreswan.png)
+![HA Fallover](/images/HA-AWS-libreswan.png)
 
 ## Introduction
 
