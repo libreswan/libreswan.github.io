@@ -1,3 +1,11 @@
+## Improve the ACQUIRE to IKE policy lookup by making use of the policy.index
+
+- Student: Vinayak Sandur - sponsored by Google Summer of Code 2026
+
+- Project page: [Improve the ACQUIRE to IKE policy lookup by making use of the policy.index](/Completed-Projects/2026-Improve-the-ACQUIRE-to-IKE-policy-lookup)
+
+- Status: merged; in Libreswan 5.4
+
 ## RFC 9593: Announcing Supported Authentication Methods in the IKEv2
 
 - Student: Osema Fadhel - sponsored by Google Summer of Code 2026
