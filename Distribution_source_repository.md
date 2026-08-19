@@ -3,16 +3,16 @@ distributions, and libreswan related software repositories.
 
 # Libreswan Source repositories
 
-## Alpine Linux ![alpine linux logo](./images/Alpine-linux-logo.png)
+## Alpine Linux ![alpine linux logo](/imagesAlpine-linux-logo.png)
 
 **git**:
 <https://git.alpinelinux.org/cgit/aports/tree/community/libreswan>
 
-## CentOS ![Centos logo](./images/Centos_logo.png)
+## CentOS ![Centos logo](/imagesCentos_logo.png)
 
 **package**: <https://git.centos.org/rpms/libreswan/>
 
-## Debian ![Debian logo](./images/Debian-logo.png)
+## Debian ![Debian logo](/imagesDebian-logo.png)
 
 **package**: <https://packages.qa.debian.org/libr/libreswan.html>
 <https://tracker.debian.org/pkg/libreswan>
@@ -24,7 +24,7 @@ distributions, and libreswan related software repositories.
 **bugs**:
 <https://bugs.debian.org/cgi-bin/pkgreport.cgi?repeatmerged=no&src=libreswan>
 
-## Fedora ![Fedora logo](./images/Fedora-logo.png)
+## Fedora ![Fedora logo](/imagesFedora-logo.png)
 
 **package**: <https://src.fedoraproject.org/rpms/libreswan>
 
@@ -32,7 +32,7 @@ distributions, and libreswan related software repositories.
 
 **bugs**: <https://apps.fedoraproject.org/packages/libreswan/bugs>
 
-## gentoo ![gento logo](./images/Gentoo-logo.png)
+## gentoo ![gento logo](/imagesGentoo-logo.png)
 
 **package**: <https://packages.gentoo.org/packages/net-vpn/libreswan>
 
@@ -42,7 +42,7 @@ distributions, and libreswan related software repositories.
 
 **bugs**: <https://github.com/openwrt/packages>
 
-## Ubuntu ![Ubuntu logo](./images/Ubuntu-logo.png)
+## Ubuntu ![Ubuntu logo](/imagesUbuntu-logo.png)
 
 **bin package**' : <https://packages.ubuntu.com/bionic/libreswan>
 

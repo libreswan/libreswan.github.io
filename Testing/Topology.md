@@ -168,16 +168,16 @@ LEFT                                                              RIGHT
 
 #### Hand sketch of network
 
-![Hand Sketch of the Test Network](./images/Testnet-sketch.png)
+![Hand Sketch of the Test Network](/imagesTestnet-sketch.png)
 
 #### Older diagram
 
-![Network Diagram](./images/Testnet-20201027.png)
+![Network Diagram](/imagesTestnet-20201027.png)
 
-![Also](./images/Testnet-20240524.png)
+![Also](/imagesTestnet-20240524.png)
 
 #### FreeSWAN's Test Network
 
-![FreeSWAN Network Diagram](./images/Testnet-FreeSWAN.png)
+![FreeSWAN Network Diagram](/imagesTestnet-FreeSWAN.png)
 
-[FreeSWAN Network FIG](./images/Testnet-FreeSWAN.fig)
+[FreeSWAN Network FIG](/imagesTestnet-FreeSWAN.fig)

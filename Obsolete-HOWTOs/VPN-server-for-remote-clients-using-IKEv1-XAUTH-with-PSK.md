@@ -228,10 +228,10 @@ NetworkManager only supported using Aggressive Mode and the Group Name
 field could not be left empty. If you see this happening, please upgrade
 your NetworkManager-libreswan (or NetworkManager-openswan) plugin.
 
-![1](./images/NMXAUTHPSK1.png)
-![2](./images/NMXAUTHPSK2.png)
-![3](./images/NMXAUTHPSK3.png)
-![4](./images/NMXAUTHPSK4-aggr.png)
+![1](/imagesNMXAUTHPSK1.png)
+![2](/imagesNMXAUTHPSK2.png)
+![3](/imagesNMXAUTHPSK3.png)
+![4](/imagesNMXAUTHPSK4-aggr.png)
 
 # iPhone and iPad client
 
@@ -240,6 +240,6 @@ type IPSec. Fill in the description, server (name or IP), Account (aka
 username), Password and Secret (aka PSK). For PSK connection you MUST
 NOT enter a Group Name.
 
-![iOSXAUTHPSK0](./images/IOSXAUTHPSK0.png)
-![iOSXAUTHPSK1](./images/IOSXAUTHPSK1.png)
-![iOSXAUTHPSK3](./images/IOSXAUTHPSK3.png)
+![iOSXAUTHPSK0](/imagesIOSXAUTHPSK0.png)
+![iOSXAUTHPSK1](/imagesIOSXAUTHPSK1.png)
+![iOSXAUTHPSK3](/imagesIOSXAUTHPSK3.png)
