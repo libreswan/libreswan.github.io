@@ -15,7 +15,6 @@ SECTIONS += Completed-Projects
 SECTIONS += IRC
 SECTIONS += Hacking
 SECTIONS += Testing
-SECTIONS += KVM-Test-Framework
 SECTIONS += Internals
 SECTIONS += Security
 SECTIONS += Meetups
@@ -35,15 +34,28 @@ sidebar:
 			echo '<details>' ; \
 			echo '  <summary>' ; \
 			if test -r $${section}.md ; then \
-				echo "    <a href='/$${section}'>$${title}</a><br/>" ; \
+				echo "    <a href='/$${section}'>$${title}</a>" ; \
 			else \
 				echo "    $${title}" ; \
 			fi ; \
 			echo '  </summary>' ; \
-			ls $${section} | sort | while read subsection ; do \
-				href=$$(basename $${subsection} .md) ; \
-				title=$$(echo $${href} | sed -e 's/-/ /g') ; \
-				echo "  <a href='/$${section}/$${href}'>$${title}</a><br/>" ; \
+			ls $${section}/*.md | sort | while read subsection ; do \
+				subsection=$$(basename $${subsection} .md) ; \
+				title=$$(basename $${subsection} .md | tr - ' ') ; \
+				if test -d $${section}/$${subsection} ; then \
+					echo '  <details>' ; \
+					echo '    <summary>' ; \
+					echo "      <a href='/$${section}/$${subsection}'>$${title}</a>" ; \
+					echo '    </summary>' ; \
+					ls $${section}/$${subsection}/*.md | sort | while read subsubsection ; do \
+						subsubsection=$$(basename $${subsubsection} .md) ; \
+						title=$$(basename $${subsubsection} .md | tr - ' ') ; \
+						echo "    <a href='/$${section}/$${subsection}/$${subsubsection}'>$${title}</a>" ; \
+					done ; \
+					echo '  </details>' ; \
+				else \
+					echo "  <a href='/$${section}/$${subsection}'>$${title}</a>" ; \
+				fi ; \
 			done ; \
 			echo '</details>' ; \
 		else \
