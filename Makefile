@@ -34,16 +34,16 @@ sidebar:
 		if test -d $${section} ; then \
 			echo '<details>' ; \
 			echo '  <summary>' ; \
-			echo "    <a href='./$${section}'>$${title}</a><br/>" ; \
+			echo "    <a href='/$${section}'>$${title}</a><br/>" ; \
 			echo '  </summary>' ; \
 			ls $${section} | sort | while read subsection ; do \
 				href=$$(basename $${subsection} .md) ; \
 				title=$$(echo $${href} | sed -e 's/-/ /g') ; \
-				echo "  <a href='./$${section}/$${href}'>$${title}</a><br/>" ; \
+				echo "  <a href='/$${section}/$${href}'>$${title}</a><br/>" ; \
 			done ; \
 			echo '</details>' ; \
 		else \
-			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
+			echo "<a href='/$${section}'>$${title}</a><br/>" ; \
 		fi ; \
 		echo ; \
 	done > _includes/_sidebar.html
