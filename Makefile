@@ -1,10 +1,9 @@
 .PHONY: default all sidebar sitemap.txt
-all default: broken sidebar
+all default: broken sidebar sitemap.txt
 
-.PHONY: sitemap.txt
 sitemap.txt:
-	find wiki -name '*.md' -print | while read md ; do \
-		echo "https://libreswan.github.io/wiki/$$(basename $$md .md)" ; \
+	find * -name '*.md' -print | sed -e 's/.md$$//' | while read md ; do \
+		echo "https://libreswan.github.io/$$md" ; \
 	done > sitemap.txt
 
 SECTIONS += Support
@@ -71,17 +70,17 @@ sidebar:
 
 broken:
 	set -eu ; \
-	for md in *.md ; do \
+	find * -name '*.md' -print | while read md ; do \
 		cat -n "$${md}" \
 		| sed -n -e 's; *\([0-9]*\).*](\([^)#]*\)[^)]*).*;\1 \2;p' \
 		| grep -v -e http: -e https: -e git: \
 		| while read line link ; do \
 			case "$${link}" in \
-			[^.]* ) echo "check:$${md}:$${line}: missing ./ in $${link}" ; continue ;; \
+			[^/]* ) echo "check:$${md}:$${line}: missing / in $${link}" ; continue ;; \
 			*.jpg|*.pdf|*.png|*.fig) ;; \
-			./* ) link="$${link}.md" ;; \
+			/* ) link="$${link}.md" ;; \
 			esac ; \
-			if test ! -r "$${link}" ; then \
+			if test ! -r ".$${link}" ; then \
 				echo "check:$${md}:$${line}: missing file $${link}" ; \
 			fi ; \
 		done ; \
@@ -90,7 +89,7 @@ broken:
 .PHONY: unreachable
 unreachable:
 	set -eu ; \
-	for md in *.md ; do \
+	find * -name '*.md' -print | while read md ; do \
 		f=$$(basename $${md} .md) ; \
 		grep -e '\(\./'"$${f}"'\)' *.md > /dev/null || \
 		grep -e 'link:\./'"$${f}"'\[' *.asciidoc > /dev/null || \
