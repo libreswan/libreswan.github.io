@@ -48,9 +48,9 @@ sidebar:
 		echo '<summary>' ; \
 		title=$$(echo "$${section}" | tr - ' ') ; \
 		if test "$${subsections}" == "$${regex}" ; then \
-			echo "<a href='$${section}'>$${title}</a><br/>" ; \
+			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
 		elif test -r "$${section}.md" ; then \
-			echo "<a href='$${section}'>$${title}</a><br/>" ; \
+			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
 		else \
 			echo "$${title}<br/>" ; \
 		fi ; \
@@ -59,8 +59,9 @@ sidebar:
 			ls $${section}:*.md \
 			| sed -e 's/.md$$//' \
 			| sort \
-			| while read subsection ; do \
-				echo "<a href='$${subsection}'>$${subsection}</a><br/>" ; \
+			| sed -e 'h' -e 's/[^:]*:-//' -e 's/-/ /g' -e 'x;G' -e 's/\n/ /' \
+			| while read subsection_href subsection_title ; do \
+				echo "<a href='./$${subsection_href}'>$${subsection_title}</a><br/>" ; \
 			done ; \
 		fi ; \
 		echo '</details>' ; \
