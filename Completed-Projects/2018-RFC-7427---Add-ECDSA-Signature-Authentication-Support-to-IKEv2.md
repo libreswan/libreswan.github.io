@@ -106,4 +106,4 @@ Implementation of RSA-PSS and support for SHA2 and it's variants. The
 work was started before GSoC 2018 but was fully completed and tested
 during the GSoC 2018 period. Work is described in this project page
 [RSA-PSS Support in compliance with RFC 7427 and RFC
-8247](/Completed-Projects/RSA-PSS-Support-in-compliance-with-RFC-7427-and-RFC-8247).
+8247](/Completed-Projects/2018-RSA-PSS-Support-in-compliance-with-RFC-7427-and-RFC-8247).

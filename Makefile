@@ -39,7 +39,12 @@ sidebar:
 			fi ; \
 			echo '  </summary>' ; \
 			echo '  <small>' ; \
-			ls $${section}/*.md | sort | while read subsection ; do \
+			ls $${section}/*.md | { \
+				case $${section} in \
+				Completed-Projects ) sort -r ;; \
+				* ) sort ;; \
+				esac ; \
+			} | while read subsection ; do \
 				subsection=$$(basename $${subsection} .md) ; \
 				title=$$(basename $${subsection} .md | tr - ' ') ; \
 				if test -d $${section}/$${subsection} ; then \
@@ -83,7 +88,7 @@ broken:
 			/* ) link="$${link}.md" ;; \
 			esac ; \
 			if test ! -r ".$${link}" ; then \
-				echo "check:$${md}:$${line}: missing file $${link}" ; \
+				echo "check:$${md}:$${line}: missing file .$${link}" ; \
 			fi ; \
 		done ; \
 	done

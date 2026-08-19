@@ -189,11 +189,11 @@ Since a successful project may identify additional changes to
 Libreswan (pluto), merging may not be straight forward.
 
 For instance, before merging the [Session
-Resumption](/Completed-Projects/Session-Resumption) project we
+Resumption](/Completed-Projects/2020-Session-Resumption) project we
 changed the way Libreswan (pluto) implements an exchange, and before
 merging [Extend RFC-7427 Signature Authentication support to IKEv2
 with
-EDDSA](/Completed-Projects/Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA)
+EDDSA](/Completed-Projects/2021-RFC-8420---Add-EdDSA-Signature-Authentication-Support-to-IKEv2)
 we changed the way Signature Message Authentication Code (MAC) is
 computed.
 
