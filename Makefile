@@ -50,7 +50,7 @@ sidebar:
 					ls $${section}/$${subsection}/*.md | sort | while read subsubsection ; do \
 						subsubsection=$$(basename $${subsubsection} .md) ; \
 						title=$$(basename $${subsubsection} .md | tr - ' ') ; \
-						echo "      <a href='/$${section}/$${subsection}/$${subsubsection}'>$${title}</a>" ; \
+						echo "      <a href='/$${section}/$${subsection}/$${subsubsection}'>$${title}</a><br/>" ; \
 					done ; \
 					echo '    </details>' ; \
 				else \

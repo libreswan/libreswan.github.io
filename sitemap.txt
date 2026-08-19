@@ -6,6 +6,7 @@ https://libreswan.github.io/Completed-Projects/Postquantum-Preshared-Keys
 https://libreswan.github.io/Completed-Projects/IKEv2-Interop-testing-with-OpenBSD
 https://libreswan.github.io/Completed-Projects/RFC-5685---Redirect-Mechanism
 https://libreswan.github.io/Completed-Projects/Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA
+https://libreswan.github.io/Completed-Projects/2026-Improve-the-ACQUIRE-to-IKE-policy-lookup
 https://libreswan.github.io/Completed-Projects/TCP-encapsulation-of-IKE-and-IPsec
 https://libreswan.github.io/Completed-Projects/RSA-PSS-Support-in-compliance-with-RFC-7427-and-RFC-8247
 https://libreswan.github.io/Completed-Projects/Managing-Interface
