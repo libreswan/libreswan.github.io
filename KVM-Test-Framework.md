@@ -3,11 +3,11 @@
 Libreswan's test framework can be run using KVM guests, and the `./kvm`
 script. The framework assumes a Linux host with virtualisation instructions.
 
-For an overview of the network see [Topology](./Testing:-Topology).
+For an overview of the network see [Topology](/Testing/Topology).
 
 ## TL;DR?
 
-You must set up your [host system](./KVM-Test-Framework:-1.-Setup-The-Host).
+You must set up your [host system](/KVM-Test-Framework/1.-Setup-The-Host).
 
 But with that done, you could try:
 

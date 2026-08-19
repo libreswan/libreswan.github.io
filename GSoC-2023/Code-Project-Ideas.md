@@ -3,7 +3,7 @@ Code](https://github.com/libreswan/libreswan/blob/main/docs/GSoC.md)
 
 **Previous Student projects**
 
-See [Student projects](./Completed-Projects) for completed student
+See [Student projects](/Completed-Projects) for completed student
 projects (sponsored by GSoC and others).
 
 **Proposal submissions**

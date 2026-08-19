@@ -1,6 +1,6 @@
 Building a tunnel between two endpoints for multiple subnets with PSK
 authentication is pretty simialar to a [host to host VPN with
-PSK](./HOWTO:-Host-to-host-VPN-with-PSK) tunnel. We used the also=
+PSK](/HOWTO/Host-to-host-VPN-with-PSK) tunnel. We used the also=
 keyword to avoid adding the same information into each connection.
 
     # /etc/ipsec.conf

@@ -19,7 +19,7 @@ First, we devised a list of requirements:
 
 As a quick note, we investigated using libreswan to connect to [AWS VPC
 VPN](https://aws.amazon.com/vpc/) . We quickly found that [AWS VPC is
-broken](./Interoperability#Multiple_tunnels_fail_with_Amazon.27s_VPN)
+broken](/Interoperability#Multiple_tunnels_fail_with_Amazon.27s_VPN)
 and moved on to design other solution.
 
 TODO:
@@ -276,7 +276,7 @@ vpn2.vpc2 should be identical.
 #### PSK
 
 Now, we need to generate a [Host_to_host_VPN_with_PSK
-PSK](./HOWTO:-Host-to-host-VPN-with-PSK)
+PSK](/HOWTO/Host-to-host-VPN-with-PSK)
 
     # openssl rand -base64 48
     3LSVg7z7CAZKzPHM1IyCBrwOzxRL65+xncHxSqsXPL9JbwT1qNgvCuTfPfrj6jbZ

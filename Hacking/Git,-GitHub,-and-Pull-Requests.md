@@ -79,7 +79,7 @@ Branches are _your call_, but lets assume you create one.
 _We find creating a separate local build tree and branch for each
 problem is easier then a single build tree with lots of branches._
 
-- look through [Programming Conventions](./Hacking:-Programming-Conventions)
+- look through [Programming Conventions](/Hacking/Programming-Conventions)
 
 - create a branch
 
@@ -367,7 +367,7 @@ or even:
   Nightly loves to find and test branch and merge points!
 
 For what really happens see [Merging GitHub Pull
-Requests](./Hacking:-Merging-GitHub-Pull-Requests).
+Requests](/Hacking/Merging-GitHub-Pull-Requests).
 
 ## Reverting
 

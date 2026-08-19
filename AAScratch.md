@@ -2,12 +2,12 @@ Antony's unsorted pages that I want to access quickly. These are mostly
 related to IPsec/libreswan and when I think I know this page exist but
 where is it.
 
-- [XFRM pCPU](./Internals:-XFRM-pCPU)
-- [XFRMi Development Notes 2018-2019](./Internals:-XFRM-Interface-Development-Notes)
-- [Namespace Magic, 2019](./Testing:-Namespace-Magic)
-- [IKEv2 State names proposal 2016 - 2019](./Internals:-IKEv2-Child-SA)
-- [Cloud Opportunistic Encryption(OE)](./Internals:-Cloud-OE-ideas)
-- [Linux Kernel Support related to libreswan](./Internals:-Libreswan-xfrm-kernel-support)
+- [XFRM pCPU](/Internals/XFRM-pCPU)
+- [XFRMi Development Notes 2018-2019](/Internals/XFRM-Interface-Development-Notes)
+- [Namespace Magic, 2019](/Testing/Namespace-Magic)
+- [IKEv2 State names proposal 2016 - 2019](/Internals/IKEv2-Child-SA)
+- [Cloud Opportunistic Encryption(OE)](/Internals/Cloud-OE-ideas)
+- [Linux Kernel Support related to libreswan](/Internals/Libreswan-xfrm-kernel-support)
 
 <!-- -->
 
@@ -85,7 +85,7 @@ using without nfsd support. Other distributions may need nfsd support.
 
 # Linux Per CPU efforts
 
-- [Linux Kernel XFRM pCPU](./Internals:-XFRM-pCPU) and
+- [Linux Kernel XFRM pCPU](/Internals/XFRM-pCPU) and
   [Libreswan](https://libreswan.org) Nov 2019
 - [Snabb](https://fosdem.org/2020/schedule/event/vita_high_speed_traffic_encryption_on_x86_64/)
   @ [FOSDEM](https://www.fosdem.org)2020

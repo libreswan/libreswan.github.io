@@ -19,7 +19,7 @@ To run tests locally, read on.
 The libreswan tests, in testing/pluto, can be run using several
 different mechanisms:
 
-|Framework|[KVM](./KVM-Test-Framework)|[Namespaces](./Testing:-Namespaces)|
+|Framework|[KVM](/KVM-Test-Framework)|[Namespaces](./Testing/Namespaces)|
 |-|-|-|
 |Full Test Run|Yes<br>Under 5 fails|No<br>100+ fails
 |Individual Tests|Yes|Most
@@ -55,7 +55,7 @@ The following happens:
 
 - the domains needed by the test are booted
 
-  For a diagram of the test network, see [topology](./Testing:-Topology).
+  For a diagram of the test network, see [topology](/Testing/Topology).
 
 - config files are installed
 

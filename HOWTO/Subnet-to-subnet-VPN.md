@@ -1,5 +1,5 @@
 Building a tunnel between two endpoints for multiple subnets is pretty
-simialar to a [host to host VPN](./HOWTO:-Host-to-host-VPN) tunnel.
+simialar to a [host to host VPN](/HOWTO/Host-to-host-VPN) tunnel.
 Except you will see we are adding leftsubnets/rightsubnets statements.
 We used the also= keyword to avoid adding the same information into each
 connection.

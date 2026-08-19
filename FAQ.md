@@ -4,7 +4,7 @@
 
 ## Which RFC's or other standards does libreswan support?
 
-See [Implemented Standards](./FAQ:-Implemented-Standards)
+See [Implemented Standards](/FAQ/Implemented-Standards)
 
 ## Which ciphers / algorithms does libreswan support?
 
@@ -114,7 +114,7 @@ You should see the l2tp modules in the output of the last command.
 Yes, this is supported as of libreswan-3.18. With libreswan 3.x you
 can set ipsec-interface=1 to get ipsec1.  As of libreswan-4.x you can
 also set it to 0 to get ipsec0. See further [Route-based
-VPN](./HOWTO:-Route-based-VPN)
+VPN](/HOWTO/Route-based-VPN)
 
 ## Does libreswan work with OpenVZ virtualization?
 
@@ -134,7 +134,7 @@ CONFIG_XFRM_STATS and those kernels have no way of debugging anything :(
 
 ## Are there well known vulnerabilities?
 
-See [Vulnerabilities](./Security:-Vulnerabilities).
+See [Vulnerabilities](/Security/Vulnerabilities).
 
 ## Google Cloud VPN issue
 

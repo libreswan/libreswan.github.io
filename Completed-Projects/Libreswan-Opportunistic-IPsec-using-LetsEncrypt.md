@@ -13,7 +13,7 @@ functionality e.g., initial OE setup, testing configuration/connection,
 generating and updating Let's Encrypt certificates. The details about
 the utilities and using them is available in the [Documentation:
 Libreswan Opportunistic IPsec using
-LetsEncrypt](./HOWTO:-Opportunistic-IPsec-using-LetsEncrypt).
+LetsEncrypt](/HOWTO/Opportunistic-IPsec-using-LetsEncrypt).
 Also, the documentation includes the sample output for each {command}
 and \[argument\].
 

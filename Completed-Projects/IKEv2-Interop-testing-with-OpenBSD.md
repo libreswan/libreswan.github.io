@@ -12,7 +12,7 @@ Systems.
 
 # Implementation
 
-The libreswan [KVM Testsuite](./Testing:-KVM) libvirt/qemu testing
+The libreswan [KVM Testsuite](/Testing/KVM) libvirt/qemu testing
 system auto-installs Linux and then compiles libreswan on these
 virtual machines. It then fires up these machines for individual tests
 and verifies the expected results with reference output. The test

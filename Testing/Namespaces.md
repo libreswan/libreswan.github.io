@@ -192,7 +192,7 @@ NSENTER () {
 NSENTER east-basic-pluto-01
 ```
 
-from [Namespace Testing](./Testing:-Namespaces) (almost) works!
+from [Namespace Testing](/Testing/Namespaces) (almost) works!
 
 Just note that scripts expect a magic environment variable to be set;
 see scripts for details.
@@ -218,7 +218,7 @@ This uses `kvmresults.py` (yes the irony) to limit things to just
 `linux` tests:
 
 ```
-./testing/utils/namespace-runner.py $(./testing/utils/kvmresults.py --test-platform linux --result untested --test-status good  --print test-name testing/pluto/TESTLIST)
+./testing/utils/namespace-runner.py $(/testing/utils/kvmresults.py --test-platform linux --result untested --test-status good  --print test-name testing/pluto/TESTLIST)
 ```
 
 The problem, this time, is that namespaces don't know about the hosts
@@ -230,7 +230,7 @@ all tests.
 This version skips tests that have passed:
 
 ```
-./testing/utils/namespace-runner.py $(./testing/utils/kvmresults.py --quick --test-platform linux --skip passed --test-status good  --print test-name testing/pluto/TESTLIST)
+./testing/utils/namespace-runner.py $(/testing/utils/kvmresults.py --quick --test-platform linux --skip passed --test-status good  --print test-name testing/pluto/TESTLIST)
 ```
 
 ### Run all modified tests
@@ -238,7 +238,7 @@ This version skips tests that have passed:
 Possibly the most useful:
 
 ```
-./testing/utils/namespace-runner.py $(./kvm modified | cut -d/ -f3)
+./testing/utils/namespace-runner.py $(/kvm modified | cut -d/ -f3)
 ```
 
 which will run just the tests that have uncommitted modifications.

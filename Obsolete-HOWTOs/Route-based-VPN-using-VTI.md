@@ -1,4 +1,4 @@
-# VTI support is OBSOLETE, use the [IPsec Interface](./HOWTO:-Route-based-VPN)
+# VTI support is OBSOLETE, use the [IPsec Interface](/HOWTO/Route-based-VPN)
 
 VPN tunnels are normally set up based on an IPsec policy. This is called
 a policy-based VPN. In libreswan, these policies are specified with

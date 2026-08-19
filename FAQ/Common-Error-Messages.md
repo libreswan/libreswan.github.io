@@ -97,7 +97,7 @@ updating Windows might resolve this issue.
 
 You are using a certificate that is missing some required
 ExtendedKeyUsage ("EKU") attributes. See [Windows Certificate
-requirements](./Interoperability#Windows_Certificate_requirements)
+requirements](/Interoperability#Windows_Certificate_requirements)
 
 ## ssh gives error: Corrupted MAC on input. Disconnecting: Packet corrupt
 

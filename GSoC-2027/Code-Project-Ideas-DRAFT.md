@@ -9,7 +9,7 @@ drives the continuous evolution of these standards.  New features,
 such as hybrid post-quantum key exchange, are being added; while old
 features, such as support for weak cryptographic algorithms are been
 removed.  For more background on Libreswan see the [History
-Page](./FAQ:-History).
+Page](/FAQ/History).
 
 The Project Ideas listed below have been selected by Libreswan's core
 developers with this evolution in mind.  They provide both a technical
@@ -19,7 +19,7 @@ through to completion.
 
 If you see a project that looks interesting, or you just have
 questions, then see the [Contributor
-Guidance](./GSoC-2026:-Contributor-Guidance-FINAL) for next steps.
+Guidance](/GSoC-2026/Contributor-Guidance-FINAL) for next steps.
 
 It isn't a requirement at you pick one of the ideas below - we also
 welcome new ideas.  For instance, additional draft RFCs that could

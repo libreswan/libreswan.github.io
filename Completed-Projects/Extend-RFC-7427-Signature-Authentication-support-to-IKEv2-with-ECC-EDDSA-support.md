@@ -115,4 +115,4 @@ Sahana Prasad (sahana.prasad07@gmail.com) under the tutelage of Paul
 Wouters.
 
 [Use Cases and Requirements document for ECC/ECDSA
-support](./Internals:-Use-Cases-and-Requirements-document-for-ECC-ECDSA-support)
+support](/Internals/Use-Cases-and-Requirements-document-for-ECC-ECDSA-support)

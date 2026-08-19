@@ -141,4 +141,4 @@ authentication that can be used with LetsEncrypt or any other public CA.
 It also supports NAT-Traversal, so that this can be used by roaming
 clients (laptops, phones) that are often behind NAT. For details, see
 [HOWTO: Opportunistic IPsec using
-LetsEncrypt](./HOWTO:-Opportunistic-IPsec-using-LetsEncrypt)
+LetsEncrypt](/HOWTO/Opportunistic-IPsec-using-LetsEncrypt)

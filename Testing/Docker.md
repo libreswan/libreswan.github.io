@@ -1,6 +1,6 @@
 # Please Note: Testing Using Docker Is Experimental
 
-[KVM](./Testing:-KVM) or [Namespaces](./Testing:-Namespaces) are
+[KVM](/Testing/KVM) or [Namespaces](./Testing:-Namespaces) are
 recommended for normal test runs.
 
 ##Libreswan testing suite docker adventures.

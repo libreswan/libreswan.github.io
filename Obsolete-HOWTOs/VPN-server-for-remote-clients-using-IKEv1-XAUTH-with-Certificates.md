@@ -202,4 +202,4 @@ X.509 certificates, which tend to cause fragmentation when used with
 ## IPsec with L2TP
 
 See
-[VPN_server_for_remote_clients_using_IKEv1_with_L2TP](./Obsolete-HOWTOs:-VPN-server-for-remote-clients-using-IKEv1-with-L2TP)
+[VPN_server_for_remote_clients_using_IKEv1_with_L2TP](/Obsolete-HOWTOs/VPN-server-for-remote-clients-using-IKEv1-with-L2TP)

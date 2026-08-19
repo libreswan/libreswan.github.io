@@ -28,7 +28,7 @@ generating X.509 certificates for this method.
 - The certificates also need to have the serverAuth and clientAuth
   ExtendedKeyUSage ("EKU") attribytes set. Alternatively, EKU checking
   can be disabled, see
-  [Interoperability#Windows_Certificate_requirements](./Interoperability#Windows_Certificate_requirements)
+  [Interoperability#Windows_Certificate_requirements](/Interoperability#Windows_Certificate_requirements)
 
 {{ ambox \| nocat=true \| type=speedy \| text = Windows uses only
 insecure defaults for IKEv2. To interop with libreswan, you need to

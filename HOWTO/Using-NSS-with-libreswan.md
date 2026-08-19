@@ -41,7 +41,7 @@ certification lab involved with the testing as well.
 
 If you are migrating from openswan with NSS or libreswan 3.13 or older
 to libreswan 3.14 or higher, then you will be converted to the new NSS
-SQL database format.  See **[3.14_X509](./Internals:-3.14-X509)**
+SQL database format.  See **[3.14_X509](/Internals/3.14-X509)**
 
 ## NSS command line tools
 
@@ -59,7 +59,7 @@ command that adds the path to Libreswan's NSS database.  For instance
 
 - `ipsec modutil`: low-level manipulation of Libreswan's NSS database
   such as putting the database into FIPS mode or manipulating
-  [hardware tokens](./HOWTO:-Using-NSS-Hardware-Tokens).
+  [hardware tokens](/HOWTO/Using-NSS-Hardware-Tokens).
 
 - `ipsec crlutil`: importing CRLs into Libreswan's NSS database
 

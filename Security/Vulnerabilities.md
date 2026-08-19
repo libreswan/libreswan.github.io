@@ -1,10 +1,10 @@
 ### Libreswan is vulnerable to TunnelCrack, see details
 
-See [Libreswan and TunnelCrack](./Security:-Libreswan-and-TunnelCrack)
+See [Libreswan and TunnelCrack](/Security/Libreswan-and-TunnelCrack)
 
 ### Libreswan is not vulnerable to the OpenSSL "Heartbleed" exploit
 
-See [Libreswan and Heartbleed](./Security:-Libreswan-and-Heartbleed)
+See [Libreswan and Heartbleed](/Security/Libreswan-and-Heartbleed)
 
 ### Libreswan is not vulnerable to bash CVE-2014-6271 or CVE-2014-7169
 

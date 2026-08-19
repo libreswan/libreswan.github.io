@@ -13,7 +13,7 @@ confusingly called of type "IPSec". some other vendors call it "Group
 PSK".
 
 It is also possible (and more secure) to use XAUTH with Certificates -
-see[VPN_server_for_remote_clients_using_IKEv1_XAUTH_with_Certificates](./Obsolete-HOWTOs:-VPN-server-for-remote-clients-using-IKEv1-XAUTH-with-Certificates)
+see[VPN_server_for_remote_clients_using_IKEv1_XAUTH_with_Certificates](/Obsolete-HOWTOs/VPN-server-for-remote-clients-using-IKEv1-XAUTH-with-Certificates)
 
 # XAUTH PSK
 

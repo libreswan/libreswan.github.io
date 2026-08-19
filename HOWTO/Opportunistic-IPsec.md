@@ -7,7 +7,7 @@ existing hosts. This concept can be used in an Enterprise or Cloud
 model, but can also be applied to the Internet at large. To use
 Opportunistic IPsec at an internet scale, see [HOWTO: Opportunistic
 IPsec using
-LetsEncrypt](./HOWTO:-Opportunistic-IPsec-using-LetsEncrypt).  This
+LetsEncrypt](/HOWTO/Opportunistic-IPsec-using-LetsEncrypt).  This
 HOWTO describes the Enterprise or Cloud deployment, sometimes also
 called Mesh Encryption"
 

@@ -4,7 +4,7 @@ type of VPN disables the "send all traffic through the VPN".
 
 The configuration is basically the same as for [VPN server for remote
 clients using
-IKEv2](./HOWTO:-VPN-server-for-remote-clients-using-IKEv2) except now
+IKEv2](/HOWTO/VPN-server-for-remote-clients-using-IKEv2) except now
 we indicate with leftsubnet= on the VPN server what the subnet is that
 we are giving access to. The easiest way to ensure that the clients can
 reach the subnet involved is to give them an address from that subnet

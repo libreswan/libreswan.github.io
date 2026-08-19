@@ -237,7 +237,7 @@ for a UDP flow, ntuple filtering would look like :
     case ESP_V4_FLOW:
        return MLX5E_TT_IPV4_IPSEC_ESP;
 
-### [XFRM_pCPU_RSS](./Internals:-XFRM-pCPU-RSS) details
+### [XFRM_pCPU_RSS](/Internals/XFRM-pCPU-RSS) details
 
 ## Future research/ideas
 

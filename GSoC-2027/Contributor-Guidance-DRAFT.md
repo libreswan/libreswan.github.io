@@ -8,7 +8,7 @@ far more digestible.  It even includes a section on [Writing A
 Proposal](https://google.github.io/gsocguides/student/writing-a-proposal).
 
 We strongly urge you to read up on the [previous student
-projects](./Completed-Projects).
+projects](/Completed-Projects).
 
 But first lets get that gnarly question out the way ...
 
@@ -65,7 +65,7 @@ Don't be lazy, the result won't impress:
 
   We can also be contacted by sending e-mail to the [developer mailing
   list](https://lists.libreswan.org/mailman3/lists/swan-dev.lists.libreswan.org/)
-  or on [IRC](./IRC).
+  or on [IRC](/IRC).
 
 ## Next steps
 
@@ -125,7 +125,7 @@ Don't be lazy, the result won't impress:
 - see if you can run a single test
 
   The testsuite is found in `testing/pluto/` in the source tree; and
-  the [Testing](./Testing) page suggests several ways to get the
+  the [Testing](/Testing) page suggests several ways to get the
   testsuite running.
 
   _Note: We're not suggesting that, at this stage, you run the full
@@ -138,7 +138,7 @@ Don't be lazy, the result won't impress:
 
   If a task or bug looks interesting and you'd like to work on it
   (i.e., submit a [Pull
-  Request](./Hacking:-Git,-GitHub,-and-Pull-Requests)), either drop an
+  Request](/Hacking/Git,-GitHub,-and-Pull-Requests)), either drop an
   e-mail to gsoc@ or add a note to the bug asking about it.
 
   Just remember that tasks are often heavy on assumed context (if
@@ -149,7 +149,7 @@ Don't be lazy, the result won't impress:
   Once you've got one bug under your hat, you could consider a second.
   <br>But please **do not _claim_ or _hog_ bugs**.
 
-- see if you can set things up so you're on [IRC](./IRC)
+- see if you can set things up so you're on [IRC](/IRC)
 
 - review the Preferred Skills
 
@@ -215,11 +215,11 @@ Since a successful project may identify additional changes to
 Libreswan (pluto), merging may not be straight forward.
 
 For instance, before merging the [Session
-Resumption](./Completed-Projects:-Session-Resumption) project we
+Resumption](/Completed-Projects/Session-Resumption) project we
 changed the way Libreswan (pluto) implements an exchange, and before
 merging [Extend RFC-7427 Signature Authentication support to IKEv2
 with
-EDDSA](./Completed-Projects:-Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA)
+EDDSA](/Completed-Projects/Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA)
 we changed the way Signature Message Authentication Code (MAC) is
 computed.
 

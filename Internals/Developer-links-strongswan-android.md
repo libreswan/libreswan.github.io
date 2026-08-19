@@ -1,7 +1,7 @@
 <H1>
 
 Collection of IPsec implementation source code and testing. For user
-Interoperability read [this](./Interoperability) link.
+Interoperability read [this](/Interoperability) link.
 
 </H1>
 

@@ -10,7 +10,7 @@ Agenda items
 
 do we want to integrate with CISCO?
 
-## [crypto boundary and certification](./Security:-Crypto-boundary-and-certification)
+## [crypto boundary and certification](/Security/Crypto-boundary-and-certification)
 
 ### ECC support for IKE and ESP
 

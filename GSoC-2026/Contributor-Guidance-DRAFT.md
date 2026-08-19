@@ -3,12 +3,12 @@
   spell out our AI policy; and clarify the next steps.**
 
 # Please go to [GSoC Contributor
-  Guidance](./GSoC-2026:-Contributor-Guidance-FINAL)
+  Guidance](/GSoC-2026/Contributor-Guidance-FINAL)
 
 Submissions must comply to all GSoC rules.
 
 We strongly urge you to read up on the [previous student
-projects](./Completed-Projects).
+projects](/Completed-Projects).
 
 Here are our suggested next steps for submitting a proposal:
 
@@ -34,7 +34,7 @@ Here are our suggested next steps for submitting a proposal:
 
 - have a look at the [code
   base](https://github.com/libreswan/libreswan) and [test
-  framework](./Testing).
+  framework](/Testing).
 
   Create a github account, clone the project, and try building.
 
@@ -104,11 +104,11 @@ Since a successful project may identify additional changes to
 Libreswan (pluto), merging may not be straight forward.
 
 For instance, before merging the [Session
-Resumption](./Completed-Projects:-Session-Resumption) project we
+Resumption](/Completed-Projects/Session-Resumption) project we
 changed the way Libreswan (pluto) implements an exchange, and before
 merging [Extend RFC-7427 Signature Authentication support to IKEv2
 with
-EDDSA](./Completed-Projects:-Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA)
+EDDSA](/Completed-Projects/Extend-RFC-7427-Signature-Authentication-support-to-IKEv2-with-EDDSA)
 we changed the way Signature Message Authentication Code (MAC) is
 computed.
 

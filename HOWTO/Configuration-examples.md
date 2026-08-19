@@ -4,35 +4,35 @@ unless specifically noted.
 
 # VPN server to VPN server configurations
 
-[host to host VPN](./HOWTO:-Host-to-host-VPN)
+[host to host VPN](/HOWTO/Host-to-host-VPN)
 
-[subnet to subnet VPN](./HOWTO:-Subnet-to-subnet-VPN)
+[subnet to subnet VPN](/HOWTO/Subnet-to-subnet-VPN)
 
-[host to host VPN with PSK](./HOWTO:-Host-to-host-VPN-with-PSK)
+[host to host VPN with PSK](/HOWTO/Host-to-host-VPN-with-PSK)
 
 [subnet to subnet VPN with
-PSK](./HOWTO:-Subnet-to-subnet-VPN-with-PSK)
+PSK](/HOWTO/Subnet-to-subnet-VPN-with-PSK)
 
 [EoIP shared ethernet LAN using
-IPsec](./HOWTO:-EoIP-shared-ethernet-LAN-using-IPsec)
+IPsec](/HOWTO/EoIP-shared-ethernet-LAN-using-IPsec)
 
-[subnet to subnet using NAT](./HOWTO:-Subnet-to-subnet-using-NAT)
+[subnet to subnet using NAT](/HOWTO/Subnet-to-subnet-using-NAT)
 
 [SElinux and Labeled IPsec
-VPN](./HOWTO:-SElinux-and-Labeled-IPsec-VPN)
+VPN](/HOWTO/SElinux-and-Labeled-IPsec-VPN)
 
 # VPN server for VPN client configurations
 
 [VPN server for remote clients using
-IKEv2](./HOWTO:-VPN-server-for-remote-clients-using-IKEv2)
+IKEv2](/HOWTO/VPN-server-for-remote-clients-using-IKEv2)
 
 [VPN server for remote clients using IKEv2 split
-VPN](./HOWTO:-VPN-server-for-remote-clients-using-IKEv2-split-VPN)
+VPN](/HOWTO/VPN-server-for-remote-clients-using-IKEv2-split-VPN)
 
 [libreswan as client to a Cisco (ASA or VPN3000)
-server](./HOWTO:-Libreswan-as-client-to-a-Cisco-ASA-or-VPN3000-server)
+server](/HOWTO/Libreswan-as-client-to-a-Cisco-ASA-or-VPN3000-server)
 
-[subnet extrusion](./HOWTO:-Subnet-extrusion)
+[subnet extrusion](/HOWTO/Subnet-extrusion)
 
 # VPN configurations to connect to cloud providers
 
@@ -47,9 +47,9 @@ Libreswan](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/libreswan
 VPNaaS](https://wiki.openstack.org/wiki/Neutron/VPNaaS/HowToInstall)
 
 [High Availability / Failover VPN in AWS using
-libreswan](./HOWTO:-High-Availability-Fallover-VPN-in-AWS)
+libreswan](/HOWTO/High-Availability-Fallover-VPN-in-AWS)
 
-[Microsoft Azure configuration](./HOWTO:-Microsoft-Azure-configuration)
+[Microsoft Azure configuration](/HOWTO/Microsoft-Azure-configuration)
 
 [OpenShift Cloud Encryption with
 libreswan](https://docs.openshift.com/container-platform/3.3/admin-guide/ipsec.html)
@@ -63,9 +63,9 @@ demonstrating a more esoteric feature or option.
 
 In addition, the [test results](https://testing.libreswan.org/) are
 published [nightly](https://testing.libreswan.org/current) (see also
-[Testing](./Testing)).
+[Testing](/Testing)).
 
 # Misc items
 
 [Using Apache to serve PKCS#12 format .p12
-files](./HOWTO:-Using-Apache-to-serve-PKCS)
+files](/HOWTO/Using-Apache-to-serve-PKCS)

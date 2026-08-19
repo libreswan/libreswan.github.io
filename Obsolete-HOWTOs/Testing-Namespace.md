@@ -1,4 +1,4 @@
-# Note: This page is out-of-date try [this](./Testing:-Namespaces) WIP crib sheet
+# Note: This page is out-of-date try [this](/Testing/Namespaces) WIP crib sheet
 
 This is a quick guide to run libreswan tests using namespaces.
 
@@ -378,4 +378,4 @@ Testing use a several of packages. To install them
   may need more work
 - strongswan install would conflict with libreswan /usr/sbin/ipsec
 
-### For more read [Namespace testing details](./Testing:-Namespace-Magic)
+### For more read [Namespace testing details](/Testing/Namespace-Magic)
