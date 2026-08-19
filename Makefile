@@ -42,8 +42,10 @@ SUBSECTIONS = $(subst :,\:,$(wildcard $(patsubst %,%:*.md, $(SECTIONS))))
 sidebar:
 	set -xeu ; \
 	for section in $(SECTIONS) ; do \
+		echo '<details>' ; \
 		regex="$${section}:*.md" ; \
 		subsections=$$(echo $${regex}) ; \
+		echo '<summary>' ; \
 		title=$$(echo "$${section}" | tr - ' ') ; \
 		if test "$${subsections}" == "$${regex}" ; then \
 			echo "<a href='$${section}'>$${title}</a><br/>" ; \
@@ -52,6 +54,7 @@ sidebar:
 		else \
 			echo "$${title}<br/>" ; \
 		fi ; \
+		echo '</summary>' ; \
 		if test "$${subsections}" != "$${regex}" ; then \
 			ls $${section}:*.md \
 			| sed -e 's/.md$$//' \
@@ -60,6 +63,7 @@ sidebar:
 				echo "<a href='$${subsection}'>$${subsection}</a><br/>" ; \
 			done ; \
 		fi ; \
+		echo '</details>' ; \
 		echo ; \
 	done > _includes/_sidebar.html
 
