@@ -25,46 +25,26 @@ SECTIONS += Obsolete-HOWTOs
 clean:
 	rm -f *.tmp
 
-ASCIIDOC_TITLE = sed \
-	-e '\# save LINK to hold space' \
-	-e 's;.md$$;;' \
-	-e 'h' \
-	-e '\# build TITLE' \
-	-e 's;-; ;g' \
-	-e 's;[^:]*: ;;' \
-	-e '\# switch-concat forming LINK NL TITLE' \
-	-e 'x' \
-	-e 'G' \
-	-e 's;\([^\n]*\)\n\(.*\);* link:./\1[\2];'
-
 SUBSECTIONS = $(subst :,\:,$(wildcard $(patsubst %,%:*.md, $(SECTIONS))))
 
 sidebar:
 	set -xeu ; \
 	for section in $(SECTIONS) ; do \
-		echo '<details>' ; \
-		regex="$${section}:*.md" ; \
-		subsections=$$(echo $${regex}) ; \
-		echo '<summary>' ; \
 		title=$$(echo "$${section}" | tr - ' ') ; \
-		if test "$${subsections}" == "$${regex}" ; then \
-			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
-		elif test -r "$${section}.md" ; then \
-			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
-		else \
-			echo "$${title}<br/>" ; \
-		fi ; \
-		echo '</summary>' ; \
-		if test "$${subsections}" != "$${regex}" ; then \
-			ls $${section}:*.md \
-			| sed -e 's/.md$$//' \
-			| sort \
-			| sed -e 'h' -e 's/[^:]*:-//' -e 's/-/ /g' -e 'x;G' -e 's/\n/ /' \
-			| while read subsection_href subsection_title ; do \
-				echo "<a href='./$${subsection_href}'>$${subsection_title}</a><br/>" ; \
+		if test -d $${section} ; then \
+			echo '<details>' ; \
+			echo '  <summary>' ; \
+			echo "    <a href='./$${section}'>$${title}</a><br/>" ; \
+			echo '  </summary>' ; \
+			ls $${section} | sort | while read subsection ; do \
+				href=$$(basename $${subsection} .md) ; \
+				title=$$(echo $${href} | sed -e 's/-/ /g') ; \
+				echo "  <a href='./$${section}/$${href}'>$${title}</a><br/>" ; \
 			done ; \
+			echo '</details>' ; \
+		else \
+			echo "<a href='./$${section}'>$${title}</a><br/>" ; \
 		fi ; \
-		echo '</details>' ; \
 		echo ; \
 	done > _includes/_sidebar.html
 
