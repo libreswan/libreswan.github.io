@@ -38,24 +38,26 @@ sidebar:
 				echo "    $${title}" ; \
 			fi ; \
 			echo '  </summary>' ; \
+			echo '  <small>' ; \
 			ls $${section}/*.md | sort | while read subsection ; do \
 				subsection=$$(basename $${subsection} .md) ; \
 				title=$$(basename $${subsection} .md | tr - ' ') ; \
 				if test -d $${section}/$${subsection} ; then \
-					echo '  <details>' ; \
-					echo '    <summary>' ; \
-					echo "      <a href='/$${section}/$${subsection}'>$${title}</a>" ; \
-					echo '    </summary>' ; \
+					echo '    <details>' ; \
+					echo '      <summary>' ; \
+					echo "        <a href='/$${section}/$${subsection}'>$${title}</a>" ; \
+					echo '      </summary>' ; \
 					ls $${section}/$${subsection}/*.md | sort | while read subsubsection ; do \
 						subsubsection=$$(basename $${subsubsection} .md) ; \
 						title=$$(basename $${subsubsection} .md | tr - ' ') ; \
-						echo "    <a href='/$${section}/$${subsection}/$${subsubsection}'>$${title}</a>" ; \
+						echo "      <a href='/$${section}/$${subsection}/$${subsubsection}'>$${title}</a>" ; \
 					done ; \
-					echo '  </details>' ; \
+					echo '    </details>' ; \
 				else \
-					echo "  <a href='/$${section}/$${subsection}'>$${title}</a>" ; \
+					echo "    <a href='/$${section}/$${subsection}'>$${title}</a><br/>" ; \
 				fi ; \
 			done ; \
+			echo '  </small>' ; \
 			echo '</details>' ; \
 		else \
 			echo "<a href='/$${section}'>$${title}</a><br/>" ; \
