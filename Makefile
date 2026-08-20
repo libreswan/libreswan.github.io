@@ -11,6 +11,7 @@ SECTIONS += FAQ
 SECTIONS += HOWTO
 SECTIONS += GSoC-2027
 SECTIONS += Completed-Projects
+SECTIONS += Presentations
 SECTIONS += IRC
 SECTIONS += Hacking
 SECTIONS += Testing

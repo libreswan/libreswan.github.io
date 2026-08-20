@@ -111,6 +111,7 @@ https://libreswan.github.io/Obsolete-HOWTOs/IKEv1-XAUTH-with-FreeOTP-and-FreeIPA
 https://libreswan.github.io/Obsolete-HOWTOs/VPN-server-for-remote-clients-using-IKEv1-with-L2TP
 https://libreswan.github.io/Obsolete-HOWTOs/Testing-Namespace
 https://libreswan.github.io/Other_links
+https://libreswan.github.io/Presentations
 https://libreswan.github.io/README
 https://libreswan.github.io/RFC_8229_-_TCP_support_for_IKEv2_and_ESP
 https://libreswan.github.io/Security/Libreswan-and-TunnelCrack
