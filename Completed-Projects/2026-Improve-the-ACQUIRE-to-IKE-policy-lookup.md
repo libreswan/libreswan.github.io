@@ -6,7 +6,7 @@ Mentor: Andrew Cagney
 
 ## Goals
 
-A connection with `auto=ondemand` installs an outbound shunt policy in the kernel.When a packet matches that trap, the kernel sends an ACQUIRE to pluto asking it to negotiate. 
+A connection with `auto=ondemand` installs an outbound IPsec kernel policy.When a packet matches that policy, the kernel sends an ACQUIRE to pluto asking it to negotiate. 
 The ACQUIRE carries the protocol and the source and destination addresses as well as
 a policy.index field, which was always 0. So pluto worked by walking through every loaded connection, matching selectors against the packet, keeping the highest-priority survivor. 
 This project closes the loop,gives each policy an unique identifier to the connection that owns it, install it in the kernel, and uses a hashtable to find the connection directly when the ACQUIRE returns.The identifier is the connection's reqid, carried in the policy's `XFRMA_TMPL` attribute. 
@@ -17,7 +17,7 @@ This project closes the loop,gives each policy an unique identifier to the conne
 The work can be majorly split into four merged changes. They landed in that order, since each one depended on the last.
 
 #### Planting the reqid ([#2811](https://github.com/libreswan/libreswan/pull/2811))
-When a shunt policy is now installed in the kernel, pluto now writes the connection's reqid in the xfrm template instead of leaving it as 0. When an outbound packet matches this policy,the ACQUIRE message brings back this value making it easier for looking up the connection which installed the trap.If the ACQUIRE carries no reqid, the old selector search still runs.Existing tests which showed reqid as 0 were also updated.
+When an ondemand kernel policy is now installed in the kernel, pluto now writes the connection's reqid in the xfrm template instead of leaving it as 0. When an outbound packet matches this policy,the ACQUIRE message brings back this value making it easier for looking up the connection which installed the policy.If the ACQUIRE carries no reqid, the old selector search still runs.Existing tests which showed reqid as 0 were also updated.
 
 #### The lookup ([#2836](https://github.com/libreswan/libreswan/pull/2836))  
 Adds a connection hashtable keyed on reqid registered alongside the existing tables,automatically maintains as connections are added or removed.    
