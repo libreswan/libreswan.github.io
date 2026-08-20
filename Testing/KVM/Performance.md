@@ -29,8 +29,6 @@ clean disk).
 Network interfaces are created directly using low-level IP commands;
 this is to avoid virsh wanting to constantly play with the firewall.
 
-(Comming soon: Test VMs changed to be fully transient).
-
 (Comming soon: replace the thread pool with a process pool.)
 
 ### Affect of `$(KVM_WORKERS)` and `$(KVM_LOCALDIR)`
@@ -60,23 +58,23 @@ Note for the following:
 - what isn't captured is that the low-end CPUs struggle to produce
   consistent results (races in tests)
 
-year | H/W                        | GHz | hype/<br>cores/<br>workers | localdir? | time | false<br>fails | notes
--|-|-|-|-|-|-|-|
-2011 | Xeon(R) E3-1240   | 3.7 | 8/4/4 | /tmp | 4:30 | 17 | **inflated; includes extra 237 WIP tests**<br>testing.libreswan.org
+| year | H/W               | GHz | cores | mem | workers | localdir? | time | false<br>fails | notes |
+|------|-------------------|-----|-------|-----|---------|-----------|------|----------------|-------|
+| 2011 | Xeon(R) E3-1240   | 3.7 |   4/8 | 64g | 4  | /tmp |  4:30 | 17 | **inflated; includes extra 237 WIP tests**<br>testing.libreswan.org
+|      ||||||
+| 2019 | AMD 3950X         | 4.1 | 16/32 | 32g |  1 |   no | 11:30 | 2 |
+| 2019 | AMD 3950X         | 4.1 | 16/32 | 32g |  2 |   no |  6:54 | 2 |
+| 2019 | AMD 3950X         | 4.1 | 16/32 | 32g |  4 |   no |  2:30 | 0 | typical
+| 2019 | AMD 3950X         | 4.1 | 16/32 | 32g |  8 |   no |  2:16<br>2:10 | 0 | hmm
+| 2019 | AMD 3950X         | 4.1 | 16/32 | 32g | 16 |   no |  1:15 | 1 | maxed out; note the diminished return
 |||||||
-2019 | AMD 3950X          | 4.1 | 32/16/1  | no | 11:30 | 2 |
-2019 | AMD 3950X          | 4.1 | 32/16/2  | no |  6:54 | 2 |
-2019 | AMD 3950X          | 4.1 | 32/16/4  | no |  2:30 | 0 | typical
-2019 | AMD 3950X          | 4.1 | 32/16/8  | no |  2:16<br>2:10 | 0 | hmm
-2019 | AMD 3950X          | 4.1 | 32/16/16 | no |  1:15 | 1 | maxed out; note the diminished return
+| 2012 | CORE(TM) i5-3317U | 1.7 |   2/4 |  4g |  1 |   no | 18:59 | 115 | laptop
+| 2012 | CORE(TM) i5-3317U | 1.7 |   2/4 |  4g |  2 |   no | 10:04 | 194 | can't have desktop running!
 |||||||
-2012 | CORE(TM) i5-3317U | 1.7 |   4/2/1  | no | 18:59 | 115 | laptop
-2012 | CORE(TM) i5-3317U | 1.7 |   4/2/2  | no | 10:04 | 194 | can't have desktop running!
-|||||||
-2017 | Celeron(R) J4105  | 1.5 | 4/4/1 | no   | 21:39 |   ? | mini-pc
-2017 | Celeron(R) J4105  | 1.5 | 4/4/2 | no   |     ? |   ? | mini-pc
-2017 | Celeron(R) J4105  | 1.5 | 4/4/4 | no   |  7:08 | 298 | + workers==cores
-2017 | Celeron(R) J4105  | 1.5 | 4/4/4 | /tmp |  7:10 | 282 | + /tmp
+| 2017 | Celeron(R) J4105  | 1.5 |   4/4 | 16g |  1 | no   | 21:39 |   ? | mini-pc
+| 2017 | Celeron(R) J4105  | 1.5 |   4/4 | 16g |  2 | no   |     ? |   ? | mini-pc
+| 2017 | Celeron(R) J4105  | 1.5 |   4/4 | 16g |  4 | no   |  7:08 | 298 | + workers==cores
+| 2017 | Celeron(R) J4105  | 1.5 |   4/4 | 16g |  4 | /tmp |  7:10 | 282 | + /tmp
 
 ### SystemD's opinion
 
