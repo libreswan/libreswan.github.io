@@ -27,6 +27,23 @@
 
       </header>
       <section>
+        {% assign page_title = page.title %}
+        {% unless page_title %}
+          {% assign page_title = page.name | default: page.path | split: "/" | last | remove: ".md" | remove: ".MD" | replace: "-", " " | replace: "_", " " %}
+        {% endunless %}
+        {% assign content_lower = content | downcase %}
+        {% assign has_h1 = false %}
+        {% if content_lower contains '<h1' %}
+          {% assign has_h1 = true %}
+        {% endif %}
+        {% assign is_home = false %}
+        {% assign page_name_lower = page.name | default: page.path | split: "/" | last | downcase %}
+        {% if page.url == '/' or page_name_lower == 'readme.md' or page_name_lower == 'index.md' %}
+          {% assign is_home = true %}
+        {% endif %}
+        {% unless is_home or has_h1 %}
+        <h1>{{ page_title }}</h1>
+        {% endunless %}
 
       {{ content }}
 
