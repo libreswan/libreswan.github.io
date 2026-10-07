@@ -3,6 +3,8 @@ remote_theme: pages-themes/minimal@v0.2.0
 logo: /assets/img/logo.png
 plugins:
   - jekyll-remote-theme
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
 defaults:
   -
     scope:
@@ -10,4 +12,3 @@ defaults:
       type: "pages"
     values:
       layout: "default"
- 
