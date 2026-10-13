@@ -263,6 +263,21 @@ struct {
 
   (chunk_t predates Libreswan using NSS, hence the difference)
 
-## Names
+## Names <-> Numeric Values
 
-Libreswan has two types of name tables for converting between names an numeric values: `enum_names` and `sparse_names`.  The former is good for enums where values are consecutive; the latter where values are discontinuous.
+Libreswan has two types of name tables for converting between a numeric value (which includes enums) and a textual representation:
+
+`struct enum_names` good for enums, where values are consecutive
+`struct sparse_names` for when where values are discontinuous.
+
+In addition, newer code provides a generic wrapper `struct names` so that callers can ignore this implementation choice.
+
+For instance, instead of writing:
+```
+vdbg("notification %s", (notification == v2N_USE_PPK_INIT ? "use ppk init" : ...
+```
+we can write:
+```
+name_buf nb;
+vdbg("notification %s", str_name_human(&ikev2_notification_names, notification, &nb));
+```
