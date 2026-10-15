@@ -1,10 +1,5 @@
-.PHONY: default all sidebar sitemap.txt
-all default: broken sidebar sitemap.txt
-
-sitemap.txt:
-	find * -name '*.md' -print | sed -e 's/.md$$//' | while read md ; do \
-		echo "https://libreswan.github.io/$$md" ; \
-	done > sitemap.txt
+.PHONY: default all sidebar
+all default: broken sidebar
 
 SECTIONS += Support
 SECTIONS += FAQ
