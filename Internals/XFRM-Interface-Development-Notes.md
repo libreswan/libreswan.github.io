@@ -1,8 +1,8 @@
 <!-- file-is-title -->
 
-# libreswan/pluto design choices
+## libreswan/pluto design choices
 
-## pluto keywords
+### pluto keywords
 
     ipsec-interface=no|yes|<n> (n = user configured device, systemd-networkd, OpenWRT..)
     leftinterface-ip=<ip>/<mask> get configured on xfrmi or loopback /* to be implemented */
@@ -12,7 +12,7 @@
     iface-mark-in=n/mask
     iface-mark-out=n/mask
 
-## pluto discarded keywords
+### pluto discarded keywords
 
 vti-routing is discarded. Pluto would add route as longs the leftsubnet
 != rightsubnet. If they are same such as 0.0.0.0/0 to 0.0.0.0/0 no route
@@ -42,9 +42,9 @@ will be added.
 - XFRMi code is compile time option. If the kernel headers do no't
   support it won't compile. Think RHEL 6 or Debian Weezy.
 
-# Kernel XFRM - related
+## Kernel XFRM - related
 
-## XFRM INTERFACE
+### XFRM INTERFACE
 
 ##### [Commit cover letter from Steffen 20180612](https://patchwork.ozlabs.org/cover/928175/), Merged in 4.19:
 
@@ -117,7 +117,7 @@ will be added.
     - Should be possible to use IPsec hardware offloads of the underlying
       interface.
 
-### Initial xfrmi kernel commits
+#### Initial xfrmi kernel commits
 
 <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f203b76d78092faf248db3f851840fbecf80b40e>
 
@@ -126,7 +126,7 @@ will be added.
 - Steffen Klassert's at Linux IPsec 2018, Dresden
   <https://workshop.linux-ipsec.org/2018/slides/xfrm_interfaces.pdf>
 
-### XFRM OUTPUT_MARK
+#### XFRM OUTPUT_MARK
 
 [Add mask and rename to XFRMA_SET_MARK,
 Steffen](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=9b42c1f179a614e11893ae4619f0304a38f481ae)
@@ -134,7 +134,7 @@ Steffen](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/comm
 [Initial Commit,
 Lorenzo](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=077fbac405bfc6d41419ad6c1725804ad4e9887c)
 
-#### 4.18 cherry pick the following commits to get xfrmi
+##### 4.18 cherry pick the following commits to get xfrmi
 
 <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f203b76d78092faf248db3f851840fbecf80b40e>
 
@@ -154,7 +154,7 @@ Lorenzo](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/comm
 
 <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=bc56b33404599edc412b91933d74b36873e8ea25>
 
-## Which mark? there as so many now!
+### Which mark? there as so many now!
 
 There are wo marks relevant to IPsec , xfrm in Linux kernel.
 [XFRMA_MARK](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=6f26b61e177e57a41795355f6222cf817f1212dc)
@@ -200,7 +200,7 @@ part for IPsec/XFRM and other part for the rest of the system use. XFRM
 stack should pass on the mark set by the system when correct mask is
 used. Masked part is opaque to xfrm.
 
-### use case of marks
+#### use case of marks
 
 - Simple use case XFRMI interface.
 
@@ -208,7 +208,7 @@ XFRM_OUTPUT_MARK by libreswan when the the other/peer end is inside the
 extruded tunnel. In other words. Say /32-to-/32 tunnel without NAT or
 0.0.0.0/0 tunnel. Note it is adding rules to rout
 
-#### XFRMi and RW
+##### XFRMi and RW
 
 XFRMi need "ip rule" when the peer's ip is covered by ipsec policy and
 for /32-to-/32 IPsec policies. Antony's initial attempt was the
@@ -252,7 +252,7 @@ following rule and route 50 table. Because of "table 50" we don't need
     #esp traffic
     192.1.2.23 via 192.1.3.254 dev eth0
 
-#### XFRMi and RW Tuomo's suggestion
+##### XFRMi and RW Tuomo's suggestion
 
 20190212 Tuomo thinks the above rule is negation rule with "not" which
 is not friendly. We should have two rules and a route entry. A further
@@ -311,7 +311,7 @@ would end up on the outgoing ESP too or just on the clear text response.
     ip route add table ISP1 192.0.3.0/24 dev eth1 src 192.0.2.0/24
     ip route add table ISP2 192.0.3.0/24 dev eth2 src 192.0.22.0/24
 
-# Track bugs and related issue
+## Track bugs and related issue
 
 - Fedora support in F29 [F29
   commit](https://src.fedoraproject.org/rpms/kernel/c/84dd8fe88279144ddb82168d1cc44117073ff07e)
@@ -327,18 +327,18 @@ would end up on the outgoing ESP too or just on the clear text response.
 - [](https://github.com/systemd/systemd/pull/13013) xfrmi auto bind to
   lo, loopback\]
 
-# Strongswan support
+## Strongswan support
 
 - <https://wiki.strongswan.org/issues/2845>
 
-# Errors
+## Errors
 
-## if you delete the namespace before deleting xfrm interface, xfrm interface will not go away
+### if you delete the namespace before deleting xfrm interface, xfrm interface will not go away
 
     Message from syslogd@swantest at Aug 28 18:38:15 ...
      kernel:unregister_netdevice: waiting for eth1 to become free. Usage count = 1
 
-## routed vpn
+### routed vpn
 
 - same destination, difference source routes to two different gateways.
 
@@ -362,7 +362,7 @@ would end up on the outgoing ESP too or just on the clear text response.
         leftsubnet=192.0.3.0/24  #different
         overlapip=yes
 
-# more configuration options
+## more configuration options
 
 - Currently the new routing table is id "50" is hardcoded
 
@@ -373,7 +373,7 @@ would end up on the outgoing ESP too or just on the clear text response.
 
 ` ipsec-interface-`
 
-# xfrm interface with hardware offload
+## xfrm interface with hardware offload
 
 systemd-networkd man page specify, for the hardware offload, network
 interface must match NIC used.

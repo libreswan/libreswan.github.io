@@ -1,6 +1,8 @@
 <!-- file-is-title -->
 
-# Note: This page is out-of-date try [this](/Testing/Namespaces) WIP crib sheet
+> [!CAUTION]
+> Note: This page is out-of-date try [this](/Testing/Namespaces) WIP
+> crib sheet
 
 This is a quick guide to run libreswan tests using namespaces.
 

@@ -1,6 +1,7 @@
 <!-- file-is-title -->
 
-# IKEv1 is obsolete, please migrate to IKEv2
+> [!CAUTION]
+> IKEv1 is obsolete, please migrate to IKEv2
 
 Using IPsec/L2TP is a common deployment. Note that it is a dated
 solution that should be avoided when possible. Specifically, there are
@@ -15,7 +16,7 @@ an MTU of 1200 for the ppp device that is created.
 > While we document how to run an L2TP/IPsec server, we do not
 > recommend this type of setup. }}
 
-# L2TP/IPsec based server
+## L2TP/IPsec based server
 
 If you place your L2TP/IPsec server behind NAT (such as on Amazon AWS)
 you will need to change Registry settings on Windows to allow it to
@@ -36,7 +37,7 @@ Supported clients:
 The server has three components to configure: libreswan for IPsec,
 xl2tpd for L2TP and pppd for PPP.
 
-# IPsec server configuration
+## IPsec server configuration
 
 We are going to hand out IP address from the range 100.64.0.10/24 via
 PPP. So we need to exclude those addresses from being used by the remote
@@ -77,7 +78,7 @@ And of course your PreSharedKey (PSK) in /etc/ipsec.secrets
 
     : PSK "strongrandomstring"
 
-# L2TP server
+## L2TP server
 
 For the L2TP server, we use xl2tpd.
 
@@ -108,7 +109,7 @@ increases performance.
 
 The IP address from the pool is handed over to PPP.
 
-# PPP server configuration
+## PPP server configuration
 
 This is done via the above pppoptfile, in our case
 /etc/ppp/options.xl2tpd
@@ -155,7 +156,7 @@ If you want to use a radius plugin instead, change
     plugin radattr.so
     radius-config-file /etc/radiusclient-ng/radiusclient.conf
 
-# L2TP/IPsec client configuration
+## L2TP/IPsec client configuration
 
 Configuring most clients such as mobile phones is pretty simple. The
 information you need to configure on the client is:

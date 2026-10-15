@@ -1,6 +1,7 @@
 <!-- file-is-title -->
 
-# IKEv1 is obsolete, please migrate to IKEv2
+> [!CAUTION]
+> IKEv1 is obsolete, please migrate to IKEv2
 
 Using XAUTH PSK is the least secure mode of running IKE/IPsec. The
 reason is that everyone in the "group" has to know the PreShared Key
@@ -17,7 +18,7 @@ PSK".
 It is also possible (and more secure) to use XAUTH with Certificates -
 see[VPN_server_for_remote_clients_using_IKEv1_XAUTH_with_Certificates](/Obsolete-HOWTOs/VPN-server-for-remote-clients-using-IKEv1-XAUTH-with-Certificates)
 
-# XAUTH PSK
+## XAUTH PSK
 
 Supported clients:
 
@@ -33,7 +34,7 @@ It is based on
 XAUTH also requires a username and password. The password can also
 contain a one time password (OTP) such as Google Authenticator
 
-# Server ipsec.conf for XAUTH/PSK
+## Server ipsec.conf for XAUTH/PSK
 
 This configuration example uses Main Mode and not Aggressive Mode, as it
 is more portable and you can use a single conn on the server for
@@ -96,7 +97,7 @@ iptables rules on the VPN server:
 
     iptables -t nat -A POSTROUTING -s 10.231.246.0/23 -o $INTERNET_INTERFACE -m policy --dir out --pol none -j MASQUERADE
 
-# Client ipsec.conf XAUTH/PSK
+## Client ipsec.conf XAUTH/PSK
 
 There are some small differences with the above server configuration
 
@@ -140,9 +141,9 @@ You can bring the connection up using the comnmand: ipsec auto --up
 xauth-psk This will automatically reconfigure your DNS if required, and
 configure the given IP address on your system.
 
-# Server options
+## Server options
 
-## Aggressive Mode
+### Aggressive Mode
 
 The difference between using the regular Main Mode or Aggressive Mode
 for the client is usually determined by whether or not the "Group Name"
@@ -165,7 +166,7 @@ need to use rightid=@String and aggrmode=yes.
 > start one from scratch where you never touch the "Group Name" input
 > box.
 
-## User/password authentication for XAUTH on the server
+### User/password authentication for XAUTH on the server
 
 Libreswan has three options for the user/password authentication. This
 is specified using the xauthby= option. If using X.509 certificates,
@@ -223,7 +224,7 @@ connection more reliable. This is particularly important when using
 X.509 certificates, which tend to cause fragmentation when used with
 2048 bit RSA keys.
 
-# NetworkManager-libreswan client
+## NetworkManager-libreswan client
 
 These are some screenshots of the NetworkManager libreswan client to
 configure XAUTH PSK. Note that until very recently (February 2016),
@@ -236,7 +237,7 @@ your NetworkManager-libreswan (or NetworkManager-openswan) plugin.
 ![3](/images/NMXAUTHPSK3.png)
 ![4](/images/NMXAUTHPSK4-aggr.png)
 
-# iPhone and iPad client
+## iPhone and iPad client
 
 Go to Settings and select VPN. Click on Add VPN Configuration. select
 type IPSec. Fill in the description, server (name or IP), Account (aka

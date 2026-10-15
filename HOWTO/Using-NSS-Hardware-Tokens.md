@@ -4,7 +4,7 @@ All hardware tokens supported by NSS should be supported by libreswan.
 It is recommended to use libreswan 3.21 or newer to get full token
 support.
 
-# Yubi Key
+## Yubi Key
 
 The [yuibkey 4-series](https://www.yubico.com/product/yubikey-4-series/)
 and the [yubikey Neo](https://www.yubico.com/product/yubikey-neo/)
@@ -20,7 +20,7 @@ operations. They appear as follows:
 
     USB HID v1.10 Device [Yubico Security Key by Yubico] on usb-0000:00:1a.0-1.1/input0
 
-## Installation
+### Installation
 
     sudo yum install yubico-piv-tool libykneomgr coolkey pcsc-lite
     sudo systemctl enable pcscd
@@ -36,7 +36,7 @@ then your yubikey only supports U2F (such as the github yubikey)
 For more information about the yubikey command line tools, see
 <https://developers.yubico.com/yubico-piv-tool/>
 
-## configuration
+### configuration
 
 The easiest way to switch or use a yubikey is to generate a PKCS#12
 (.p12) file, and import that onto the yubikey. Of course you can also

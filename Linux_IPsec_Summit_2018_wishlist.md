@@ -2,13 +2,13 @@
 
 A scratchpad for things we'd like to talk about during the ipsec meetup
 
-# Fixup XFRM and tcpdump
+## Fixup XFRM and tcpdump
 
 The fact that you see some plaintext, but not all plaintext, is the most
 confusing aspect of IPsec to system administrators, who now believe hey
 are leaking plaintext.
 
-# INVALID_SPI acquires
+## INVALID_SPI acquires
 
 When one endpoint crashes and restarts, and does not need to send
 traffic, it will lead to traffic for because the other end's ESP/AH
@@ -18,27 +18,27 @@ It would be nice of the kernel could send a rate limited INVALID_SPI
 message, so the node can see if it has an ondemand/ready tunnel that it
 should bring up.
 
-# First query for IPsec Sa statistics returns bogus information
+## First query for IPsec Sa statistics returns bogus information
 
 When we query for the IPsec SA statistics using XFRM_MSG_GETPOLICY it
 seems the first call always returns 0's instead of actual data.
 
 (not guaranteed to be a kernel bug)
 
-# larval acquire saying "transport mode" - would be nice to not say mode at all
+## larval acquire saying "transport mode" - would be nice to not say mode at all
 
     src 192.0.2.100 dst 192.1.2.23
         proto esp spi 0xSPISPIXX reqid REQID mode transport
         replay-window 0
         sel src 192.0.2.100/32 dst 192.1.2.23/32 proto icmp type 8 code 0 dev eth0
 
-# add support for Populate-From-Packet flag. Cause acquires for each different policy hit
+## add support for Populate-From-Packet flag. Cause acquires for each different policy hit
 
 Support rate limited acquires on a wider policy for individual policy
 hits, so we can setup individual IPsec SA's for a part of a single SPD
 policy entry.
 
-# some clarification or documentation for IPsec SA flags
+## some clarification or documentation for IPsec SA flags
 
     FLAG := noecn | decap-dscp | nopmtudisc | wildrecv | icmp | af-unspec | align4 | esn
     EXTRA-FLAG-LIST := [ EXTRA-FLAG-LIST ] EXTRA-FLAG
@@ -52,14 +52,14 @@ policy entry.
     MODE := transport | tunnel | beet | ro | in_trigger
     LEVEL := required | use
 
-# some clarification or documentation for /proc values
+## some clarification or documentation for /proc values
 
     /proc/sys/net/core/xfrm_acq_expires
     /proc/sys/net/core/xfrm_aevent_etime
     /proc/sys/net/core/xfrm_aevent_rseqth
     /proc/sys/net/core/xfrm_larval_drop
 
-# fixup for userland using xfrm.h include
+## fixup for userland using xfrm.h include
 
 Our kernel_netlink.c code contains:
 
@@ -94,7 +94,7 @@ Note that we have linux-copy/linux/xfrm.h because sometimes we need
 newer XFRM values then the system provided version has, eg if people
 upgrade kernel but not glibc.
 
-# Comply with RFC 7296 NAT-T requirements
+## Comply with RFC 7296 NAT-T requirements
 
 The kernel currently marks an IPsec SA as not natted or encaps-udp. It
 rejects packets based on this. To comply to the RFC, it should:
@@ -112,7 +112,7 @@ rejects packets based on this. To comply to the RFC, it should:
 
 This is also important for TCP support.
 
-# crypto module loading problems
+## crypto module loading problems
 
 The problem of not autoloading crypto modules means we have to manually
 load modules. We don't want the daemon to be able to load kernel
@@ -131,7 +131,7 @@ also, how to detect af_key is the old PF_KEY api is removed? we detect
 af_key using /proc/net/pfkey as /proc/net/xfrm_stat is not available
 everywhere
 
-# VTI devices do not work for host-host tunnel/transport
+## VTI devices do not work for host-host tunnel/transport
 
 For Opportunistc IPsec, we want all unauthenticated (anonymous) IPsec to
 go into a single VTI device, so iptables rules that are installed the
@@ -139,15 +139,15 @@ machine's plaintext can be applied to the VTI device as well. Currently
 (last tested early 4.x) only VTI policies with networks, not single
 hosts, worked properly. ESP and IKE + NAT-T holes.
 
-# RFC 8229 ESPinTCP support
+## RFC 8229 ESPinTCP support
 
 AFAIK, Herbert Xu is working on this
 
-# RFC 8229 ESPinTLS support
+## RFC 8229 ESPinTLS support
 
 AFAIK, no one is working on this. Could it use ktls ?
 
-# FIPS mode private key censoring
+## FIPS mode private key censoring
 
 In FIPS mode, or actually maybe in normal mode too, it would be good if
 the private keys are not visible in "ip xfrm state" unless there is some
@@ -157,7 +157,7 @@ settable in FIPS mode.
 Proposal: per default, show a CENSORED string instead of the actual
 private key
 
-# named sockets
+## named sockets
 
 getsockopt() and setsockopt() for named sockets. This way a client that
 gets a DNS name, and resolves it to an IP, can set the socket name. This
@@ -175,7 +175,7 @@ The idea is, if you mark a connection to expect it to be
 "dns.google.com", then if it comes with the mark "evil.nohats.ca" you
 know there is a MITM.
 
-# named IPsec policies
+## named IPsec policies
 
 We would like to be able to "get" the name of an IPsec policy from
 userland. Imagine this would be available via netlink or socket options.
@@ -185,7 +185,7 @@ FQDN) which we can then "add" to the SPD entry. Userland can then
 confirm that a connect() or bind() it did based on a DNS name got a
 policy matching the identity.
 
-# a New 'Encryption Required' socket option
+## a New 'Encryption Required' socket option
 
 We'd like to be able to open a connection only if it is protected by
 IPsec encryption. If the encryption is terminated, we want the kernel to
@@ -196,7 +196,7 @@ refuse to send data if there is no matching encryption, but obviously
 this is comletely unsafe as the userland will not be notified if the
 encryption status changes.
 
-# Client Address Translation
+## Client Address Translation
 
 For anonymous IPsec, where the client authenticates the server, but the
 server does not authenticate the client, we have an IP clashing problem
@@ -219,12 +219,12 @@ needed)
 
 We have a draft written for this which we will share soon)
 
-# XFRM_MIGRATE support in ip xfrm monitor
+## XFRM_MIGRATE support in ip xfrm monitor
 
 Last I checked, ip xfrm monitor still threw errors when seeing
 XFRM_MIGRATE messages
 
-# Replace IPsec SA on successful traffic receiving
+## Replace IPsec SA on successful traffic receiving
 
 Currently, IKE daemon when doing a rekey need to ensure there is no
 cleartext leaks. So the daemon flow looks like: (simplified, as
@@ -240,7 +240,7 @@ better, that in 5) we could tell the kernel to associate this new IPsec
 SA with the old one, and just sent us an confirmation netlink message
 when it did 7)
 
-# Routing and XFRM interaction
+## Routing and XFRM interaction
 
 On machines with no default route and no route to a destination subnet,
 a net-to-net IPsec SA will fail in the routing layer and will prevent
@@ -250,12 +250,12 @@ This isn't intuitive to the user. We can work around it by detecting
 this situation and manually adding a route (in our updown script) but
 ideally the kernel would handle this properly itself.
 
-# Implicit IV for Counter-based Ciphers for IoT support
+## Implicit IV for Counter-based Ciphers for IoT support
 
 See
 [draft-ietf-ipsecme-implicit-iv](https://datatracker.ietf.org/doc/draft-ietf-ipsecme-implicit-iv/)
 
-# Diet ESP for IoT support
+## Diet ESP for IoT support
 
 See
 [draft-mglt-ipsecme-diet-esp](https://tools.ietf.org/html/draft-mglt-ipsecme-diet-esp-05)

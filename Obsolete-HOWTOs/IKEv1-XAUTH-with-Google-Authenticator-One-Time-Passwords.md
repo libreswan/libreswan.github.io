@@ -1,6 +1,7 @@
 <!-- file-is-title -->
 
-# IKEv1 is obsolete, please migrate to IKEv2
+> [!CAUTION]
+> IKEv1 is obsolete, please migrate to IKEv2
 
 Libreswan's IKE daemon **pluto** can use pam for XAUTH authentication
 (xauthby=pam). One Time Passwords (OTP) can be supported via pam

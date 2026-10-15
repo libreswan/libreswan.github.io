@@ -10,9 +10,9 @@ address are not consistent. Once I have more experience I would be
 tempted to make consistent set of outputs for more troubleshooting. send
 comments to swan@lists.libreswan.org.
 
-# AWS EC2 instance experience, after ipsec works
+## AWS EC2 instance experience, after ipsec works
 
-## iperf and ipsec trafficstatus
+### iperf and ipsec trafficstatus
 
     [root@ip-172-31-22-162 ec2-user]# iperf3 -R -i 2 -c  172.31.24.146
     Connecting to host 172.31.24.146, port 5201
@@ -36,7 +36,7 @@ comments to swan@lists.libreswan.org.
     [root@ip-172-31-22-162 ec2-user]# ipsec  whack --trafficstatus
     006 #2: "private#172.31.0.0/16"[1] ...172.31.24.146, type=ESP, add_time=1557943233, inBytes=2167022, outBytes=1238843830, id='CN=ip-172-31-24-146.us-east-2.compute.internal'
 
-## Look at certificates and public keys
+### Look at certificates and public keys
 
     ipsec whack --listcerts
     000
@@ -80,7 +80,7 @@ comments to swan@lists.libreswan.org.
     000 May 16 05:27:00 2019, 4096 RSA Key AwEAAaOQ6 (has private key), until Jun 14 23:03:00 2019 ok
     000        ID_IPV4_ADDR '172.31.22.162'
 
-## ipsec status output for OE connections
+### ipsec status output for OE connections
 
     000 "private":     oriented; my_ip=unset; their_ip=unset; mycert=hostcert; my_updown=ipsec _updown;
     000 "private":   xauth us:none, xauth them:none,  my_username=[any]; their_username=[any]
@@ -143,7 +143,7 @@ comments to swan@lists.libreswan.org.
     000 #2: "private#172.31.0.0/16"[1] ...172.31.22.162 esp.d6d830dc@172.31.22.162 esp.475291e5@172.31.24.146 ref=0 refhim=0 Traffic: ESPin=128B ESPout=128B! ESPmax=0B
     000
 
-## look at NSS db
+### look at NSS db
 
 The host certificate is strored in NSS db on the instance. Here is more
 detailed look

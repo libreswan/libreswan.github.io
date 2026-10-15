@@ -23,7 +23,7 @@ entire internet.
     ping oe.libreswan.org
     ipsec whack --trafficstatus
 
-# How does Opportunistic IPsec work?
+## How does Opportunistic IPsec work?
 
 The IKEv2 protocol is used to negotiate the symmetric encryption keys
 for the IPsec subsystem in the kernel. The kernel then takes care of
@@ -69,7 +69,7 @@ IPsec host can never be trusted to talk on another IP's behalf.
 > The libreswan-3.19 release does not yet support IPv6. Support for
 > this will be added to 3.20.
 
-## Types of Opportunistic Encryption
+### Types of Opportunistic Encryption
 
 - Mutually authenticated IPsec - this requires both peers authenticate
   each other. This is the classic IPsec model. Authentication could be
@@ -89,7 +89,7 @@ IPsec host can never be trusted to talk on another IP's behalf.
 Work is being done to implement all three types of Opportunistic IPsec.
 As of version 3.16, libreswan supports unauthenticated encryption.
 
-### Configuring Opportunistic unauthenticated IPsec
+#### Configuring Opportunistic unauthenticated IPsec
 
 To configure libreswan, simply download the configuration file
 [oe-upgrade-authnull.conf](https://raw.githubusercontent.com/libreswan/libreswan/master/docs/examples/oe-upgrade-authnull.conf)
@@ -112,7 +112,7 @@ Per default, 0.0.0.0/0 is places in the active range.
 
 Simply restart libreswan and Opportunistic IPsec will be enabled.
 
-### Monitoring the sytem for IPsec tunnels
+#### Monitoring the sytem for IPsec tunnels
 
 There are three important commands to get information about IPsec
 tunnels and Shunts. Shunts are placed in the kernel to allow cleartext,
@@ -133,7 +133,7 @@ shunts installed due to IKE failures.
 This will give a lot of developer specific internal status of the IKE
 daemon.
 
-### Test hosts
+#### Test hosts
 
 If you want to test Opportunistic IPsec, you can do so by sending
 traffic to any \*.libreswan.org or \*.nohats.ca host. If you browse to

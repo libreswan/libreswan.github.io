@@ -3,18 +3,18 @@
 On this page you can find collection of links to libreswan in various
 distributions, and libreswan related software repositories.
 
-# Libreswan Source repositories
+## Libreswan Source repositories
 
-## Alpine Linux ![alpine linux logo](/images/Alpine-linux-logo.png)
+### Alpine Linux ![alpine linux logo](/images/Alpine-linux-logo.png)
 
 **git**:
 <https://git.alpinelinux.org/cgit/aports/tree/community/libreswan>
 
-## CentOS ![Centos logo](/images/Centos_logo.png)
+### CentOS ![Centos logo](/images/Centos_logo.png)
 
 **package**: <https://git.centos.org/rpms/libreswan/>
 
-## Debian ![Debian logo](/images/Debian-logo.png)
+### Debian ![Debian logo](/images/Debian-logo.png)
 
 **package**: <https://packages.qa.debian.org/libr/libreswan.html>
 <https://tracker.debian.org/pkg/libreswan>
@@ -26,7 +26,7 @@ distributions, and libreswan related software repositories.
 **bugs**:
 <https://bugs.debian.org/cgi-bin/pkgreport.cgi?repeatmerged=no&src=libreswan>
 
-## Fedora ![Fedora logo](/images/Fedora-logo.png)
+### Fedora ![Fedora logo](/images/Fedora-logo.png)
 
 **package**: <https://src.fedoraproject.org/rpms/libreswan>
 
@@ -34,17 +34,17 @@ distributions, and libreswan related software repositories.
 
 **bugs**: <https://apps.fedoraproject.org/packages/libreswan/bugs>
 
-## gentoo ![gento logo](/images/Gentoo-logo.png)
+### gentoo ![gento logo](/images/Gentoo-logo.png)
 
 **package**: <https://packages.gentoo.org/packages/net-vpn/libreswan>
 
-## OpenWRT
+### OpenWRT
 
 **git**: <https://github.com/openwrt/packages/tree/master/net/libreswan>
 
 **bugs**: <https://github.com/openwrt/packages>
 
-## Ubuntu ![Ubuntu logo](/images/Ubuntu-logo.png)
+### Ubuntu ![Ubuntu logo](/images/Ubuntu-logo.png)
 
 **bin package**' : <https://packages.ubuntu.com/bionic/libreswan>
 
@@ -56,7 +56,7 @@ distributions, and libreswan related software repositories.
 **questions**:
 <https://answers.launchpad.net/ubuntu/+source/libreswan/+questions?field.status=OPEN>
 
-## Libreswan Upstream
+### Libreswan Upstream
 
 **home**: <https://www.libreswan.org>
 
@@ -64,7 +64,7 @@ distributions, and libreswan related software repositories.
 
 **bugs**: <https://github.com/libreswan/libreswan/issues>
 
-# Bugs
+## Bugs
 
 - Libreswan Github: <https://github.com/libreswan/libreswan/issues>
 - Red Hat Bugzilla:
@@ -74,13 +74,13 @@ distributions, and libreswan related software repositories.
 - Ubuntu bugs :
   <https://bugs.launchpad.net/ubuntu/+source/libreswan/+bugs?field.status:list=NEW>
 
-# Related packages
+## Related packages
 
-## Strongswan
+### Strongswan
 
 - Fedora <https://src.fedoraproject.org/rpms/strongswan/>
 
-## Unbound
+### Unbound
 
 - Debian: <https://tracker.debian.org/pkg/unbound>
 - Centos 7:
@@ -91,7 +91,7 @@ distributions, and libreswan related software repositories.
 - Ubuntu libunbound:
   <https://code.launchpad.net/~usd-import-team/ubuntu/+source/unbound/+git/unbound>
 
-# 2017 closed : ~~libunbound2 + libevent bug/feature requests~~
+## 2017 closed : ~~libunbound2 + libevent bug/feature requests~~
 
 - Libreswan upstream:
   ~~<https://github.com/libreswan/libreswan/issues/117>~~ Closed
@@ -106,7 +106,7 @@ distributions, and libreswan related software repositories.
 - Unbound upstream discussion :
   <https://lists.nlnetlabs.nl/pipermail/unbound-users/2017-April/004718.html>
 
-# Kernel source repositories
+## Kernel source repositories
 
 - ipsec Steffen Klassert
   <https://git.kernel.org/pub/scm/linux/kernel/git/klassert/ipsec.git>
@@ -130,7 +130,7 @@ distributions, and libreswan related software repositories.
 - Ubuntu
   <https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/>
 
-# Kernel CONFIG_XFRM_MIGRATE disabled
+## Kernel CONFIG_XFRM_MIGRATE disabled
 
 XFRMA_MIGRATE require CONFIG_XFRM_MIGRATE=y\|m. Libreswn Mobike support
 need. Mainline kernel CONFIG_XFRM_MIGRATE is not set. Many
@@ -146,6 +146,6 @@ requests to track the missing ones.
 
 - OpenWRT Pull requrest <https://github.com/openwrt/openwrt/pull/2142>
 
-# Libreswan in Downstream releases
+## Libreswan in Downstream releases
 
 - <https://repology.org/project/libreswan/versions>

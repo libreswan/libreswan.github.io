@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# Using NAT to resolve an subnet IP conflict
+## Using NAT to resolve an subnet IP conflict
 
 VPNs often connect networks in the RFC-1918 address space, such as
 10.0.0/8, 192.16.8.0.0/16 or 172.16.0.0/12. A problem arises when both

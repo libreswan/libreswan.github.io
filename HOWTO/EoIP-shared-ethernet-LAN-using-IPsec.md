@@ -6,7 +6,7 @@ network/LAN type multiuser games. This will allow all broadcast traffic
 to make it to all remote parties as if they were on the same local LAN
 network.
 
-# EoIP and IPsec
+## EoIP and IPsec
 
 This configuration uses the [linux-eoip
 software](https://code.google.com/archive/p/linux-eoip/) together with
@@ -18,7 +18,7 @@ Note that at least for RHEL/Fedora, the linux-eoip package isn't
 properly integrated yet, so some additional manual configuration for now
 is required.
 
-## eoip configuration
+### eoip configuration
 
 Create a bridge device for the LAN facing interface and assign a LAN IP
 address, for example LAN-bro
@@ -26,7 +26,7 @@ address, for example LAN-bro
 On RHEL/Fedora you can use an ifcfg file in
 /etc/sysconfig/networking-scripts
 
-## add a libreswan connection
+### add a libreswan connection
 
 The IPsec connection needs to allow sending GRE (protocol 47) traffic.
 If you have public IP addresses on the IPsec gateways (not behind a NAT
@@ -61,7 +61,7 @@ have stable public IP addresses (PublicIP-A and PublicIP-B)
 Once both ends are configured you can bring the tunnel up manually
 using: ipsec auto --up tun-eoip
 
-## Bridge configuration
+### Bridge configuration
 
     #  /etc/sysconfig/network-scripts/ifcfg-LAN-br0
 
@@ -85,7 +85,7 @@ Start bridge interface
 
     ifup LAN-br0
 
-## EoIP tunnel configuration
+### EoIP tunnel configuration
 
 Configure the LAN-br0 tunnel. Note the ID must be the same on both
 sides.
@@ -112,7 +112,7 @@ Add this to the bridge:
 
     brctl addif LAN-br0 zeoip0
 
-## iptables configuration
+### iptables configuration
 
 The tunnel should allow GRE only over IPsec. You should also clamp the
 MSS on the LAN bridge:

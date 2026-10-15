@@ -3,7 +3,7 @@
 Summary: your system needs lots of entropy. It may not have it. You
 might be able to fix this.
 
-# your system needs lots of entropy
+## your system needs lots of entropy
 
 This page is meant to provide some helpful hints about Entropy. It is
 not meant to be exhaustive or definitive.
@@ -27,7 +27,7 @@ The normal approach is to have some sources of entropy feed into a
 mixing and stretching process to generate lots of random numbers
 starting with a modest source of entropy (true randomness).
 
-# your system might not have enough entropy
+## your system might not have enough entropy
 
 As a crude monitor, run this shell command:
 
@@ -41,7 +41,7 @@ On a server that ran into entropy scarcity, Hugh got a sequence of one
 or two digit numbers. After enabling TPM as an entropy source, numbers
 just above 3000 were normal.
 
-# Install an entory package
+## Install an entory package
 
 Fedora 32 comes with rng-tools pre-installed.
 
@@ -70,26 +70,26 @@ Fedora commands for using havegd:
 `sudo systemctl enable haveged`
 `sudo systemctl start haveged`
 
-# sources of entropy on normal Linux systems
+## sources of entropy on normal Linux systems
 
 <https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/drivers/char/random.c>
 
-### timing keyboard and mouse events
+#### timing keyboard and mouse events
 
 This is great when these events are available. But servers don't
 generally have this activity and even workstations may not have this
 activity when entropy is needed.
 
-### timing disk operations
+#### timing disk operations
 
 It isn't obvious that these are random enough. Especially now that
 spinning disks are being replaced by solid state drives.
 
-### timing network packet arrival
+#### timing network packet arrival
 
 This is the kind of thing that an opponent might actually control.
 
-### hardware Random Number Generators provided by CPU
+#### hardware Random Number Generators provided by CPU
 
 Recent Intel and AMD processors provide RdRand hardware. Some other
 processors have similar facilities. (Some suspect that these may have
@@ -101,7 +101,7 @@ You can tell if you have the Intel or AMD generator by looking for
 Other CPUs might have hardware random number generators. For example,
 the Raspberry Pi does.
 
-### hardware Random Number Generator provided by TPM
+#### hardware Random Number Generator provided by TPM
 
 Some computers come with a TPM unit
 <https://en.wikipedia.org/wiki/Trusted_Platform_Module>
@@ -112,7 +112,7 @@ well have been compromised by design and there is no way to know.)
 Unlike the previously mentioned sources, TPM is not by default used as
 an entropy source by Linux.
 
-### haveged
+#### haveged
 
 The havege daemon is another approach to gather entropy from timing
 interrupts. There are packages available for many distros. It is not
@@ -122,7 +122,7 @@ clear to us whether this is real entropy in the quantities claimed.
 - <https://wiki.archlinux.org/index.php/Haveged>
 - <http://www.irisa.fr/caps/projects/hipsor/>
 
-### other sources
+#### other sources
 
 A lot of projects and companies produce peripheral that are intended to
 supply entropy. We have no experience with these but some are probably a
@@ -132,7 +132,7 @@ build trust.
 There are also projects to improve entropy collection in Linux from
 ordinary computer hardware.
 
-# plumbing entropy
+## plumbing entropy
 
 In most Linux distros, the random number infrastructure is already
 configured reasonably. But it is confusing.
@@ -152,7 +152,7 @@ to use it and /dev/tpm0 is used by the tcsd daemon.
 Kernel module tpm_rng is a kernel module that shovels entropy from the
 TPM to /dev/hwrng. This module may not be loaded by default.
 
-## using TPM entropy on Fedora 23
+### using TPM entropy on Fedora 23
 
 Note: something changed after Fedora 23. On Fedora 28 there is not
 tpm-rnd module. Somehow /dev/hwrng can use TPM but we do not know how to
@@ -189,7 +189,7 @@ The TPM device must be configured.
 
 - (optional) check how much entropy your system has
 
-# references
+## references
 
 <http://lwn.net/Articles/525459/> LWN: LCE: Don't play dice with random
 numbers

@@ -1,8 +1,8 @@
 <!-- file-is-title -->
 
-# Introduction
+## Introduction
 
-## IKE acceleration
+### IKE acceleration
 
 The IKE protocol uses encryption that can be accelerated. But since IKE
 only generates a few packets per hour per IPsec connection, compared to
@@ -12,7 +12,7 @@ exception is on-CPU special instructions, such as AESNI or the VIA
 Padlock instructions. Acceleration of these happen via the NSS crypto
 library and does not require specific libreswan support.
 
-## Obsoleted IPsec accelerations
+### Obsoleted IPsec accelerations
 
 Libreswan (for now) still supports its own older KLIPS IPsec stack that
 comes with its own OCD based acceleration. It is not recommended to use
@@ -26,7 +26,7 @@ implementatios and should not be used anymore.
 Information about these two older hardware accelerations are left at the
 end of this document.
 
-## IPsec (ESP) acceleration
+### IPsec (ESP) acceleration
 
 libreswan as of version 3.23 supports the new cryptographic hardware
 offload as implemented by Linux 4.11 and up using the native (XFRM)
@@ -67,7 +67,7 @@ reached the maximum number of IPsec SA's it can support for offloading.
 There are two typical deployment scenario's that require hardware
 acceleration.
 
-### site to site VPNs
+#### site to site VPNs
 
 These deployments involves only one or very few IPsec connections
 transporting anywhre from 1 to 400 Gbps. Especially on multi-CPU
@@ -76,7 +76,7 @@ tied to one CPU's resources. A workaround can be to split the IPsec
 connection into artificial smaller IPsec connections. Libreswan will
 soon have populate-from-packet (PFP) support to make this easy.
 
-### Remote Access VPNs
+#### Remote Access VPNs
 
 These are deployments with thousands of IPsec connections and clients
 are continuously being added and removed. Some NIC cards are limited in
@@ -88,7 +88,7 @@ that have vanished, and cleaning out replaced IPsec SA's more quickly.
 When possible, use libreswan 3.24 as it no longer keeps replaced IPsec
 SA's around for 20 minutes.
 
-# Supported hardware
+## Supported hardware
 
 The below list is hardware that The Libreswan Project knows about that
 supports to new Linux 4.11 crypto hardware offload API. If you know of
@@ -110,7 +110,7 @@ libreswan developers.
 - Broadcom SPU driver
 - Cavium Nitrox / Octeon-tx CPT Engine
 
-# Obsoleted OCF Hardware Crypto Acceleration (KLIPS and XFRM)
+## Obsoleted OCF Hardware Crypto Acceleration (KLIPS and XFRM)
 
 In general, cryptographic acceleration is mostly useful for embedded and
 low power systems. High end systems tend to have a CPU that is fast
@@ -140,7 +140,7 @@ supported. The overhead of sending IKE packets to the kernel accelerator
 for encryption/decryption is not worth it and might actually slow things
 down.
 
-## OCF: Kernel and Userland crypto acceleration
+### OCF: Kernel and Userland crypto acceleration
 
 OCF provides kernel crypto acceleration for IPsec (ESP and AH) as well
 as userland crypto acceleration via the /dev/crypto interface. Libreswan
@@ -158,7 +158,7 @@ For more information about OCF, see
 idea of the crypto acceleration see these [OCF
 benchmarks](http://ocf-linux.sourceforge.net/benchmarks.html)
 
-## Supported hardware via OCF
+### Supported hardware via OCF
 
 - Safenet SafeXcel 1741 and SafeXcel 1142
 - Intel IXP465, IXP425 and IXP422
@@ -171,7 +171,7 @@ benchmarks](http://ocf-linux.sourceforge.net/benchmarks.html)
 - Cavium Octeon (requires vendor-supplied source code for OCF)
 - Hifn 7951 and Hifn 7956
 
-## Supported hardware via cryptosoft.ko kernel module
+### Supported hardware via cryptosoft.ko kernel module
 
 The OCF subsystem can interface with the XFRM Linux kernel crypto
 acceleration system. It does so via the OCF *cryptosoft* kernel module.
@@ -180,7 +180,7 @@ acceleration system. It does so via the OCF *cryptosoft* kernel module.
 - AMD Geode LX (via cryptosoft)
 - SMP (multi-core) support (via cryptosoft)
 
-## Supported algorithms and ciphers with libreswan
+### Supported algorithms and ciphers with libreswan
 
 - 3DES and 1DES
 - AES
@@ -193,13 +193,13 @@ Note that not all hardware implementations support all these algorithms
 and ciphers. Libreswan no longer supports 1DES because it is too
 insecure.
 
-## SMP support
+### SMP support
 
 The Linux NETKEY/XFRM native IPsec stack does not load balance a single
 IPsec SA over multiple CPU cores. Using the OCF cryptosoft driver, a
 single IPsec SA can be offloaded over multiple CPU's
 
-### Building libreswan with OCF support
+#### Building libreswan with OCF support
 
 Some OCF kernel builds are made available at
 [libreswan.org](https://downloads.libreswan.org/), usually in the form
@@ -208,7 +208,7 @@ support both kernel and userland OCF acceleration. You will also find
 patched openssl packages there which can be used in combination with
 openvpn to support hardware acceleration in userland.
 
-### Building kernel only OCF support as a module for running kernel
+#### Building kernel only OCF support as a module for running kernel
 
     tar zxf ocf-linux-20120127.tar.gz
     cd ocf-linux-20120127/ocf
@@ -230,7 +230,7 @@ You should see something along the lines of:
 
     [  583.128741] OCF: 45133 requests of 1488 bytes in 251 jiffies (535.122 Mbps)
 
-### Building KLIPS with OCF support
+#### Building KLIPS with OCF support
 
 To build libreswan KLIPS with OCF support, instead of using *make
 module*, use:
@@ -244,14 +244,14 @@ module*, use:
          MODULE_DEFCONFIG=`pwd`/packaging/ocf/defconfig \
          minstall
 
-### Building userland OCF support for IKE
+#### Building userland OCF support for IKE
 
 OCF support for IKE has been removed, as it is faster to use the CPU
 instruction support via the userland CPU instructions these days.
 Support for those instructions come in via the NSS library that
 libreswan uses. It has the advantage of not requiring a kernel patch.
 
-### Generate the kernel patches and apply the appropriate one
+#### Generate the kernel patches and apply the appropriate one
 
 If you want OCF random support, you cannot just build the ocf as module,
 you also need to patch the kernel.
@@ -284,7 +284,7 @@ needs to be installed on the system, for example in
 The OCF source code comes with openssl patches as well, please see the
 OCF source for further instructions.
 
-### How to load the OCF modules into the kernel
+#### How to load the OCF modules into the kernel
 
 Libreswan comes with the *_stackmanager* script that loads all kernel
 modules and sets various parameters. These include all the native
@@ -311,7 +311,7 @@ hardware driver, eg one of:
 > the software driver has accidentally gained preference over a
 > hardware driver.
 
-### Debugging OCF
+#### Debugging OCF
 
 To enable debugging (which will ruin your acceleration gains!) you can
 issue some of the following commands based on your hardware/software:
@@ -323,7 +323,7 @@ issue some of the following commands based on your hardware/software:
         echo 1 > /sys/module/safe/parameters/safe_debug
         echo 1 > /sys/module/ixp4xx/parameters/ixp_debug
 
-### OCF benchmarking
+#### OCF benchmarking
 
 The ocf-bench driver accepts the following parameters:
 
@@ -338,7 +338,7 @@ An example benchmark use:
     modprobe ocf-bench request_size=1024 request_cbimm=0
     dmesg |tail -5
 
-### OCF KLIPS tuning
+#### OCF KLIPS tuning
 
 The following parameters are managed by _stackmanager but can be
 changed to suit your specific need based on the hardware capabilities of
@@ -365,19 +365,19 @@ Additional parameters that can be tuned manually:
 - /sys/module/ipsec/parameters/ipsec_ocf_batch
 - /sys/module/ipsec/parameters/ipsec_ocf_cbimm
 
-#### ipsec_ocf_cbimm
+##### ipsec_ocf_cbimm
 
 The OCF layer will call back on completion immediately rather than
 calling back from a work queue (softirq) context. Your callbacks need to
 be very careful and re-entrant safe to use this mode. KLIPS is typically
 safe to use in this mode.
 
-#### ipsec_ocf_batch
+##### ipsec_ocf_batch
 
 Instruct OCF to batch requests if possible. Typically this should be
 enabled.
 
-# The (obsoleted) pcrypt kernel module
+## The (obsoleted) pcrypt kernel module
 
 The pcrypt and tcrypt kernel module allows the Linux kernel CryptoAPI to
 spread the crypto load of single IPsec SA's over multiple CPU's. If your

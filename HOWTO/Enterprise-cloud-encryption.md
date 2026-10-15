@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# Introduction
+## Introduction
 
 Most IPsec deployments fall into two types of deployment. The first type
 is the Remote Access, where roaming users (phones, laptops) connect to
@@ -39,7 +39,7 @@ never have encryption. Or encryption to some networks can be optional.
 > [!CAUTION]
 > The methods of configuring various aspects of Opportunistic IPsec are still subject to change.
 
-# The basic configuration
+## The basic configuration
 
 Currently, libreswan supports a few different groups of connections:
 
@@ -109,7 +109,7 @@ it will drop the traffic to prevent cleartext packet leaks. In the time
 that the IPsec connection is being negotiated, packets are held to
 prevent cleartext leaks.
 
-# An IP address is not a certified identifier
+## An IP address is not a certified identifier
 
 One issue is that any IPsec connection that is triggered by a packet
 needs to be authenticated using only the source and destination IP
@@ -121,7 +121,7 @@ name has a proper address (A or AAAA) record to the IP that gave us the
 certificate. If this DNS domain is properly DNSSEC signed, we have some
 certainty that this host is really who they claim to be.
 
-# Authentication methods
+## Authentication methods
 
 The following authentication methods are planned to be supported with
 cloud encryption via Opportunistic IPsec:
@@ -135,7 +135,7 @@ cloud encryption via Opportunistic IPsec:
 - DNSSEC based (mutual or single sided)
 - DNSSEC via Reverse DNS (mutual or single sided)
 
-# Lets Encrypt
+## Lets Encrypt
 
 As of libreswan-3.119 there is support for single sided certificate
 authentication that can be used with LetsEncrypt or any other public CA.

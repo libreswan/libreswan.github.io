@@ -49,7 +49,7 @@ and there is a [video
 recording](https://www.youtube.com/watch?v=Me_rl6N1m7c&list=PLbzoR-pLrL6pq6qCHZUuhbXsTsyz1N1c0&index=17)
 of the presentation.
 
-# Implement varlink status reporter
+## Implement varlink status reporter
 
 **Required Skills:** C programming, writing documentation and test cases
 
@@ -95,7 +95,7 @@ state, and not on a single connection, can be implemented as well.
 The deliverable would be a varlink enabled libreswan pluto daemon and a
 varlink enabled ipsec whack command.
 
-# Implement static IP assignments and support for Radius / AAA backend
+## Implement static IP assignments and support for Radius / AAA backend
 
 **Required Skills:** C programming, writing documentation and test cases
 
@@ -122,7 +122,7 @@ This solution replaces the addresspool= support entrely.
 The deliverable would be two methods for assigning static IP addresses
 in the libreswan pluto daemon to connecting clients.
 
-# Improve the ACQUIRE to IKE policy lookup by making use of the reqid
+## Improve the ACQUIRE to IKE policy lookup by making use of the reqid
 
 **Required Skills:** C programming, RFC interpretation
 
@@ -154,7 +154,7 @@ The deliverable is a pluto daemon that sends and receives unique reqids
 from kernel messages and that uses these reqids for its connection
 matching mechanism.
 
-# Implement Announcing Supported Authentication Methods in IKEv2
+## Implement Announcing Supported Authentication Methods in IKEv2
 
 **Required Skills:** BSD networking, C, shell scripting, RFC
 interpretation
@@ -182,7 +182,7 @@ stage of discussion at the IETF, so someone implementing this might find
 issues with the draft protocol for which they would need to communicate
 with the author of the draft to resolve.
 
-# Extend MOBIKE support to allow it to be used as server failover mechanism
+## Extend MOBIKE support to allow it to be used as server failover mechanism
 
 **Required Skills:** BSD networking, C, shell scripting, RFC
 interpretation
@@ -205,7 +205,7 @@ states.
 The deliverable would be a pluto daemon that can generate and respond to
 MOBIKE requests and a few test cases to show the failover procedure.
 
-# Support for RFC 6290: Quick Crash Recovery
+## Support for RFC 6290: Quick Crash Recovery
 
 **Required Skills:** BSD networking, C, shell scripting, RFC
 interpretation
@@ -236,7 +236,7 @@ the student is expected to start work on another small RFC.
 The deliverable is a test case that demonstrates the implemented RFC is
 working properly.
 
-# Support for RFC 7670: Generic Raw public key support
+## Support for RFC 7670: Generic Raw public key support
 
 **Required Skills:** BSD networking, C, shell scripting, RFC
 interpretation
@@ -256,7 +256,7 @@ for raw public keys, but it only supported RSA raw public keys. In
 constrained environments, it is useful to make use of other types of
 public keys, such as those based on Elliptic Curve Cryptography.
 
-# Extend Libreswan's support for FreeBSD
+## Extend Libreswan's support for FreeBSD
 
 **Required Skills:** BSD networking, C, kernel coding, python, shell
 scripting
@@ -278,7 +278,7 @@ The deliverable are:
 - modifications to Libreswan adding at least two missing features
 - testsuite additions demonstrating the added features
 
-# Re-port the libreswan code for Microsoft Windows
+## Re-port the libreswan code for Microsoft Windows
 
 **Required Skills:** Windows / PowerShell, C, python, shell scripting
 
@@ -300,7 +300,7 @@ commands from a libreswan Windows binary.
 The deliverable is a compile of libreswan that can be used to setup VPN
 connections that runs on Windows
 
-# Cleanup / maintenance / code deduplication
+## Cleanup / maintenance / code deduplication
 
 **Required Skills:** Windows / PowerShell, C, python, shell scripting
 
@@ -328,7 +328,7 @@ not PF_KEY support)
 The deliverable here are a number of commits that clean up various items
 in our code base
 
-# Implement IKEv2 Group Key Management
+## Implement IKEv2 Group Key Management
 
 \[ this project is not ready yet, as the draft has not seen much
 development lately \]
@@ -336,7 +336,7 @@ development lately \]
 Add Group Key Management as per
 <https://tools.ietf.org/html/draft-ietf-ipsecme-g-ikev2>
 
-# Use of a VPNonly namespace
+## Use of a VPNonly namespace
 
 **Required Skills:** systemd, kernel name-spaces, podman/toolbox, C,
 python, shell scripting
@@ -366,13 +366,13 @@ systemd and virtualization.
 The deliverable is a Linux desktop where an application such as firefox
 can be started in a vpnonly namespace.
 
-# Implement the INTERNAL_DNSSEC_TA support
+## Implement the INTERNAL_DNSSEC_TA support
 
 \[ project currently not available \]
 
 See <https://tools.ietf.org/html/draft-ietf-ipsecme-split-dns-16>
 
-# Integrate libreswan into OSS-Fuzz project
+## Integrate libreswan into OSS-Fuzz project
 
 **Required Skills:** C, code reading
 

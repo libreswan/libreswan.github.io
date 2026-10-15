@@ -1,22 +1,23 @@
 <!-- file-is-title -->
 
-# VTI support is OBSOLETE, use the [IPsec Interface](/HOWTO/Route-based-VPN)
+> [!CAUTION]
+> VTI support is OBSOLETE, use the [IPsec Interface](/HOWTO/Route-based-VPN)
 
-VPN tunnels are normally set up based on an IPsec policy. This is called
-a policy-based VPN. In libreswan, these policies are specified with
-*leftsubnet=* and *rightsubnet=* and optionally also with
+VPN tunnels are normally set up based on an IPsec policy. This is
+called a policy-based VPN. In libreswan, these policies are specified
+with *leftsubnet=* and *rightsubnet=* and optionally also with
 *leftprotoport=* and *rightprotport=*. Libreswan allow you to setup a
 route-based VPN. This is basically a policy-based VPN with
 leftsubnet=0.0.0.0/0 and rightsubnet=0.0.0.0/0. Then a special Virtual
-Tunnel Interface ("VTI") device is created that is attached to the IPsec
-policy. Now, whenever a packet is routed into this VTI device, it will
-be encrypted. If the packet's route misses the interface, the packet
-leaves in the clear. While this type of setup is much less secure, it is
-easier to manage because you just need to update the routing table
-instead of adding or modifying IPsec policies. While libreswan supported
-this with KLIPS using the ipsec0 interface, when using XFRM/NETKEY this
-was not supported. As of libreswan-3.18, this is now supported using the
-Linux VTI interface and network MARKing.
+Tunnel Interface ("VTI") device is created that is attached to the
+IPsec policy. Now, whenever a packet is routed into this VTI device,
+it will be encrypted. If the packet's route misses the interface, the
+packet leaves in the clear. While this type of setup is much less
+secure, it is easier to manage because you just need to update the
+routing table instead of adding or modifying IPsec policies. While
+libreswan supported this with KLIPS using the ipsec0 interface, when
+using XFRM/NETKEY this was not supported. As of libreswan-3.18, this
+is now supported using the Linux VTI interface and network MARKing.
 
 > [!WARNING]
 > VTI support requires libreswan-3.18 or later and a recent linux-3.x
