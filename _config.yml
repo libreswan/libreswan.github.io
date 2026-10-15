@@ -5,6 +5,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-optional-front-matter
   - jekyll-readme-index
+  - jekyll-sitemap
 defaults:
   -
     scope:
