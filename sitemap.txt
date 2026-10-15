@@ -23,7 +23,6 @@ https://libreswan.github.io/FAQ/History
 https://libreswan.github.io/FAQ
 https://libreswan.github.io/GSoC-2023/Code-Project-Ideas
 https://libreswan.github.io/GSoC-2026/Contributor-Guidance-FINAL
-https://libreswan.github.io/GSoC-2026/Contributor-Guidance-DRAFT
 https://libreswan.github.io/GSoC-2026/Code-Project-Ideas
 https://libreswan.github.io/GSoC-2027/Contributor-Guidance-DRAFT
 https://libreswan.github.io/GSoC-2027/Code-Project-Ideas-DRAFT
@@ -32,7 +31,6 @@ https://libreswan.github.io/Hacking/Git,-GitHub,-and-Pull-Requests
 https://libreswan.github.io/Hacking/Merging-GitHub-Pull-Requests
 https://libreswan.github.io/Hacking/Programming-Conventions
 https://libreswan.github.io/Hacking/Documentation
-https://libreswan.github.io/Home
 https://libreswan.github.io/HOWTO/Subnet-to-subnet-VPN-with-PSK
 https://libreswan.github.io/HOWTO/Host-to-host-VPN-with-PSK
 https://libreswan.github.io/HOWTO/Confuse-!?@:-github-wiki

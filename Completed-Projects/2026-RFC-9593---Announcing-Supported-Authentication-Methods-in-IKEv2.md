@@ -1,18 +1,18 @@
 <!-- file-is-title -->
 
-# RFC 9593 - Announcing Supported Authentication Methods in IKEv2
+## RFC 9593 - Announcing Supported Authentication Methods in IKEv2
 
-## Student Information
+### Student Information
 
 - **Name:** Osema Fadhel ([@OsemaFadhel](https://github.com/OsemaFadhel))
 - **Project:** [Add Support For Announcing Authentication Methods To Libreswan](https://summerofcode.withgoogle.com/programs/2026/projects/vT6e1MsJ)
 - **Mentor:** Vukašin Karadžić
 
-## Introduction
+### Introduction
 
 During an IKEv2 negotiation, each peer independently selects its authentication method without knowing what the other side actually supports, which can lead to the IKE SA establishment failures when peers are configured with multiple credentials. The goal of this project is to implement RFC 9593, which introduces the SUPPORTED_AUTH_METHODS notification: each peer can announce its supported authentication methods during the IKE SA establishment, enabling Libreswan to adjust its authentication selection to a method both sides support. 
 
-## Implementation
+### Implementation
 
 To make Libreswan RFC 9593 compliant, the following items have been
 implemented:
@@ -37,17 +37,17 @@ The decision of whether Libreswan sends the SUPPORTED_AUTH_METHODS notification 
 The Test Suite was extended by adding test cases to verify feature
 functionality.
 
-## Issues encountered
+### Issues encountered
 
 - Only one certificate can be configured per connection end (left/rightcert=). So even once the peer's supported authentication methods are known via the notification, Libreswan has no way to dynamically pick the right certificate for whichever method gets negotiated
 
-## Future work
+### Future work
 
 - Support multiple certificates, so Libreswan can load the right cert dynamically once the negotiated method is known
 
 - Track the ordered list of CAs sent in the CERTREQ payload at the point each SUPPORTED_AUTH_METHODS announcement is built, so the Cert Link field in that announcement can be set to the real index of the trust anchor the method applies to, instead of always being sent as 0 ("any CA"). [RFC 9593 reference](https://datatracker.ietf.org/doc/html/rfc9593#name-3-octet-announcement:~:text=%C2%B6-,Cert%20Link%3A,%C2%B6,-This%20format%20is)
 
-## Source code
+### Source code
 
 Merged Pull Requests in order:
 
@@ -59,7 +59,7 @@ Merged Pull Requests in order:
 
 - [2950 - Add support for announcing supported authentication methods](https://github.com/libreswan/libreswan/pull/2950)
 
-## Acknowledgments
+### Acknowledgments
 
 I want to thank Vukašin for the continuous mentoring and the weekly calls reviewing and supporting the work. Thanks also to Andrew for the reviews and for always being available to answer questions.
 

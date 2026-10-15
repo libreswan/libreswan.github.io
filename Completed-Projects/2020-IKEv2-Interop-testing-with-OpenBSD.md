@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# Introduction
+## Introduction
 
 IPSec standards are produced and maintained by [Internet Engineering
 Task Force](https://ietf.org/) which are implemented by many software
@@ -12,7 +12,7 @@ This helps us test Linux kernel to BSD kernel and understand several
 issues with Linux when inter-operating with with Non-Linux Operating
 Systems.
 
-# Implementation
+## Implementation
 
 The libreswan [KVM Testsuite](/Testing/KVM) libvirt/qemu testing
 system auto-installs Linux and then compiles libreswan on these
@@ -21,7 +21,7 @@ and verifies the expected results with reference output. The test
 suite also supports strongswan on Linux. To add OpenBSD to this, the
 following tasts we completed:
 
-## Perform a Non-interactive OpenBSD Base installation
+### Perform a Non-interactive OpenBSD Base installation
 
 OpenBSD’s autoinstall only allows unattended installation by
 automatically responding to installer questions with answers through a
@@ -32,7 +32,7 @@ non-interactively. To solve this, a pexpect script using python was
 written which adds install.conf to the OpenBSD installer image by
 modifying the ISO image directly.
 
-## Mounting the testing directory over NFS
+### Mounting the testing directory over NFS
 
 The Libreswan’s testing system uses a 9P File System with Libvirt/Qemu
 to mount the testing directory. Unfortunately, OpenBSD's 9P filesystem
@@ -47,7 +47,7 @@ Using NFS for OpenBSD means that the Linux host operating system that
 launches all the testing virtual machines also needed to be configured
 as an NFS server.
 
-## Cloning the base install image
+### Cloning the base install image
 
 To provide support for OpenBSD being a responder (like the linux "east"
 machine) and being an initiator (like the linux "west" machine), after
@@ -59,13 +59,13 @@ are used. This also needed some support in the base testing setup
 because until now, every test always had the machine "east" booted
 first. Now this can be either "east" (linux) or openbsde (openbsd).
 
-## Adding OpenBSD specific tests
+### Adding OpenBSD specific tests
 
 Iniitally, two tests were created (interop-ikev2-openbbsd-01 and 02)
 that perform a basic standard IKEv2 PSK based connection. One test has
 openbsd initiating and one test has openbsd responding.
 
-# Issues encountered
+## Issues encountered
 
 OpenBSD’s documentation is very scarce and incomplete. This caused a lot
 of problems at the start of the project.
@@ -90,7 +90,7 @@ and lack of user experiences for OpenBSD. It seems most OpenBSD users
 work only with OpenBSD machines, resulting in hardly any information or
 documentation on interoperability with Linux.
 
-# Possible Future Work
+## Possible Future Work
 
 Additionals tests that cover a lot more features of the OpenBSD IKE
 daemon should be added. X.509 certificates, ECDSA, IKE fragmentation are
@@ -103,7 +103,7 @@ then test interop of libreswan on Linux with libreswan on openbsd. While
 libreswan was recently re-ported to NetBSD, it has not yet been
 re-ported to OpenBSD of FreeBSD.
 
-# Source code
+## Source code
 
 The Source code for this project is merged into the main branch of
 [Libreswan Repository](https://github.com/libreswan/libreswan) and will
@@ -123,7 +123,7 @@ implementation for this project is done by [Ravi
 Teja](https://github.com/RaviTejaCMS)(hello@rtcms.dev) under the
 guidance of Paul Wouters, Tuomo Soini, and Andrew Cagney.
 
-# License
+## License
 
 This project is Licensed under [GNU General Public License
 v2.0](https://github.com/libreswan/libreswan/blob/master/LICENSE).

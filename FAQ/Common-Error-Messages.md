@@ -1,6 +1,8 @@
 <!-- file-is-title -->
 
-## 030 ignoring message from whack with bad magic
+## Common Error Messages
+
+### 030 ignoring message from whack with bad magic
 
 This means that the ipsec whack command that is used to talk to the
 pluto daemon are different versions. The most common cause is that the
@@ -19,14 +21,14 @@ restarting the ipsec service will resolve that. Note that the
 upgrades (eg via rpm) can install the new whack, then call shutdown
 with the new whack to the old pluto, without this error appearing.
 
-## ERROR: netlink response for Add SA esp.XXXX@<IP> included errno 38: Function not implemented
+### ERROR: netlink response for Add SA esp.XXXX@<IP> included errno 38: Function not implemented
 
 This means the kernel does not support something of the negotiated
 IPsec SA. This happens for instance on sime Raspberry Pi Linux images
 that do not compile in support for AES-GCM. A workaround could be to
 pick another esp= algorithm such as esp=aes-sha2
 
-## compile error: ‘SEC_OID_CURVE25519’ undeclared here
+### compile error: ‘SEC_OID_CURVE25519’ undeclared here
 
 The NSS library is too old and does not support CURVE25519. Either
 upgrade the NSS library or compile with USE_DH31=false to disable
@@ -84,7 +86,7 @@ configuration mismatch in the ike= or esp= (phase2alg=) setting. But
 other options could also be wrong, such as authby= or pfs= or
 aggrmode=
 
-## Microsoft Windows fails to connect, log shows: retransmit response for message ID: 1 exchange ISAKMP_v2_AUTH
+### Microsoft Windows fails to connect, log shows: retransmit response for message ID: 1 exchange ISAKMP_v2_AUTH
 
 You are on a network that is dropping UDP fragments, and your client
 has no support for IKEv2 fragmentation. This is common on LTE networks
@@ -92,13 +94,13 @@ when using Windows clients that are not up to date. Microsoft added
 IKEv2 Fragmentation support in Windows 10 April 2018 Update (v1803) so
 updating Windows might resolve this issue.
 
-## Microsoft Windows Error 13806: IKE failed to find valid machine certificate
+### Microsoft Windows Error 13806: IKE failed to find valid machine certificate
 
 You are using a certificate that is missing some required
 ExtendedKeyUsage ("EKU") attributes. See [Windows Certificate
 requirements](/Interoperability#Windows_Certificate_requirements)
 
-## ssh gives error: Corrupted MAC on input. Disconnecting: Packet corrupt
+### ssh gives error: Corrupted MAC on input. Disconnecting: Packet corrupt
 
 This usually indicates MTU issues. You can try lowering the mtu using
 the mtu= option or by changing the actual mtu on the proper interface
@@ -106,7 +108,7 @@ on the libreswan server. This error is known to happen on Amazon EC2
 AMI types that use PV (xen) instances. Switching to Amazon HVM
 instances seems to resolve the problem on AWS.
 
-## Using aes_gcm or aes_ctr results in ERROR: netlink response for Add SA esp.XXXXXXXX@IPADDRESS included errno 22: Invalid argument
+### Using aes_gcm or aes_ctr results in ERROR: netlink response for Add SA esp.XXXXXXXX@IPADDRESS included errno 22: Invalid argument
 
 This usually indicates that the ESP algorithm selected using the
 phasealg= (esp=) line is not available in the kernel. These usually
@@ -124,7 +126,7 @@ although that will cut the performance in half.
 Linux kernels to date seem to have a bug in the aes_ctr code on the
 POWER8BE VM - use phase2alg=aes there as well to use AES_CBC,
 
-## Can't find the private key from the NSS CERT (err -8177)
+### Can't find the private key from the NSS CERT (err -8177)
 
 The old libreswan-3.8 /etc/ipsec.d/nsspassword requires just the
 password to be entered. In later libreswan's, you must add the NSS
@@ -132,7 +134,7 @@ prefix to it. So to specify the password "secret", use:
 
     NSS Certificate DB:secret
 
-## ESP DH algorithm MODP3072 is invalid as PFS policy is disabled
+### ESP DH algorithm MODP3072 is invalid as PFS policy is disabled
 
 libreswan before version 3.25 allowed invalid configurations with pfs=no
 while specifying a PFS group for esp (eg esp="aes-sha2;modp3072") and it
@@ -140,7 +142,7 @@ would ignore the PFS group. This is no longer allowed. Either use
 pfs=yes (the recommended and default) or remove the modp item from any
 ah= / esp= / phaesalg= option.
 
-## "IPsec encryption transform did not specify required KEY_LENGTH"
+### "IPsec encryption transform did not specify required KEY_LENGTH"
 
 This happens when trying to interoperate with old openswan versions that
 mistakenly do not send the KEY_LENGTH attribute for AES. The work around
@@ -151,21 +153,21 @@ instead of "aes". For example:
     esp=aes256-sha1;modp1536
     ike=aes256-sha1;modp1536
 
-## No PARENT proposal selected
+### No PARENT proposal selected
 
 This error can happen when there is a mismatch of IKE proposals between
 the server and client. In libreswan-3.14, the modp1024 (group 2) was
 removed from the default proposal set because of its weakness, but
 apparently Windows 7 requires it per default.
 
-## Using VTI causes "Keys are not allowed with ipip and sit tunnels"
+### Using VTI causes "Keys are not allowed with ipip and sit tunnels"
 
 You need to upgrade the iproute package. For RHEL7, see
 [RHBA-2015-2117](https://rhn.redhat.com/errata/RHBA-2015-2117.html)
 
-# Old problems fixed in newer releases
+## Old problems fixed in newer releases
 
-## invalid last pad octet:
+### invalid last pad octet:
 
 There is a bug in racoon (also called ipsec-tools) that sends improper
 oversized padding. Libreswan version 3.14 became more struct and
@@ -173,7 +175,7 @@ rejected these packets. Libreswan 3.16 allows the bad padding again.
 Note that racoon is used in various products including older versions of
 OSX and iOS (up to iOS 7.x)
 
-## Module unloading error on shutdown or restart: Module esp4 is in use
+### Module unloading error on shutdown or restart: Module esp4 is in use
 
     ERROR: Module xfrm4_mode_tunnel is in use
     ERROR: Module esp4 is in use
@@ -181,7 +183,7 @@ OSX and iOS (up to iOS 7.x)
 
 This has been fixed in libreswan-3.9. Please upgrade
 
-## IPv6 tunnel works manually but fails on freshly booted machine
+### IPv6 tunnel works manually but fails on freshly booted machine
 
 When one machine reboots and loses state, the other machine still has an
 encryption policy for the rebooted machine and will insist on receiving
@@ -222,7 +224,7 @@ libreswan-3.13 to 3.22 installs this connection per default in
 /etc/ipsec.d/ libreswan as of 3.23 loads this as a buildin connection
 automatically.
 
-## Using IPsec/L2TP with xl2tpd, the pppd ip-down script does not seem to run
+### Using IPsec/L2TP with xl2tpd, the pppd ip-down script does not seem to run
 
 Old pppd \< 2.4.5 could cause xl2tpd to hang on a hanging pppd, so
 xl2tpd killed pppd itself to avoid this. But that meant pppd did not get
@@ -230,7 +232,7 @@ to execute its ip-down script. This behaviour can be tweaked using the
 define TRUST_PPPD_TO_DIE in the xl2tpd Makefile. Fedora and EPEL
 packages enable this as of April 2015.
 
-## Interop issue with racoon: invalid padding-length octet: 0x23
+### Interop issue with racoon: invalid padding-length octet: 0x23
 
 Racoon has a broken implementation of IKE padding. Libreswan version
 3.12 to 3.14 had strict padding checks that caused these packets to be
@@ -249,20 +251,20 @@ this is to disable AES_GCM encryption in NSS using:
 This should probably be placed somewhere more global than just
 libreswan, as it will affect everything that is using the nss libraries.
 
-## IPv6/KLIPS: ipsec_set_dst can't determine the correct routing device on a host connection
+### IPv6/KLIPS: ipsec_set_dst can't determine the correct routing device on a host connection
 
 This is a kernel bug, see
 [lsw#237](https://bugs.libreswan.org/show_bug.cgi?id=237) Confirmed
 affected are kernel 4.1.6 and 3.14.51 but possible all 3.x and
 4.\[12\].x kernels to date (Sep 28, 2015)
 
-## L2TP / Transport Mode connections fail after system update
+### L2TP / Transport Mode connections fail after system update
 
 There is a kernel bug in Linux kernel 4.14 with the XFRM/NETKEY code.
 Downgrade to 4.13 or upgrade to 4.15rc1 or later. Be aware that some
 kernels could contain backports of the faulty 4.14 kernel.
 
-## High Speed IPsec performance issues
+### High Speed IPsec performance issues
 
 Kernels used a really small crypto queue by default (100), which was
 also hard coded. Recent kernels (4.x and RHEL7 kernels) can now be

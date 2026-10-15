@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# Introduction
+## Introduction
 
 The Intermediate Exchange, or IKE_INTERMEDIATE, is an addition to the
 IKEv2 protocol to enable the use of quantum computer (QC) resistant
@@ -29,7 +29,7 @@ support any specific post-quantum algorithm.
 The Intermediate Exchange draft document is available at
 [draft-ietf-ipsecme-ikev2-intermediate](https://tools.ietf.org/html/draft-ietf-ipsecme-ikev2-intermediate-05).
 
-# Implementation
+## Implementation
 
 To allow the use of Intermediate Exchange in libreswan, the following
 modifications were made:
@@ -64,7 +64,7 @@ modifications were made:
 
 The current implementation successfully interoperated with Elvis Plus.
 
-# Issues encountered
+## Issues encountered
 
 - Incorporating new exchange into existing implementation caused
   significant problems. As new state transitions were added, it caused
@@ -83,12 +83,12 @@ The current implementation successfully interoperated with Elvis Plus.
   separately even after the packet has been sent (and received). This is
   very complicated to do with the libreswan code base.
 
-# Future work
+## Future work
 
 - Keep track of changes of the current draft and keep the code up to
   date with the latest draft (and finally with the RFC).
 
-# Source code
+## Source code
 
 This code was merged into libreswan 4.0
 
