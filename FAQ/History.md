@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# History of The Libreswan Project
+## History of The Libreswan Project
 
 Libreswan has been under active development for over 15 years, going
 back to [The FreeS/WAN Project](http://www.freeswan.org/) founded in
@@ -11,7 +11,7 @@ forked into a continuation as The Openswan Project in 2003. In 2012 it
 was forced to rename itself to The Libreswan Project due to a lawsuit
 filed over the trademark of the name "openswan".
 
-## The FreeS/WAN days (1995 - 2003)
+### The FreeS/WAN days (1995 - 2003)
 
 The goal was to develop IPsec and DNS standards for encryption for use
 on the internet. The goal was to encrypt 5% of internet traffic per
@@ -87,7 +87,7 @@ Snowden](http://en.wikipedia.org/wiki/Edward_Snowden) in 2013, a full
 decade after Gilmore had given up on his attempt to encrypt the entire
 internet with freeswan.
 
-## From FreeS/WAN to Openswan (2003 - 2011)
+### From FreeS/WAN to Openswan (2003 - 2011)
 
 Commercial companies were using freeswan as one of their key
 interoperability tests during "bake off" events. Andreas Steffen wrote a
@@ -134,6 +134,6 @@ common when free software developers are sued by corporations, it was
 cheaper and easier to walk away and rename the software. Libreswan was
 born.
 
-## Libreswan (2011 - now)
+### Libreswan (2011 - now)
 
 Libreswan is maintained by The Libreswan Project.

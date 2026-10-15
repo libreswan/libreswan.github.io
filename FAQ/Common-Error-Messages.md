@@ -1,8 +1,5 @@
 <!-- file-is-title -->
 
-
-# Common error messages
-
 ## 030 ignoring message from whack with bad magic
 
 This means that the ipsec whack command that is used to talk to the

@@ -1,16 +1,14 @@
-<!-- file-is-title -->
-
-# General Questions
+## General Questions
 
 ( we will sort this in categories once we have more )
 
-## Which RFC's or other standards does libreswan support?
+### Which RFC's or other standards does libreswan support?
 
 See [Implemented Standards](/FAQ/Implemented-Standards)
 
-## Which ciphers / algorithms does libreswan support?
+### Which ciphers / algorithms does libreswan support?
 
-### IKEv1
+#### IKEv1
 
 - IKE: AES_CBC, 3DES and SHA2_256, SHA2_384, SHA2_512, SHA1, MD5 with
   all regular MODP and ECP groups (serpent, twofish, 1des no longer
@@ -23,7 +21,7 @@ See [Implemented Standards](/FAQ/Implemented-Standards)
 - AH on Linux: SHA2_256, SHA2_256_96(truncbug) SHA2_384, SHA2_512,
   AES-XCBC-MAC, SHA1, MD5
 
-### IKEv2
+#### IKEv2
 
 - IKE: CHACHA20-POLY1305, AES_GCM, AES_CTR, AES_CBC, 3DES, CAMELLIA_CBC
   and SHA2_256, SHA2_384, SHA2_512, AES-XCBC-MAC, SHA1, MD5 with all
@@ -36,7 +34,7 @@ See [Implemented Standards](/FAQ/Implemented-Standards)
 - AH on Linux: SHA2_256, SHA2_256_96(truncbug) SHA2_384, SHA2_512,
   AES-XCBC-MAC, SHA1, MD5
 
-### Notes
+#### Notes
 
 - Serpent, Twofish, 1DES and CAST are no longer supported.
 
@@ -48,14 +46,14 @@ See [Implemented Standards](/FAQ/Implemented-Standards)
   should support DH5 or DH14, with the exception of Android when using
   L2TP. In those cases, please use Android with IKEv2.
 
-## Which IKEv1 and IKEv2 Exchange Modes does libreswan support?
+### Which IKEv1 and IKEv2 Exchange Modes does libreswan support?
 
 The [IANA
 Registry](https://www.iana.org/assignments/ipsec-registry/ipsec-registry.xhtml#ipsec-registry-8)
 lists all official Exchange Modes. There are a few IKEv1 Modes that
 are very common despite never gotten past the draft stage.
 
-### IKEv2:
+#### IKEv2:
 
 - [IKEv2 (PSK, raw RSA, X509)](https://tools.ietf.org/html/rfc5996#section-1.2)
 
@@ -67,7 +65,7 @@ are very common despite never gotten past the draft stage.
 
 - IKEv2 IKE_SESSION_RESUME
 
-### IKEv1
+#### IKEv1
 
 - [IKEv1 Main Mode (PSK, raw RSA, X509)](https://tools.ietf.org/html/rfc2409#section-5)
 
@@ -76,7 +74,7 @@ are very common despite never gotten past the draft stage.
 - [IKEv1 XAUTH/RSA and XAUTH/PSK with ModeConfig (aka "Cisco IPsec
   mode")](https://tools.ietf.org/html/draft-ietf-ipsec-isakmp-xauth-06)
 
-### Not supported
+#### Not supported
 
 - [IKEv1 Revised Mode](https://tools.ietf.org/html/rfc2409#section-5.3)
 
@@ -85,7 +83,7 @@ are very common despite never gotten past the draft stage.
   although there is some [unmaintained contributed
   code](https://github.com/libreswan/libreswan/tree/master/contrib/checkpoint-hybrid)
 
-## Does libreswan interoperate with Microsoft Windows?
+### Does libreswan interoperate with Microsoft Windows?
 
 In general, yes it does. For specific features, see [Microsoft Product
 Behaviour](https://msdn.microsoft.com/en-us/library/cc233476.aspx)
@@ -97,7 +95,7 @@ latest win10.
 Another known issue is reconnecting not working, see this [techinline
 blog](https://blog.techinline.com/2018/06/01/vpn-stuck-on-connecting-windows-10/)
 
-## Microsoft and L2TP (xl2tpd)
+### Microsoft and L2TP (xl2tpd)
 
 It seems newer xl2tpd versions only interop with Microsoft when using
 the l2tp_ppp kernel module loaded. Some distributions blacklist the
@@ -111,14 +109,14 @@ can properly load, use:
 
 You should see the l2tp modules in the output of the last command.
 
-## Can I have an ipsec0 interface with XFFRM/NETKEY?
+### Can I have an ipsec0 interface with XFFRM/NETKEY?
 
 Yes, this is supported as of libreswan-3.18. With libreswan 3.x you
 can set ipsec-interface=1 to get ipsec1.  As of libreswan-4.x you can
 also set it to 0 to get ipsec0. See further [Route-based
 VPN](/HOWTO/Route-based-VPN)
 
-## Does libreswan work with OpenVZ virtualization?
+### Does libreswan work with OpenVZ virtualization?
 
 Yes it can work. You must run kernel 042stab084.8 or later. You must
 load the proper kernel modules on the host before booting the
@@ -126,7 +124,7 @@ container.  The easiest way to do this is to install libreswan on the
 host and then run "ipsec _stackmanager start". You also need to give
 the container the "net_admin" capability.
 
-## How can I debug the kernel?
+### How can I debug the kernel?
 
 For XFRM, see /proc/net/xfrm_stat and its documentations at
 [xfrm_proc.txt](https://www.kernel.org/doc/Documentation/networking/xfrm_proc.txt)
@@ -134,18 +132,18 @@ For XFRM, see /proc/net/xfrm_stat and its documentations at
 note that some debian/ubuntu kernels do not compile in support for
 CONFIG_XFRM_STATS and those kernels have no way of debugging anything :(
 
-## Are there well known vulnerabilities?
+### Are there well known vulnerabilities?
 
 See [Vulnerabilities](/Security/Vulnerabilities).
 
-## Google Cloud VPN issue
+### Google Cloud VPN issue
 
 Google Cloud VPN does not support NAT. The libreswan endpoint has to
 have a real public IP that is not NAT'ed
 
-# Configuration Matters
+## Configuration Matters
 
-## Using SHA2_256 for ESP connection establishes but no traffic passes (especially Android 6.0)
+### Using SHA2_256 for ESP connection establishes but no traffic passes (especially Android 6.0)
 
 It seems that android 6.0 now defaults to ESP with SHA2, but it uses a
 bad implementation of SHA2. You can work around that using
@@ -165,7 +163,7 @@ to be set.
 libreswan-3.18 and higher prefers sha2_512 over sha2_256 to avoid this
 issue. A note has also been added to RFC7321bis.
 
-## Microsoft Windows connection attempts fail with NO_PROPOSAL_CHOSEN
+### Microsoft Windows connection attempts fail with NO_PROPOSAL_CHOSEN
 
 Windows ships with insecure default IKEv2 proposals.  See [How to
 configure DH for IKEv2 in
@@ -188,14 +186,14 @@ back to modp1024:
     ike=aes_gcm256-sha2,aes_gcm128-sha2,aes256-sha2,aes128-sha2,aes256-sha1,aes128-sha1,aes256-sha2;modp1024
     esp=aes_gcm256-null,aes_gcm128-null,aes256-sha2_512,aes128-sha2_512,aes256-sha1,aes128-sha1,aes_gcm256-null;modp1024
 
-## iOS (Apple) phone devices trying and failing to rekey in 8 minutes
+### iOS (Apple) phone devices trying and failing to rekey in 8 minutes
 
 This is a bug in Apple devices. These devices do not use `pfs=yes`
 when configured via the phone manually (as opposed to via a
 .mobileconfig provisioning profile). Either use `pfs=no` or `enable
 ms-dh-downgrade=yes` option.
 
-## How do I specify AEAD ciphers like GCM for IKE and IPsec
+### How do I specify AEAD ciphers like GCM for IKE and IPsec
 
 For IKE, a PRF must be configured. For IPsec, a PRF must not be
 configured.
@@ -234,7 +232,7 @@ phase2alg=aes_gcm-null. As of libreswan 3.23, the trailing -null can
 be left out, so it can be specified as phae2alg=aes_gcm. Note that the
 esp= keyword is an alias for the phase2alg= keyword.
 
-## My ssh sessions hang or connectivity is very slow
+### My ssh sessions hang or connectivity is very slow
 
 This could be an MTU issue. The overhead of IPsec encryption (and
 possibly ESPinUDP encapsulation) yields a slightly smaller packet
@@ -315,13 +313,13 @@ immediately return on a non-blocking socket with an appropriate POSIX
 compliant errno, which is why the workaround also sets the TCP SYN
 retry count to 3.
 
-## PSK doesn't work against cisco ASA 55xx
+### PSK doesn't work against cisco ASA 55xx
 
 While libreswan has very little restrictions to Pre-shared secret
 Cisco has additional restriction, you can't have question mark '?' in
 psk.  Cisco handles that as help request.
 
-## When using hundreds of tunnels on a xen based cloud system like AWS, a fraction of tunnels fail regularly
+### When using hundreds of tunnels on a xen based cloud system like AWS, a fraction of tunnels fail regularly
 
 This is a [known
 issue](https://bugzilla.redhat.com/show_bug.cgi?id=1085025) that could
@@ -330,13 +328,13 @@ hypervisor. Try unloading the aesni.ko kernel module on the xen
 server.  If you can confirm this fixes your issue (we cannot change
 the AWS servers), please email the swan-dev list with a confirmation.
 
-## My XAUTH authentication via PAM always claims the password is incorrect on centos6
+### My XAUTH authentication via PAM always claims the password is incorrect on centos6
 
 This is an odd bug (feature?) that shows up when you have disabled
 selinux in /etc/sysconfig/selinux. Running selinux in permissive (or
 enforcing) mode seems to resolve this.
 
-## Why is it recommended to disable send_redirects in /proc/sys/net ?
+### Why is it recommended to disable send_redirects in /proc/sys/net ?
 
 Let's say you have a VPN server in a cloud that you use with your
 phone.  Your phone will setup an IPsec VPN and all its traffic is
@@ -359,7 +357,7 @@ This is why we recommend disabling "send_redirects" in
     net.ipv4.conf.all.send_redirects = 0
     net.ipv4.conf.default.send_redirects = 0
 
-## How do I configure my firewall to allow IPsec
+### How do I configure my firewall to allow IPsec
 
 If using firewalld, you can issue:
 
@@ -381,7 +379,7 @@ source IP to an ephemeral port, although if there is only one
 IKE/IPsec device behind the NAT gateway they might try to keep the
 original port number.
 
-## Why is it recommended to disable rp_filter in /proc/sys/net ?
+### Why is it recommended to disable rp_filter in /proc/sys/net ?
 
 The kernel has a notion of which interface a packet came from and
 where it will go to and it determines if the path through the machine
@@ -410,7 +408,7 @@ picked up. As a one shot disabling for all interfaces, you can use:
 
     for i in /proc/sys/net/ipv4/conf/*; do echo 0 > $i/rp_filter; done
 
-## NAT + IPsec is not working
+### NAT + IPsec is not working
 
 When using NAT on the same linux machine as IPsec, care must be taken
 that packets meant for an IPsec remote address is not NATed. The NATed
@@ -434,7 +432,7 @@ or insert a ipsec skip rule before these:
     -A POSTROUTING -o eth0 -m policy --dir out --pol ipsec -j RETURN
     -A POSTROUTING -o eth0 -j MASQUERADE
 
-## Can I hand out LAN IP addresses in the addresspool?
+### Can I hand out LAN IP addresses in the addresspool?
 
 Yes, but you will need to enable proxyarp on the IPsec server. You can
 do this globally using the proxyarp entry in /etc/sysctl.conf, for
@@ -442,7 +440,7 @@ example if your LAN interface is ethX, use
 
     net.ipv4.conf.ethX.proxy_arp=1
 
-## No acceptable ECDSA/RSA-PSS ASN.1 signature
+### No acceptable ECDSA/RSA-PSS ASN.1 signature
 
 This is an interop issue between libreswan and strongswan. When using
 RFC -7427 style autentication, libreswan only allows RSA-PSS and not

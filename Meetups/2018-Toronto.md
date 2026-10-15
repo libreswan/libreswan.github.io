@@ -1,6 +1,6 @@
 <!-- file-is-title -->
 
-# Roadmap
+## Roadmap
 
 - killing MAST
 - Killing KLIPS
@@ -11,9 +11,9 @@
 
 - Changing shunts
 
-# Bugs
+## Bugs
 
-# Misc.
+## Misc.
 
 - technical debt
 - testing using lightweight namespaces

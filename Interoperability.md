@@ -5,7 +5,7 @@ interoperability issues between different vendors. Below we list known
 issues with certain vendors, as well as known networking issues of
 services and cloud providers.
 
-# Amazon AWS VPN
+## Amazon AWS VPN
 
 Amazon instances running libreswan require some additional logic due to
 the AWS Elastic IP and internal routing. Additionally, Amazon provides
@@ -14,7 +14,7 @@ their own VPN servers you can use.
 Configuring those is hard and tedious and in some cases cannot be made
 to work due to a broken implementation of IPsec at Amazon.
 
-## Multiple tunnels fail with Amazon's VPN
+### Multiple tunnels fail with Amazon's VPN
 
 Various documentation suggests building failover tunnels with the AWS
 VPN service. Instructions tell you to use 169.254.0.0/16 IP ranges -
@@ -136,7 +136,7 @@ Note that our outgoing spi is still 0x75ca3837 from the first tunnel but
 their return spi is <b>0x6a6cc99f</b> instead of0x410efc2c. They
 mistakenly used the spi from the 2nd tunnel for the 1st tunnel!
 
-## The elastic IP and the RFC1918 native IP address
+### The elastic IP and the RFC1918 native IP address
 
 Your AWS instance has a temporary RFC1918 IP address. The Amazon cloud
 NATs this to your permanent public IP address, called the "elastic IP".
@@ -178,7 +178,7 @@ IP address on the AWs instance is dynamic, so it should not appear in
 configuration files or else those would need to be updated when the
 internal IP address of the machine changes after a reboot.
 
-## ESP packet filter
+### ESP packet filter
 
 The Amazon internal cloud network does not route IPsec ESP or AH
 packets. These packets need to be encapsulated in UDP. While normally
@@ -187,7 +187,7 @@ not detected (for example because this is an IPsec connection between
 two instances in the Amazon cloud), you can force encapsulation by
 setting **encapsulation=yes**.
 
-## NAT exclusion
+### NAT exclusion
 
 If you are using NAT or MASQUERADE to provide connectivity to a subnet
 behind your AWS machine, you need to exclude NAT for those
@@ -199,7 +199,7 @@ rules similar to:
     iptables -t nat -I POSTROUTING -s 10.0.2.0/24 -d 172.16.0.0/16 -j RETURN
     iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -d 0.0.0.0/0 -j MASQUERADE -o eth0
 
-## Example configuration
+### Example configuration
 
     # /etc/ipsec.conf on Amazon EC2 instance
     version 2.0
@@ -239,9 +239,9 @@ rules similar to:
     # hardcoding it into configurations where possible.
     193.110.157.131 0.0.0.0 %any : PSK "mysecret"
 
-# Juniper
+## Juniper
 
-## Juniper Example
+### Juniper Example
 
 Although technically not an interop problem, Ryan Waldron
 \<ryanw@phxx.com\> contributed a working Juniper configuration that is
@@ -298,7 +298,7 @@ There is also another example of configuring Juniper with libreswan by
 [Pedro
 Kiefer](http://www.pedro.kiefer.com.br/2012/10/openswan-tunnel-to-juniper-ssg)
 
-## Juniper shows Bad SPI messages in the Event Log
+### Juniper shows Bad SPI messages in the Event Log
 
 When libreswan and juniper rekey around the same time, the Juniper can
 get confused. This bug is triggered especially if you have more than one
@@ -308,16 +308,16 @@ the Juniper from the default 10 to 40. See also this [Juniper Knowledge
 Base
 Article](http://kb.juniper.net/InfoCenter/index?page=content&id=KB10091&pmv=print)
 
-## Juniper continuously rekeying
+### Juniper continuously rekeying
 
 Some have reported a bug in Juniper routers where the IPsec connection
 is rekeying continuously. This problem is apparently caused by the
 **vpn-monitor** option in the firewall policy configuration. Disabling
 this option stopped the rekeying and resulted in a stable tunnel.
 
-# Microsoft Windows
+## Microsoft Windows
 
-## L2TP / IPsec with the server behind NAT
+### L2TP / IPsec with the server behind NAT
 
 Windows clients require some registry settings to be allowed to connect
 to an IPsec server behind NAT:
@@ -330,7 +330,7 @@ on Windows XP
 
     REG ADD HKLM\SYSTEM\CurrentControlSet\Services\IPsec /v AssumeUDPEncapsulationContextOnSendRule /t REG_DWORD /d 0x2 /f
 
-## Windows Certificate requirements
+### Windows Certificate requirements
 
 Windows 8.x and 10 require the IKEv2 Machine Certificate to have the
 "Client Auth" **and** "Server Auth" ExtendedKeyUsage ("EKU") attribute
@@ -346,7 +346,7 @@ For further information, see this
 \[<http://technet.microsoft.com/en-us/library/dd941612(v=ws.10>).aspx
 Microsoft\] link
 
-## Windows IKEv2 default DiffieHellman proposal too weak
+### Windows IKEv2 default DiffieHellman proposal too weak
 
 Microsoft Windows IKEv2 insists on using **ONLY** DiffieHellman 1024 (DH
 group 2) which is no longer part of the default proposal set of

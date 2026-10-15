@@ -17,16 +17,16 @@ where is it.
 - [VPN Benchmark](https://www.net.in.tum.de/fileadmin/bibtex/publications/theses/2018-pudelko-vpn-performance.pdf)
 - [Wiregaurd BenchMark](https://arstechnica.com/gadgets/2019/12/wireguard-vpn-is-a-step-closer-to-mainstream-adoption/)
 
-# KVM/QEMU
+## KVM/QEMU
 
-## 9pfs
+### 9pfs
 
 As of 2023 9pfs is seeing renewed interest among testers. It is probably
 not ideal for production use, however, it is ideal for testing. It is
 widely used NIX os testing. I imagine libreswan will stick with this for
 a while more.
 
-## virtio-fs is an alternative to 9pfs in KVM/QEMU:
+### virtio-fs is an alternative to 9pfs in KVM/QEMU:
 
 In January 2021, I tried it on Fedora 33. I am happy with the initial
 results. The performance was great. Building libreswan was quick 44/240
@@ -60,7 +60,7 @@ Requirement: Fedora 33 - libvirt 6.2, qemu 5.0, kernel 5.4
 - [virtiofs RFC
   patches](https://marc.info/?l=linux-kernel&m=154446243024251&w=2)
 
-## KVM/QEMU + vsock NFS to replace 9pfs
+### KVM/QEMU + vsock NFS to replace 9pfs
 
 KVM/QEMU support for vsock and nfs support over vsock could have a
 better performance than 9pfs. vsock + nfd started
@@ -72,20 +72,20 @@ using without nfsd support. Other distributions may need nfsd support.
 
 - 2015 [LWN virtio](https://lwn.net/Articles/647516/)
 
-# Linux Kernel developments
+## Linux Kernel developments
 
-## XFRM Offload : starting 4.14
+### XFRM Offload : starting 4.14
 
 ` * NAT support ??? `
 ` * What if the interface is a member of bridge? can libreswan/strongswan configure SA correctly? `[`bridge`](https://wiki.strongswan.org/issues/3454)
 ` * what if the packets arrive on different interface would that get decrypted correctly? would it be decrypted by CPU or the offload NIC? `
 ` * Bonded NIC card`
 
-## XFRM and XDP
+### XFRM and XDP
 
 ` * idea presentation `[`Steffen Klassert`](http://vger.kernel.org/netconf2019_files/xfrm_xdp.pdf)` Linux Netconf, Boston, June, 2019`
 
-# Linux Per CPU efforts
+## Linux Per CPU efforts
 
 - [Linux Kernel XFRM pCPU](/Internals/XFRM-pCPU) and
   [Libreswan](https://libreswan.org) Nov 2019
@@ -95,12 +95,12 @@ using without nfsd support. Other distributions may need nfsd support.
   40Gbps](https://medium.com/fd-io-vpp/getting-to-40g-encrypted-container-networking-with-calico-vpp-on-commodity-hardware-d7144e52659a)
   May 2020
 
-# Userspace IPsec Stacks
+## Userspace IPsec Stacks
 
 Over last few years specialized user space IPSec(ESP) stacks and IKE
 implementations are becoming popular.
 
-## VPP + DPDK (Userspace ESP + IKE)
+### VPP + DPDK (Userspace ESP + IKE)
 
 VPP has its own IKEv2 and ESP implimentation.
 
@@ -109,7 +109,7 @@ VPP has its own IKEv2 and ESP implimentation.
   friends)](https://archive.fosdem.org/2019/schedule/event/userspace_network_stacks)
   2019
 
-## Snabb ESP userspace stack
+### Snabb ESP userspace stack
 
 Snabb as of 2020 has ESP. No IKE, it can easily use of the shelf IKE say
 strongswan for IKE and and few command line calls to install snabb esp
@@ -119,25 +119,25 @@ strongswan for IKE and and few command line calls to install snabb esp
 podcast](https://blog.ipspace.net/2019/02/high-speed-ipsec-on-snabb-switch-on.html)
 [Strongswan inegeration](https://github.com/inters/vita/issues/68)
 
-## OVS
+### OVS
 
 <http://docs.openvswitch.org/en/latest/tutorials/ipsec/>
 
-# iptable rule to drop IKEv2 message id X
+## iptable rule to drop IKEv2 message id X
 
 <https://unix.stackexchange.com/questions/321252/drop-a-packet-depending-on-its-options-or-type>
 
     # drop ike message ID 6
     iptables -A INPUT -m u32 --u32 '0x6 & 0xFF = 0x11 && 0x30 & 0xFFFFFFFF = 0x4' -j DROP
 
-# Hardware offload
+## Hardware offload
 
-## XFRM offload
+### XFRM offload
 
 - Mellonax Innova or ConnectX 6DX
 - Intel
 
-## Pensando - DSC ASIC. The PenAccel
+### Pensando - DSC ASIC. The PenAccel
 
 Around 2017 - 2020 Pensand DSC(DPU) announced East-West IPsec line rate
 100Gbps. It is also FIPS 140-2 certified [\| Oracle certified
@@ -145,30 +145,30 @@ it?](https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-p
 [\| Aurba CX
 1000](https://packetpushers.net/aruba-puts-dpus-into-new-top-of-rack-switch-5-questions)
 
-## Intel QAT
+### Intel QAT
 
 <https://www.servethehome.com/intel-quickassist-at-40gbe-speeds-ipsec-vpn-testing/>
 [\|
 DPDK](https://fast.dpdk.org/doc/perf/DPDK_19_11_Intel_crypto_performance_report.pdf)
 crypto performance report.
 
-## Intel AES NI
+### Intel AES NI
 
-## Historic OCF
+### Historic OCF
 
 Back in the 90 there was alo
 
-# RSS/RPS/RFS
+## RSS/RPS/RFS
 
 - [RPS](https://garycplin.blogspot.com/2017/06/linux-network-scaling-receives-packets.html)
 
-# Interesting Linux referecncs
+## Interesting Linux referecncs
 
-## Linux packet path
+### Linux packet path
 
 <https://upload.wikimedia.org/wikipedia/commons/3/37/Netfilter-packet-flow.svg>
 
-## Debugging Netlink
+### Debugging Netlink
 
 <https://jvns.ca/blog/2017/09/03/debugging-netlink-requests/>
 

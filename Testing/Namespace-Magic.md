@@ -6,14 +6,14 @@ not be magic anymore or even may become obsolete. An [early attempt in
 Libreswan](https://github.com/libreswan/libreswan/commit/16a97349952373734e41d9185d6b7c84b20d858c#diff-4f87e254860291fdfb0a76d4d2ea7f73)
 with Paul.
 
-# Design
+## Design
 
 The namespaces are named as host-testname e.g "east-basic-pluto-01" and
 "west-basic-pluto-01". Networking is using bridges. Once we scale up we
 can keep all tests running at the same time there won't be any
 namespace, bridge, network link name collisons.
 
-## Network bridge
+### Network bridge
 
 The bridges on the host are named uniquely. brswan-<BC>-<csum> . csum is
 16bit checksum of testname. The max length of bridge name is 15
@@ -29,15 +29,15 @@ No bridge for the second eth device on east, west, norht, eg. west eth0,
 and sunset yet. so eth0 is just hanging in there. this might save us
 total bridges required on the host.
 
-## Network links
+### Network links
 
 Network links are veth type. On the host side they are named as
 h<host>eX<csum>. e.g east's eth0 is heaste052501, eth1 of east
 heaste152501. heaste152501 will join the bridge brswan12-52501
 
-# FAQ
+## FAQ
 
-## How detect from inside the namespace
+### How detect from inside the namespace
 
 `* "ip netns identify" would return name of the namespace`
 `* one way seems to look at eth0. inside namespace "eth1@if107" kvm "eth0:"`
@@ -63,9 +63,9 @@ heaste152501. heaste152501 will join the bridge brswan12-52501
     from the host you get the name space name: "link-netns west-ikev2-03-basic-rawrsa"
     for exaactly which interface from "ip link" you see "106: eth1@if107",  "107: hweste164512@if106"
 
-# Scaling issues to navigate
+## Scaling issues to navigate
 
-## route cache filling up
+### route cache filling up
 
     [2936616.607520] Route cache is full: consider increasing sysctl net.ipv[4|6].route.max_size.
     [2936616.607908] Route cache is full: consider increasing sysctl net.ipv[4|6].route.max_size.
@@ -90,7 +90,7 @@ think routes are stuck inside namespaces.
     netns: east-ikev2-mobike-06
     setting the network namespace "east-ikev2-mobike-06" failed: Invalid argument
 
-## iptable fails -w 60 seems to help
+### iptable fails -w 60 seems to help
 
 
     sudo /usr/bin/nsenter --mount=/run/mountns/west-nstest-4 --net=/run/netns/west-nstest-4 --uts=/run/utsns/west-nstest-4 /bin/bash -c 'cd /testing/pluto/nstest-4;iptables -I INPUT -m policy --dir in --pol ipsec -j ACCEPT
@@ -106,7 +106,7 @@ That seems to have reduced the failure rate from 50% to 2%, when running
 errror. Going above 120 seconds would skew tests. They usually timeout
 in 120 seconds
 
-# would this work on foo 7/CentOS7: not yet too old util-linux
+## would this work on foo 7/CentOS7: not yet too old util-linux
 
 unshare and or nsenter do not suppor --mount\[=file\] option.
 
@@ -130,21 +130,21 @@ seems to be some options.
 === test using "sudo unshare --net=/run/netns/east-basic-pluto-01
 /usr/bin/bash" ===
 
-# outstanding issues
+## outstanding issues
 
-## reduce the use of iptables
+### reduce the use of iptables
 
 This would go in steps. First make sure the swan-prep crate the LOGDROP
 traget only when a test need it. grep in the test scripts for LOGDROP.
 So mostly it will only run on the initiator.
 
-## proxy arp route missing on east
+### proxy arp route missing on east
 
 See the 20 Sep 2019 post [extract MAC address from "ip -o link sow dev
 eth0" -
 awk](https://lists.libreswan.org/archives/list/swan-dev@lists.libreswan.org/thread/CTUXOYNU4NO5GX4EPH2OZDG7J5HQVKHZ/)?
 
-## MAC address mismatch
+### MAC address mismatch
 
 the NICs, on east, west, road, north in KVM use a consistant MAC
 address. Namespace does not have this yet. It can be done need more
@@ -161,7 +161,7 @@ here is an example of diff testrun ikev2-xfrmi-06
     +    inet 192.1.3.209/24 scope global eth0
             valid_lft forever preferred_lft forever
 
-## order of ip -o addr show scope global
+### order of ip -o addr show scope global
 
 the command "ip -o addr show scope global" very likely to produce
 different order in kvm and namespace runs
@@ -208,21 +208,21 @@ that is the order.
     Message from syslogd@swantest at Oct  8 12:42:54 ...
      kernel:unregister_netdevice: waiting for eth1 to become free. Usage count = 1
 
-## "Error: Peer netns reference is invalid."
+### "Error: Peer netns reference is invalid."
 
 = It seems when the namespaces get mangled up any "ip" command would
 output this error. For now I am sanitizing it.
 
-## running the tests in parallel worker pool
+### running the tests in parallel worker pool
 
 =
 
-## support bind mount installation using RPM or make install-base
+### support bind mount installation using RPM or make install-base
 
 This would help us test two versions of libreswan against each other.
 Say interoperate between 3.28 - 3.25.
 
-## can not attch gdb in side the namesapce??? gdb -p 'pidof pluto\` will not work
+### can not attch gdb in side the namesapce??? gdb -p 'pidof pluto\` will not work
 
 If your run "gdb -p 'pidof pluto\`" inside the namesapce gdb may attach
 to wrong namesapce. Becuse pidof pluto will see all plutos on the host.
@@ -238,12 +238,12 @@ to wrong namesapce. Becuse pidof pluto will see all plutos on the host.
 
 also "gdbp -p \$(cat /run/pluto/pluto.pid)" fails
 
-## route cache filling up
+### route cache filling up
 
 So testruns appeared to fill up route cache and packets will not
 forward.
 
-## python threads locking up
+### python threads locking up
 
 It seems often the the workers, started using ProcessPoolExecutor seems
 to lock up. They sit there doing nothinng I have been looking at them
@@ -288,29 +288,31 @@ using gdb
     dnf debuginfo-install python3
     dnf debuginfo-install python3-3.7.3-3.fc29.x86_64
 
-# Further ideas
+## Further ideas
 
-## Mixed KVM + namespace
+### Mixed KVM + namespace
 
 One host, the you are debuggig is KVM and rest of the hosts are
 namesapce. Quicker development and debugging
 
-## isolate the bridges completley
+### isolate the bridges completley
 
 create namesapces completely isolated. use bridge forwarding??
 
-# Good to know
+## Good to know
 
-## nsenter alias/function
+### nsenter alias/function
 
-    NSENTER()
-    {
-     ns=$1
-     nsargs="--mount=/run/mountns/${ns} --net=/run/netns/${ns} --uts=/run/utsns/${ns}"
-     NSENTER_CMD="/usr/bin/nsenter ${nsargs} "
-     sudo ${NSENTER_CMD} /bin/bash
-    }
-
-    # Then type
-
-    NSENTER east-basic-pluto-01
+```
+NSENTER()
+{
+ ns=$1
+ nsargs="--mount=/run/mountns/${ns} --net=/run/netns/${ns} --uts=/run/utsns/${ns}"
+ NSENTER_CMD="/usr/bin/nsenter ${nsargs} "
+ sudo ${NSENTER_CMD} /bin/bash
+}
+```
+then type
+```
+NSENTER east-basic-pluto-01
+```
