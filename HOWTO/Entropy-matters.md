@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Summary: your system needs lots of entropy. It may not have it. You
 might be able to fix this.
 

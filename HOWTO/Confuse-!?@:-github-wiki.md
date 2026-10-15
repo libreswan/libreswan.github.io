@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Some notes on using github's wiki
 
 It allows both markdown (.md) and asciidoc (.asciidoc).

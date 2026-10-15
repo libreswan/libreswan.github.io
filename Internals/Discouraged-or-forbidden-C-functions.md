@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Most of the libreswan code is written in C. The standard C libraries
 come with many functions people use. Some of these functions are
 dangerous to use or for other reasons should not be used with libreswan.

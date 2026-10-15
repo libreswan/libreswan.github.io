@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 There are two ways to run an individual test.  We'll refer to this as single-test mode.
 
 ### specify the test explicitly on the command line:

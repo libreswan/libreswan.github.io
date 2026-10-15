@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Many companies have Cisco or cisco-comptable VPN setups to allow laptops
 to connect to the enterprise network. This most often uses XAUTH with
 PreSharedKeys. It requires some special handling which libreswan

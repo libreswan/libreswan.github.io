@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Tracking down regressions (using git bisect)
 
 ### The easy way

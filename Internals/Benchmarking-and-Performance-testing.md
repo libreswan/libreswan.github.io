@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The performance of an IPsec system depends on CPU, RAM, NICs, switches,
 kernel and configuration.
 

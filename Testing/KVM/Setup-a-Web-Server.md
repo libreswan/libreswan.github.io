@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 _This is optional._
 
 If the machine is to run nightly test runs then it can be set up as a

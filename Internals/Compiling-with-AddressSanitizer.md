@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 AddressSanitizer (or ASAN) is a programming tool that detects memory
 corruption bugs such as buffer overflows or accesses to a dangling
 pointer (use-after-free). AddressSanitizer is based on compiler

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Support for algorithms and ciphers tries to narrowly follow two RFCs:
 
 - [RFC 8221](https://tools.ietf.org/html/rfc8221): Cryptographic

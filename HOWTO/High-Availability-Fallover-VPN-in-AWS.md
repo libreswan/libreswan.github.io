@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ![HA Fallover](/images/HA-AWS-libreswan.png)
 
 ## Introduction

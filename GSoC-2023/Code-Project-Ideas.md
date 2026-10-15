@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Please go to [Google Summer of
 Code](https://github.com/libreswan/libreswan/blob/main/docs/GSoC.md)
 

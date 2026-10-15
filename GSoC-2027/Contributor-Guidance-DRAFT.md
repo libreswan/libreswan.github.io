@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Submissions must comply to all GSoC [rules](https://summerofcode.withgoogle.com/rules).
 
 You will likely find the document [What is Google Summer of

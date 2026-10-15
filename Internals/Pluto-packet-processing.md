@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The document describes the steps that a packet goes through when it is
 received by pluto. This is not a state machine, but rather a call graph,
 in general each run through the process causes a single state change.

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 This is a crib-sheet for using Namespace testing.
 
 ## Disclaimer

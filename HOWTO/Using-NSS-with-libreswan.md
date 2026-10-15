@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The libreswan IKE daemon uses the Mozilla [Network Security
 Services](http://www.mozilla.org/projects/security/pki/nss/) ("NSS")
 crypto library for all cryptographic functions during the IKE

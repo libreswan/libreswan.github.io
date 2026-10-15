@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Day GSoC Is Announced
 
 - set up the year's mailing list

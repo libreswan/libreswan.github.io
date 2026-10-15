@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 This meetup was hosted by Tuomo Soini. Besides Tuomo, this meeting was
 attended by Antony Antony, D. Hugh Redelmeier, Paul Wouters, Kim and
 Mika.

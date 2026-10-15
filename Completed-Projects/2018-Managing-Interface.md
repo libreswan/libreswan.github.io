@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Introduction
 
 Libreswan Managing Interface is an interface for Libreswan VPN software,

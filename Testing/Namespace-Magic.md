@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The namespaces have been around for long time however, it still feel
 magic. So I start a page to enable magic, in 2019. As time pass it may
 not be magic anymore or even may become obsolete. An [early attempt in

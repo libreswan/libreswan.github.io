@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Nightly Test Tesults
 
 Libreswan's testsuite is run nightly. The results are published

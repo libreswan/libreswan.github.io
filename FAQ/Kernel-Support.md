@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Here's a brief list showing which kernel features are supported.
 
 Since the feature may require modifications to both the kernel and

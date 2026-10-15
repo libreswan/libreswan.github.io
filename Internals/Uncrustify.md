@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Cleaning up the formatting is a good idea.
 
 Doing it on a "flag day" is necessary.

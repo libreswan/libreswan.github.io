@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Since running the testsuite can take significant time, it is often
 convenient to run it in the background, or on a dedicated machine.
 

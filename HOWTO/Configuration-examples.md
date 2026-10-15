@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Below are the most common type of IPsec configurations people use. While
 written for libreswan, the instructions will work for openswan as well
 unless specifically noted.

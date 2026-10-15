@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 States (enum state_kind values) reflect where we are in a negotiation,
 between events. During the processing of events, many things are up in
 the air and the state will be in transition. During processing, the fine

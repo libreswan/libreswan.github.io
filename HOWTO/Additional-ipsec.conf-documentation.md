@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Introduction
 
 the most up to date source of the ipsec.conf options is always the

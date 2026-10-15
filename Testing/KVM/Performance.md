@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 To make the KVM test framework's performance more concrete, here are
 some numbers.  In each case, the analysis is using the tools of the
 time.

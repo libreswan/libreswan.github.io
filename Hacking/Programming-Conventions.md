@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Pluto previously had its own stylistic conventions but they were
 abandoned and starting from Libreswan 3.4 only Linux Kernel coding style
 is accepted.

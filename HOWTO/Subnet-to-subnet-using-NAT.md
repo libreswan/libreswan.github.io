@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # Using NAT to resolve an subnet IP conflict
 
 VPNs often connect networks in the RFC-1918 address space, such as

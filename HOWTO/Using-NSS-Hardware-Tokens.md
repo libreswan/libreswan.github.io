@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 All hardware tokens supported by NSS should be supported by libreswan.
 It is recommended to use libreswan 3.21 or newer to get full token
 support.

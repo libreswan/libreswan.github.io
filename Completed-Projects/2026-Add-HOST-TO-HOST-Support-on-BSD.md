@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # Google Summer of Code 2026 Final Report
 
 ## Student Information

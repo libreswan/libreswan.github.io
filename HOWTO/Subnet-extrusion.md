@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Often IPsec is deployed in a hub-and-spoke architecture. Each leaf node
 has an IP range that is part of a larger range. Leaves communicate with
 each other via the hub. This is called subnet extrusion. In the example

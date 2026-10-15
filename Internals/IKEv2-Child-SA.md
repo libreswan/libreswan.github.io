@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Use name of exchange (INIT, AUTH, CREATE_CHILD, INFORMATIONAL) in name
 of state. Auth ones may extend with EAP?
 

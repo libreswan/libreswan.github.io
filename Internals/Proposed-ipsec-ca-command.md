@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 "ipsec ca" command:
 
 In order to simplify the creation and management of certificates for use

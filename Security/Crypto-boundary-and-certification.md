@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Paul to document, explain and implement the crypto boundary
 
 Is there a readonly and writeonly path for crypto ?

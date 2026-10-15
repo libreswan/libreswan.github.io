@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Sometimes it is desirable to have a virtual ethernet LAN so all remote
 peers appear to be within the same LAN. One example is various
 network/LAN type multiuser games. This will allow all broadcast traffic

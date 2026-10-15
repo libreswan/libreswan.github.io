@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # VTI support is OBSOLETE, use the [IPsec Interface](/HOWTO/Route-based-VPN)
 
 VPN tunnels are normally set up based on an IPsec policy. This is called

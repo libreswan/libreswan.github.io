@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # Introduction
 
 ## IKE acceleration

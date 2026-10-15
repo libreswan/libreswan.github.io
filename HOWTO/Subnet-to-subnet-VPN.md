@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Building a tunnel between two endpoints for multiple subnets is pretty
 simialar to a [host to host VPN](/HOWTO/Host-to-host-VPN) tunnel.
 Except you will see we are adding leftsubnets/rightsubnets statements.

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The libreswan status output is very verbose and confusing. Work is being
 done to make this a lot more userfriendly.
 

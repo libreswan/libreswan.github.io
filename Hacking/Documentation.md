@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ### Background
 
 Yes, it's DocBook!

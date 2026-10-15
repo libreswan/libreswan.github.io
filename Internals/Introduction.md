@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ### What's in the name
 
 Libreswan has its roots all the way back to [The FreeS/WAN

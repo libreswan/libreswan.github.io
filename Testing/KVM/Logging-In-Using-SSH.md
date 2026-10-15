@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Shell access using SSH
 
 While requiring more effort to set up, it provides full shell access to

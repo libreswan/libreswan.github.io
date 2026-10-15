@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Sometimes it is necessary to build and test old code (for instance,
 when determining the oldest release that has a bug).
 

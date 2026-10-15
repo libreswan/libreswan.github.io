@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Please note that all contributions to this wiki are considered to be
 released under the Creative Commons Attribution Non-Commercial Share
 Alike.

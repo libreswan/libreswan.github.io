@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Often code changes cause log messages to change which, in turn, causes
 test cases to fail.
 

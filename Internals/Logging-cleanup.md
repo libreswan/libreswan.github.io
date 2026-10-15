@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 - Do inventory of logging functions and proposal for cleanup
 
 <!-- -->

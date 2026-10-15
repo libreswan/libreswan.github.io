@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## Introduction
 
 As of version 4.0, libreswan supports [RFC

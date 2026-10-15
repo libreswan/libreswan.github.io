@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 It's assumed that the test `basic-pluto-01` is is causing problems on
 `east`.
 

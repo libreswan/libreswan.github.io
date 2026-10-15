@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 _by Brendan Kearney_
 
 i finally have a working config that i am content with.  i have been

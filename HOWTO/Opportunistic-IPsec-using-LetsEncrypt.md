@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The idea is to leverage the LetsEncrypt Certificate Agency to
 authenticate servers for IPsec. At the same time, we want our IPsec
 clients to remain anonymous. This allows the client configuration to be

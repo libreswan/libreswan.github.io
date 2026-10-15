@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## What Not To Do
 
 - **do not follow GitHub's instructions**

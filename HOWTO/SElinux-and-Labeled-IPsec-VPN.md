@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 When SElinux is enabled with a **targeted policy**, network labels can
 be configured on the VPN tunnel to restrict the security context that is
 allowed to pass via the VPN tunnel.

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # libreswan/pluto design choices
 
 ## pluto keywords

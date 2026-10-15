@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 # History of The Libreswan Project
 
 Libreswan has been under active development for over 15 years, going

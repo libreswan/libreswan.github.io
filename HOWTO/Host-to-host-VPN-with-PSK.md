@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 This example sets up an IPsec connection between two hosts called "east"
 and "west". (these names are also used for our daily tests, and you can
 find lots of configuration examples in our test suite)

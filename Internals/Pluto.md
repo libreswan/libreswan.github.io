@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 The pluto daemon handles the IKE protocol layer and instructs the kernel
 about IPsec SA's.
 

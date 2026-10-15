@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 This is mostly a collection of ideas and possibilities, as of 2019. AWS
 support is already developed to a quickstart guide and others need more
 work. I hope to find resources to work on these and eventually develop

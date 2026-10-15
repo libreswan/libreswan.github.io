@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 ## The opportunistic Meetup in San Francisco, January 2014
 
 This meetup was hosted by John Gilmore.

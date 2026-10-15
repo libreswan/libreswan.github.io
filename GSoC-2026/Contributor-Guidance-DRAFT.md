@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 **This is the version of the 2026 GSoC Contributor Guidence that was
   online when GSoC 2026 was announced.  It has since been updated to
   spell out our AI policy; and clarify the next steps.**

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Classic VPNs provide encryption and authentication of hosts or users
 based on an existing and configured relationship. This can be an
 enterprise VPN, or a VPN service provider.

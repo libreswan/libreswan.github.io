@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 A scratchpad for things we'd like to talk about during the ipsec meetup
 
 # Fixup XFRM and tcpdump

@@ -1,3 +1,5 @@
+<!-- file-is-title -->
+
 Libreswan developers can be found on the
 `#libreswan`
 [IRC](http://en.wikipedia.org/wiki/IRC) channel on
