@@ -137,6 +137,8 @@ close #555 maybe a bug
   + the LTO compiler will inline them anyway
   + the performance bottle neck is elsewhere
 
+## Macros
+
 - macros are used as a poor-developer alternative to templates et.al.
 
 - you can use __STD_ARGS__ in macros
@@ -148,9 +150,8 @@ close #555 maybe a bug
 - `.c` files include in the following order:
 
   + system headers; using `#include <system-header.h>`
-  + libreswan headers; using `#include "header.h"`
-
-  Headers from `include/` are also typically included before headers from the local file.
+  + libreswan's `include/` headers; using `#include "header.h"`
+  + local headers; using `#include "header.h"`
 
 - headers have a full(C) a the top
 
@@ -192,21 +193,104 @@ close #555 maybe a bug
 
 ## Memory Management
 
-- we use custom wrappers around malloc() and free(); see `lswalloc.h`
+### Libreswan has custom wrappers, see `lswalloc.h`:
 
-  + it guarantees zero on allocate, and scrambled on free
+- use `alloc...()` et.al., not `malloc()`
+- use `pfree()` not `free()`
 
-  + it includes macros to overallocate buffers and allocate arrays
+these functions:
 
-  + if you mix it with malloc() et.al., pluto will core dump
+- zero on allocate
+- scrambled on free
+- detect unreleased memory
 
-  + it detects unreleased memory
+also available are:
 
-- in addition, many structures are reference counted; see `refcnt.h`
+- macros to overallocate buffers and allocate arrays
 
-- calls to NSS often require the use of the NSS allocator
+### Exceptions
 
-- we do not use alloca() nor dynamic arrays
+- nss often requires the use of its memory allocator
+- system calls often require the use of free()
+  copy the data to a libreswan allocated buffer
+ 
+### Libreswan uses reference counting
+
+Structures needing a reference counter use `refcnt.h`
+
+### Balance Memory Allocation
+
+_Unbalanced memory allocation is probably the leading cause of Libreswan's CVEs._
+
+Memory allocated at a given level should be freed (or ownership transfered) at that same level.
+
+#### Use a wrapped function so only one place needs to free memory
+
+For instance, here all the error paths simply return, and the caller is responsible for cleanup:
+```
+static bool do_stuff_1(struct memory *memory)
+{
+  if (bad_stuff_happend) {
+    // caller frees MEMORY
+    return false;
+  }
+  if (other_bad_stuff_happened) {
+    // caller frees MEMORY
+    return false;
+  }
+  // caller frees MEMORY
+  return true;
+}
+bool do_stuff()
+{
+  struct memory *memory = alloc_thing(struct memory); /* must free */
+  bool ok = do_stuff_1(memory);
+  pfreeany(memory);
+  return ok;
+}
+```
+Contrast it to:
+```
+bool do_stuff()
+{
+  struct memory *memory = alloc_thing(struct memory); /* must free */
+  if (bad_stuff_happend) {
+    pfree(memory);
+    return false;
+  }
+  if (other_bad_stuff_happened) {
+    return false;
+  }
+  pfree(memory);
+  return true;
+}
+```
+an extreme example can be found in the cert code
+
+#### Keep code paths allocating memory separate from those that don't
+
+For instance, here one path allocates while the second does not:
+```
+if (some_logic) {
+  struct memory *new_memory = alloc_thing(struct memory); /* must free */
+  do_stuff(memory);
+  pfreeany(new_memory);
+} else {
+  struct memory *existing_memory = ...->memory;
+  do_stuff(memory);
+}
+```
+Contrast it to:
+```
+struct memory *new_memory;
+struct memory *arg = ...->memory;
+if (some_logic) {
+  new_memory = alloc_thing(struct memory); /* must free */
+}
+do_stuff(arg);
+pfreeany(new_memory);
+```
+should things start to get complicated, spin of a new function
 
 ## Logging
 
