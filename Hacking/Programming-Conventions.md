@@ -272,23 +272,22 @@ an extreme example can be found in the cert code
 For instance, here one path allocates while the second does not:
 ```
 if (some_logic) {
-  struct memory *new_memory = alloc_thing(struct memory); /* must free */
+  struct memory *memory = alloc_thing(struct memory); /* must free */
   do_stuff(memory);
-  pfreeany(new_memory);
+  pfreeany(memory);
 } else {
-  struct memory *existing_memory = ...->memory;
-  do_stuff(memory);
+  do_stuff(...->memory);
 }
 ```
 Contrast it to:
 ```
-struct memory *new_memory;
+struct memory *memory;
 struct memory *arg = ...->memory;
 if (some_logic) {
-  new_memory = alloc_thing(struct memory); /* must free */
+  arg = memory = alloc_thing(struct memory); /* must free */
 }
 do_stuff(arg);
-pfreeany(new_memory);
+pfreeany(memory);
 ```
 should things start to get complicated, spin of a new function
 
