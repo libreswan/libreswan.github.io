@@ -295,7 +295,7 @@ should things start to get complicated, spin of a new function
 
 Most objects include a logger (`state->logger`, `md->logger`, ...) that contains context (prefix) for the message; removing the need to include context in the message.
 
-Log messages are not complete sentences, i.e., they don't start with a capital or end in a full stop, use `;` to break long messages.
+Log messages are not complete sentences, i.e., they don't start with a capital or end in a full stop, use `;` or `m` to break long messages.
 
 There are two ways to emit log messages:
 
@@ -323,7 +323,7 @@ oh, and two more:
 ```
 struct {
   unsigned len;
-  uint8_t *ptr;
+  uint8_t *ptr COUNTED_BY_PTR(len);
 }
 ```
 - for strings, such as when processing config files, we strongly prefer the predefined `shunk_t` type
@@ -336,7 +336,7 @@ struct {
 ```
 struct {
   unsigned len;
-  const void *ptr;
+  const void *ptr COUNTED_BY_PTR(len);
 }
 ```
 
@@ -348,21 +348,27 @@ struct {
 
   (chunk_t predates Libreswan using NSS, hence the difference)
 
-## Names <-> Numeric Values
+## Printing enums (and converting text to an enum)
 
-Libreswan has two types of name tables for converting between a numeric value (which includes enums) and a textual representation:
+See `names.h`
+
+Many `enums` are paired with a `struct names` table.
+For instance `enum stf_status` is paired with `struct names stf_status_names`.
+
+The table can then be used to print an enum value as text:
+```
+name_buf nb;
+ldbg(ike->sa.logger, "stf status is %s", str_name_short(&stf_status_names, status, &nb));
+```
+and convert a name back into an index:
+```
+long index = index_byname(&stf_status_names, name);
+if (index < 0) bad bad bad
+```
+
+Libreswan also has the legacy the name tables:
 
 `struct enum_names` good for enums, where values are consecutive
 `struct sparse_names` for when where values are discontinuous.
 
-In addition, newer code provides a generic wrapper `struct names` so that callers can ignore this implementation choice.
-
-For instance, instead of writing:
-```
-vdbg("notification %s", (notification == v2N_USE_PPK_INIT ? "use ppk init" : ...
-```
-we can write:
-```
-name_buf nb;
-vdbg("notification %s", str_name_human(&ikev2_notification_names, notification, &nb));
-```
+`struct names` is just a wrapper around these.
