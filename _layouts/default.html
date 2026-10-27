@@ -45,7 +45,9 @@
         <h1>{{ page_title }}</h1>
         {% endunless %}
 
-      {{ content }}
+	<!--see https://github.com/allejo/jekyll-anchor-headings -->
+	<!--{{ content }}-->
+	{% include anchor_headings.html html=content anchorBody="#" %}
 
       </section>
       <footer>
