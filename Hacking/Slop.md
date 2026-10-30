@@ -30,6 +30,16 @@ thing is to keep it short.  If there's something complicated going on,
 make it a comment in the code.  That way we'll see it when we read the
 diff.
 
+### The Drive-By Review
+
+*Where's the value-add in telling A.I. to fill-buster a Pull-Request?*
+
+We're not asking for much, but we are looking for a Human touch.
+
+A bad code review, like bad A.I., will trivialize the work by
+producing reams of redundant meaningless nit-picking drivel.
+A good code review, looks beyond that.
+
 ## Bugs
 
 *Like a politician, A.I. is selective with the truth.*
@@ -42,3 +52,5 @@ analysis.*
 The bug reporting form has some very specific requests.  Notably, a
 non-debug log of the entire exchange, so we can all understand the big
 picture and figure out the root cause.
+
+
