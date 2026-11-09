@@ -1,5 +1,29 @@
 <!-- file-is-title -->
 
+Note: this is written from the POV of merging a contributors changes.  But the same applies when merging your own changes.
+
+## Why Merge?
+
+- it preserves the history
+
+  Specifically, it preserves the testsuite and code changes as the commits that were tested.
+
+  Rebasing onto mainline invalidates that.
+
+- it keeps mainline's test results stable
+
+  The testsuite and code changes appear on mainline as a single commit.
+
+  Rebasing onto mainline creates a series of commits with unstable test results.
+
+- it keeps bisecting happy
+
+  Since mainline's test results are stable.
+
+- it keeps GitHub happy
+
+  GitHub recognizes a clean merge, closing the Pull-Request and related bugs.
+
 ## What Not To Do
 
 - **do not follow GitHub's instructions**
@@ -8,6 +32,13 @@
   pull the changes onto it.  That just seems to create a mess.
 
 - **do not cherry-pick**
+
+  GitHub gets confused by this, refusing to mark the pull-request
+  as merged.
+
+- **do not rebase**
+
+  It looses history.
 
   GitHub gets confused by this, refusing to mark the pull-request
   as merged.
@@ -91,7 +122,7 @@ It involves the following steps:
 ### Cleanup The Merge
 
 ```
-[main ^NNN]$ git commit --signoff --amend --author 'get it from a branch commit'
+[main]$ git commit --signoff --amend --author 'get it from a branch commit'
 ```
 
 - `--signoff` you're the one certifying it is all tested
@@ -136,26 +167,11 @@ Re-test?
 But first check over the results.
 
 ```
-[main ^NNN]$ gitk
-[main ^NNN]$ git push
+[main]$ gitk
+[main]$ git push
 ```
 
 ## Alternatives
-
-### The Direct Fetch Merge
-
-For when the pull-request is forked from recent sources, and there's a
-high confidence that it will merge cleanly, the branch can be skipped:
-
-```
-[main]$ git fetch git@github.com:${HANDLE}/libreswan.git ${BRANCH}
-From github.com:${HANDLE}/libreswan
- * branch                  ${BRANCH} -> FETCH_HEAD
-[main]$ git merge --no-ff FETCH_HEAD
-[main ^NNN]$
-```
-
-**Now cleanup the commit per above**
 
 ### The rebase merge.
 
@@ -192,3 +208,17 @@ needed, consider first rebasing:
   ```
 
 now continue with the cleanup above
+
+## Developers
+
+Since developers can commit directly to the repo they're afforded some leeway.
+
+### Standalone changes don't tend to be merged
+
+For instance:
+
+- documentation tweaks
+- testsuite tweaks
+- build fixes
+
+but this doesn't apply to pull-requests or more substantive changes.
