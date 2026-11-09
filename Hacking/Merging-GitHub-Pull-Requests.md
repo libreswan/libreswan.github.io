@@ -4,25 +4,48 @@ Note: this is written from the POV of merging a contributors changes.  But the s
 
 ## Why Merge?
 
-- it preserves the history
+The goals are:
 
-  Specifically, it preserves the testsuite and code changes as the commits that were tested.
+- preserve history
 
-  Rebasing onto mainline invalidates that.
+  Specifically, the branch that was fully tested before the merge.
 
-- it keeps mainline's test results stable
+- keep mainline's test results stable
 
   The testsuite and code changes appear on mainline as a single commit.
 
-  Rebasing onto mainline creates a series of commits with unstable test results.
-
-- it keeps bisecting happy
+- keep bisect working
 
   Since mainline's test results are stable.
 
-- it keeps GitHub happy
+- keep GitHub happy
 
-  GitHub recognizes a clean merge, closing the Pull-Request and related bugs.
+  GitHub recognizes a clean merge, auto-closing the Pull-Request and related bugs.
+
+For instance, given:
+```
+       .- [PULL] --> TESTS -> CODE -> DOCS    <-- TESTSUITE PASSES
+      /
+... u0 -- [main] -> OTHER -> STUFF            <-- TESTSUITE PASSES
+```
+Then after the merge:
+```
+       .- [PULL-REQUEST] -> CODE -> TESTS -> DOCS       <-- PASSES
+      /                                          \  
+... u0 -- [main] -> OTHER -> STUFF -> [PASSES]   MERGE  <-- SHOULD PASS
+```
+The the branch, pre-merge commit and merge are all available for testing.
+
+Since a rebase puts the test and code changes directly into mainline that no longer holds:
+```
+... u0 -- [main] -> OTHER -> STUFF 
+                                  \
+                                   TESTS      <- BREAKS TESTSUITE
+                                    \
+                                     CODE     <- FIXES TESTSUITE
+                                      \
+                                       DOCS   <- FIXES TESTSUITE
+```
 
 ## What Not To Do
 
@@ -222,3 +245,7 @@ For instance:
 - build fixes
 
 but this doesn't apply to pull-requests or more substantive changes.
+
+### Want to Live on the Edge?
+
+See [Bubble Merging](https://stackoverflow.com/questions/79577497/merging-local-mainline-changes-into-upstream-mainline).
