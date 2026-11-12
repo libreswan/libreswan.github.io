@@ -16,12 +16,16 @@ expect to apply it liberally.
 Since most things should finish in under 10s there should never be a
 retransmit.
 
+`--impair timeout:5` is proposed as an alternative
+
 ## For when Retransmits do matter
 
 ### Add `conn %default; retransmit-timeout=5s; retransmit-interval=10s`
 
 For when a timeout is expected.  Presumably other exchanges complete
 in less than 5s.
+
+`--impair timeout:5` is proposed as an alternative
 
 ### Add `conn %default; retransmit-timeout=9s; retransmit-interval=5s`
 
