@@ -102,10 +102,6 @@ There's several options.
 
 #### Simple scripts: `nicinit.sh`, `eastinit.sh`, `westinit.sh`, `westrun.sh`, `final.sh` et.al.
 
-_This is the original script structure and is used by most tests.
-It turns out it isn't sufficient for robustly testing IKEv1's
-three message Quick mode exchange._
-
 Most often a test involves a simple interop
 from a domain such as `west` to `east`.
 
