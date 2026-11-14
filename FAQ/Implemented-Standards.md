@@ -56,7 +56,7 @@ IPSECME
 | [RFC 9349](https://datatracker.ietf.org/doc/rfc9349) | IKE | Definitions of Managed Objects for IP Traffic Flow Security
 | [RFC 9348](https://datatracker.ietf.org/doc/rfc9348) | IKE | A YANG Data Model for IP Traffic Flow Security
 | [RFC 9347](https://datatracker.ietf.org/doc/rfc9347) | IKE | Aggregation and Fragmentation Mode for Encapsulating Security Payload (ESP) and Its Use for IP Traffic Flow Security (IP-TFS) | v5.2
-| [RFC 9329](https://datatracker.ietf.org/doc/rfc9329) | IKE | TCP Encapsulation of Internet Key Exchange Protocol (IKE) and IPsec Packets | v4.0 | | Updated RFC 8229?
+| [RFC 9329](https://datatracker.ietf.org/doc/rfc9329) | IKE | TCP Encapsulation of Internet Key Exchange Protocol (IKE) and IPsec Packets | v4.0 | | Obsoleted [RFC RFC 8229](https://datatracker.ietf.org/doc/rfc8229)
 | [RFC 9242](https://datatracker.ietf.org/doc/rfc9242) | IKE | Intermediate Exchange in the Internet Key Exchange Protocol Version 2 (IKEv2) | v4.0
 | [RFC 9227](https://datatracker.ietf.org/doc/rfc9227) | IKE | Using GOST Ciphers in the Encapsulating Security Payload (ESP) and Internet Key Exchange Version 2 (IKEv2) Protocols
 | [RFC 8983](https://datatracker.ietf.org/doc/rfc8983) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Notification Status Types for IPv4/IPv6 Coexistence
@@ -65,7 +65,7 @@ IPSECME
 | [RFC 8598](https://datatracker.ietf.org/doc/rfc8598) | IKE | Split DNS Configuration for the Internet Key Exchange Protocol Version 2 (IKEv2)
 | [RFC 8420](https://datatracker.ietf.org/doc/rfc8420) | IKE | Using the Edwards-Curve Digital Signature Algorithm (EdDSA) in the Internet Key Exchange Protocol Version 2 (IKEv2) | v5.4 | Limited by NSS
 | [RFC 8247](https://datatracker.ietf.org/doc/rfc8247) | IKE | Algorithm Implementation Requirements and Usage Guidance for the Internet Key Exchange Protocol Version 2 (IKEv2)
-| [RFC 8229](https://datatracker.ietf.org/doc/rfc8229) | IKE | ~~TCP Encapsulation of IKE and IPsec Packets~~ | v4.0 | Updated by [RFC 9329](https://datatracker.ietf.org/doc/rfc9329)
+| [RFC 8229](https://datatracker.ietf.org/doc/rfc8229) | IKE | ~~TCP Encapsulation of IKE and IPsec Packets~~ | v4.0 | Obsoleted by [RFC 9329](https://datatracker.ietf.org/doc/rfc9329)
 | [RFC 8221](https://datatracker.ietf.org/doc/rfc8221) | IPsec | Cryptographic Algorithm Implementation Requirements and Usage Guidance for Encapsulating Security Payload (ESP) and Authentication Header (AH)
 | [RFC 8031](https://datatracker.ietf.org/doc/rfc8031) | IKE | Curve25519 and Curve448 for the Internet Key Exchange Protocol Version 2 (IKEv2) Key Agreement | v3.25 | Curve25519 (dh31): v3.25 <br/> Curve448 (dh32): Needs NSS support
 | [RFC 8019](https://datatracker.ietf.org/doc/rfc8019) | IKE | Protecting Internet Key Exchange Protocol Version 2 (IKEv2) Implementations from Distributed Denial-of-Service Attacks
@@ -73,7 +73,7 @@ IPSECME
 | [RFC 7634](https://datatracker.ietf.org/doc/rfc7634) | IKE | "ChaCha20, Poly1305, and Their Use in the Internet Key Exchange Protocol (IKE) and IPsec" | v3.26
 | [RFC 7619](https://datatracker.ietf.org/doc/rfc7619) | IKE | The NULL Authentication Method in the Internet Key Exchange Protocol Version 2 (IKEv2) | v2.x
 | [RFC 7427](https://datatracker.ietf.org/doc/rfc7427) | IKE | Signature Authentication in the Internet Key Exchange Version 2 (IKEv2) | v3.26 | aka DIGSIG
-| [RFC 7383](https://datatracker.ietf.org/doc/rfc7383) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Message Fragmentation | v3.14
+| [RFC 7383](https://datatracker.ietf.org/doc/rfc7383) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) Message Fragmentation | v3.14 | Obsoletes [RFC 5996](https://datatracker.ietf.org/doc/rfc5996)
 | [RFC 7321](https://datatracker.ietf.org/doc/rfc7321) | IPsec | Cryptographic Algorithm Implementation Requirements and Usage Guidance for Encapsulating Security Payload (ESP) and Authentication Header (AH)
 | [RFC 7296](https://datatracker.ietf.org/doc/rfc7296) | IKE | Internet Key Exchange Protocol Version 2 (IKEv2) | yes
 | [RFC 7018](https://datatracker.ietf.org/doc/rfc7018) | IPsec | Auto-Discovery VPN Problem Statement and Requirements
@@ -92,7 +92,7 @@ IPSECME
 | [RFC 6027](https://datatracker.ietf.org/doc/rfc6027) | IKE | IPsec Cluster Problem Statement
 | [RFC 6023](https://datatracker.ietf.org/doc/rfc6023) | IKE | A Childless Initiation of the Internet Key Exchange Version 2 (IKEv2) Security Association (SA)
 | [RFC 5998](https://datatracker.ietf.org/doc/rfc5998) | IKE | An Extension for EAP-Only Authentication in IKEv2 | v4.7 | server only
-| [RFC 5996](https://datatracker.ietf.org/doc/rfc5996) | IKE | ~~Internet Key Exchange Protocol Version 2 (IKEv2)~~ | | Obsolete, see [RFC 7296](https://datatracker.ietf.org/doc/rfc7296)
+| [RFC 5996](https://datatracker.ietf.org/doc/rfc5996) | IKE | ~~Internet Key Exchange Protocol Version 2 (IKEv2)~~ | | Obsoleted by [RFC 7296](https://datatracker.ietf.org/doc/rfc7296); Obsoletes [RFC 4718](https://datatracker.ietf.org/doc/rfc4718), [RFC 4306](https://datatracker.ietf.org/doc/rfc4306)
 | [RFC 5930](https://datatracker.ietf.org/doc/rfc5930) | IKE | Using Advanced Encryption Standard Counter Mode (AES-CTR) with the Internet Key Exchange version 02 (IKEv2) Protocol | v3.14
 | [RFC 5903](https://datatracker.ietf.org/doc/rfc5903) | IKE | Elliptic Curve Groups modulo a Prime (ECP Groups) for IKE and IKEv2 | v3.20 | added to defaults in v3.28
 | [RFC 5879](https://datatracker.ietf.org/doc/rfc5879) | IPsec | Heuristics for Detecting ESP-NULL Packets | N/A | kernel
@@ -117,6 +117,7 @@ IPSECME
 | [RFC 4434](https://datatracker.ietf.org/doc/rfc4434) | IKE | The AES-XCBC-PRF-128 Algorithm for the Internet Key Exchange Protocol (IKE) | v3.25
 | [RFC 4309](https://datatracker.ietf.org/doc/rfc4309) | IPsec | Using Advanced Encryption Standard (AES) CCM Mode with IPsec ESP | v3.7
 | [RFC 4308](https://datatracker.ietf.org/doc/rfc4308) | IPsec | Cryptographic Suites for IPsec
+| [RFC 4306](https://datatracker.ietf.org/doc/rfc4306) | IKEv2 | ~~Internet Key Exchange (IKEv2) Protocol~~ | Obsoleted by [RFC 5996](https://datatracker.ietf.org/doc/rfc5996); Obsoletes [RFC 2407](https://datatracker.ietf.org/doc/rfc2407), [RFC 2409](https://datatracker.ietf.org/doc/rfc2409), [RFC 2408](https://datatracker.ietf.org/doc/rfc2408)
 | [RFC 4304](https://datatracker.ietf.org/doc/rfc4304) | IPsec | Extended Sequence Number (ESN) Addendum to IPsec DOI for ISAKMP | v3.17
 | [RFC 4303](https://datatracker.ietf.org/doc/rfc4303) | IPsec | **IP Encapsulating Security Payload (ESP)** | v2.x | Obsoletes: [2406](https://datatracker.ietf.org/doc/rfc2406)
 | [RFC 4302](https://datatracker.ietf.org/doc/rfc4302) | IPsec | **IP Authentication Header (AH)** | v2.x | Obsoletes: [2402](https://datatracker.ietf.org/doc/rfc2402)
@@ -175,7 +176,7 @@ _This table should track the "Active Internet-Drafts " section of the the IPSECM
 | [RFC 5998](https://datatracker.ietf.org/doc/rfc5998) | EAP | An Extension for EAP-Only Authentication in IKEv2 | v4.7 | server only
 | [RFC 5216](https://datatracker.ietf.org/doc/rfc5216) | EAP | The EAP-TLS Authentication Protocol | v4.7 | server only, Updated by [RFC 9190](https://datatracker.ietf.org/doc/rfc9190)
 | [RFC 3748](https://datatracker.ietf.org/doc/rfc3748) | EAP | Extensible Authentication Protocol (EAP)
-| [RFC 2716](https://datatracker.ietf.org/doc/rfc2716) | EAP | ~~PPP EAP TLS Authentication Protocol~~ | | Obsolete, see [RFC 5216](https://datatracker.ietf.org/doc/rfc5216)
+| [RFC 2716](https://datatracker.ietf.org/doc/rfc2716) | EAP | ~~PPP EAP TLS Authentication Protocol~~ | | Obsoleted by [RFC 5216](https://datatracker.ietf.org/doc/rfc5216)
 
 ### Certificates and PKIX
 
