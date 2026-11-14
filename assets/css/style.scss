@@ -4,11 +4,15 @@
 @import "{{ site.theme }}";
 
 header {
-  width:200px;
+  width:30%;
   float:right;
 }
 
 footer {
-  width:200px;
+  width:30%;
   float:right;
+}
+
+section {
+    width:70%
 }
