@@ -3,16 +3,14 @@
 
 @import "{{ site.theme }}";
 
-header {
-  width:200px;
-  float:right;
-}
-
-footer {
-  width:200px;
-  float:right;
+header footer {
+  width:30%;
 }
 
 .wrapper{
     width:90%
+}
+
+section {
+    width:70%
 }
