@@ -62,3 +62,16 @@ west #
  ../../guestbin/ping-once.sh --up -I 192.0.1.254 192.0.2.254
 up
 ```
+
+### What hasn't worked
+
+- do nothing
+
+  When running a single test, everything seems to work.  Only to the
+  fail when tested under load.
+
+- `sleep 5`
+
+  When running a single test, this just makes things slower.  Only to
+  then fail (just less often) when under load.
+
