@@ -28,7 +28,7 @@ DOWN unexpected
 because the ping is sent before the responder has finished installing
 the IPsec (Child) SA.
 
-_IKEv2 doesn't have this problem because it always sends a response._
+_Note: IKEv2 doesn't have this problem because it always sends a response._
 
 ### Fix 1: Convert test to NN-test.sh form
 
@@ -39,15 +39,14 @@ For instance, `basic-pluto-01/` has:
 |03-west-up.sh|`ipsec up westnet-eastnet`
 |04-east-established.sh|`../../guestbin/wait-for-pluto.sh '^".*#2: IPsec SA established'`
 |05-west-ping.sh|`../../guestbin/ping-once.sh --up -I 192.0.1.254 192.0.2.254`
-||`ipsec trafficstatus`
+|final.sh|`ipsec trafficstatus`
 
 so that the ping is only run after `east` has been confirmed as established
 
 ### Fix 2: Use `wait-for.sh OUTPUT/east.log`
 
-For instance, in `interop-ikev1-strongswan-17-compress` the
-`westrun.sh` script waits for `east` to log that the SA is established
-before continuing to the ping:
+Modify `westrun.sh` so it waits for `east` to log that the SA is
+established before continuing to the ping:
 
 ```
 west #
@@ -56,8 +55,8 @@ west #
 ...
 "westnet-eastnet-ikev1" #2: IPsec SA established tunnel mode ...
 west #
- ../../guestbin/wait-for.sh --match 'CHILD_SA .* established' -- cat OUTPUT/east.charon.log
-[IKE] <westnet-eastnet-ikev1|1> CHILD_SA westnet-eastnet-ikev1{1} established with SPIs SPISPI_i SPISPI_o and TS 192.0.2.0/24 === 192.0.1.0/24
+ ../../guestbin/wait-for.sh --match '#2: IPsec SA established tunnel mode' -- cat OUTPUT/east.pluto.log
+"westnet-eastnet-ikev1" #2: IPsec SA established tunnel mode ...
 west #
  ../../guestbin/ping-once.sh --up -I 192.0.1.254 192.0.2.254
 up
@@ -67,7 +66,7 @@ up
 
 - do nothing
 
-  When running a single test, everything seems to work.  Only to the
+  When running a single test, everything seems to work.  Only to then
   fail when tested under load.
 
 - `sleep 5`
