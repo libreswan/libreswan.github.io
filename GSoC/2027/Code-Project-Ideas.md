@@ -21,7 +21,7 @@ through to completion.
 
 If you see a project that looks interesting, or you just have
 questions, then see the [Contributor
-Guidance](/GSoC-2026/Contributor-Guidance-FINAL) for next steps.
+Guidance](/GSoC/2026/Contributor-Guidance-FINAL) for next steps.
 
 It isn't a requirement at you pick one of the ideas below - we also
 welcome new ideas.  For instance, additional draft RFCs that could

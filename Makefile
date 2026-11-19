@@ -4,7 +4,7 @@ all default: broken sidebar
 SECTIONS += Support
 SECTIONS += FAQ
 SECTIONS += HOWTO
-SECTIONS += GSoC-2027
+SECTIONS += GSoC
 SECTIONS += Completed-Projects
 SECTIONS += Presentations
 SECTIONS += IRC

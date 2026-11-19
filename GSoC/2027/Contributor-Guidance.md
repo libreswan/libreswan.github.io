@@ -2,28 +2,43 @@
 
 Submissions must comply to all GSoC [rules](https://summerofcode.withgoogle.com/rules).
 
-You will likely find the document [What is Google Summer of Code?](https://google.github.io/gsocguides/student/),
-that is part of the [GSoC Guides](https://developers.google.com/open-source/gsoc/resources/guide),
-far more digestible.  It even includes a section on
-[Writing A Proposal](https://google.github.io/gsocguides/student/writing-a-proposal).
+You will likely find the document [What is Google Summer of
+Code?](https://google.github.io/gsocguides/student/), that is part of
+the [GSoC
+Guides](https://developers.google.com/open-source/gsoc/resources/guide),
+far more digestible.  It even includes a section on [Writing A
+Proposal](https://google.github.io/gsocguides/student/writing-a-proposal).
 
 We strongly urge you to read up on the [previous student
-projects](/Completed-Projects).
+projects](/Completed-Projects/).
 
 But first lets get that gnarly question out the way ...
 
 ## A.I. Policy
 
-It's [recommended](https://docs.google.com/document/d/1jglptdn_DovOxjwuhzORn3QhYoeBcToS7ymk3IIWHKY/edit?tab=t.0#heading=h.ib59d98mnz6q) that we have an A.I. Policy.  So this it is.
+It's
+[recommended](https://docs.google.com/document/d/1jglptdn_DovOxjwuhzORn3QhYoeBcToS7ymk3IIWHKY/edit?tab=t.0#heading=h.ib59d98mnz6q)
+that we have an A.I. Policy.  So this it is.
 
 Don't be lazy, the result won't impress:
 
 - don't use AI to generate your proposal
-  <br>For written English, we strongly prefer your local English dialect and its idioms over AI generated text (we are ok with tools like spell checkers; be sure to set them to your local dialect).
+
+  For written English, we strongly prefer your local English dialect
+  and its idioms over AI generated text (we are ok with tools like
+  spell checkers; be sure to set them to your local dialect).
+
 - don't use AI to estimate your proposal
-  <br>You can use AI to help understand the code and find issues; but use human analysis to confirm its correct.
+
+  You can use AI to help understand the code and find issues; but use
+  human analysis to confirm its correct.
+
 - don't use AI to write code
-  <br>You won’t learn anything, and if you can’t tell if AI did it right, you shouldn’t show it to anyone else either.
+
+  You won’t learn anything, and if you can’t tell if AI did it right,
+  you shouldn’t show it to anyone else either.
+
+  _If AI wrote the code, who owns the copyright?_
 
 ## First Step
 
@@ -39,15 +54,16 @@ Don't be lazy, the result won't impress:
   + your GitHub handle
     <br>If you don't have a GitHub account, please create one.
     <br>If using GitHub isn't possible please let us know.
+  + your development environment
 
   If you have additional questions, definitely include those.
 
-  This is important.  It helps us know that we're interacting with
-  a GSoC candidate, and not another
-  [Jia Tan collective](https://en.wikipedia.org/wiki/XZ_Utils_backdoor).
+  This is important.  It helps us know that we're interacting with a
+  GSoC candidate, and not another [Jia Tan
+  collective](https://en.wikipedia.org/wiki/XZ_Utils_backdoor).
 
   Please resist the temptation to contact individual developers
-  directly or via social media.
+  directly.  Be it via e-mail, Linked In, or other social media.
 
   We can also be contacted by sending e-mail to the [developer mailing
   list](https://lists.libreswan.org/mailman3/lists/swan-dev.lists.libreswan.org/)
@@ -55,7 +71,7 @@ Don't be lazy, the result won't impress:
 
 ## Next steps
 
-- Subscribe to the [developer mailing
+- subscribe to the [developer mailing
   list](https://lists.libreswan.org/mailman3/lists/swan-dev.lists.libreswan.org/)
 
   Don't worry, it is low volume.
@@ -64,6 +80,13 @@ Don't be lazy, the result won't impress:
   sent here.
 
   It can also be used as an alternative channel for questions.
+
+- consider subscribing to the lists
+
+  + IETF
+  + Ipsec Coffee Hour
+
+  **should this be part of onboarding**
 
 - get Libreswan working on **your** machine
 
@@ -93,12 +116,13 @@ Don't be lazy, the result won't impress:
 
   (if you haven't already) Create a local copy and build Libreswan.
 
-  One way to get familiar with the source code is, using the
-  log messages from Libreswan establishing a connection as a pointer,
-  trace how Libreswan works.  To get specific, work out from the function
-  `initiate_v2_IKE_SA_INIT_request()`.
+  One way to get familiar with the source code is, using the log
+  messages from Libreswan establishing a connection as a pointer,
+  trace how Libreswan works.  To get specific, work out from the
+  function `initiate_v2_IKE_SA_INIT_request()`.
 
-  The wiki also contains notes (some getting old) about Libreswan internals
+  The wiki also contains notes (some getting old) about Libreswan
+  internals
 
 - see if you can run a single test
 
@@ -106,21 +130,23 @@ Don't be lazy, the result won't impress:
   the [Testing](/Testing/) page suggests several ways to get the
   testsuite running.
 
-  _Note: We're not suggesting that, at this stage, you run the
-  full testsuite. We have dedicated hardware for that._ 
+  _Note: We're not suggesting that, at this stage, you run the full
+  testsuite. We have dedicated hardware for that._
 
-  This may also prove to be a good point to come forward with any questions.
+  This may also prove to be a good point to come forward with any
+  questions.
 
 - look through Libreswan's [bug database](https://github.com/libreswan/libreswan/issues)
 
-  If a task or bug looks interesting and you'd like to work on it (i.e.,
-  submit a [Pull Request](/Hacking/Git,-GitHub,-and-Pull-Requests)),
-  either drop an e-mail to gsoc@ or add a note to the bug asking about it.
+  If a task or bug looks interesting and you'd like to work on it
+  (i.e., submit a [Pull
+  Request](/Hacking/Git,-GitHub,-and-Pull-Requests)), either drop an
+  e-mail to gsoc@ or add a note to the bug asking about it.
 
-  Just remember that tasks are often heavy on assumed
-  context (if prompted we can provide details); and seemingly trivial
-  tasks (such as output tweaks) can require a deceptive amount of work
-  (such as test-suite updates).
+  Just remember that tasks are often heavy on assumed context (if
+  prompted we can provide details); and seemingly trivial tasks (such
+  as output tweaks) can require a deceptive amount of work (such as
+  test-suite updates).
 
   Once you've got one bug under your hat, you could consider a second.
   <br>But please **do not _claim_ or _hog_ bugs**.
@@ -132,7 +158,8 @@ Don't be lazy, the result won't impress:
   The Preferred Skills list is a good starting point for further
   reading.
 
-- prepare your (proposal)[https://google.github.io/gsocguides/student/writing-a-proposal]
+- prepare your
+  (proposal)[https://google.github.io/gsocguides/student/writing-a-proposal]
 
   Please address the required an preferred skills.
 
@@ -147,7 +174,6 @@ and try things.  It is the only reliable metric we have for new people
 to indicate how serious they are to take on a project for the summer.
 If implementing an RFC, read the RFC and ask us any questions you
 have.
-
 
 ## Glossary
 
