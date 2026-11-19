@@ -102,9 +102,9 @@ Don't be lazy, the result won't impress:
 
 - see if you can run a single test
 
-  The testsuite is found in `testing/pluto/` in the source tree;
-  and the [Testing](/Testing) page suggests several ways to get
-  the testsuite running.
+  The testsuite is found in `testing/pluto/` in the source tree; and
+  the [Testing](/Testing/) page suggests several ways to get the
+  testsuite running.
 
   _Note: We're not suggesting that, at this stage, you run the
   full testsuite. We have dedicated hardware for that._ 

@@ -65,7 +65,7 @@ demonstrating a more esoteric feature or option.
 
 In addition, the [test results](https://testing.libreswan.org/) are
 published [nightly](https://testing.libreswan.org/current) (see also
-[Testing](/Testing)).
+[Testing](/Testing/)).
 
 ## Misc items
 
