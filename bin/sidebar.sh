@@ -32,7 +32,11 @@ for section in "$@" ; do
 	    if test -d ${section}/${subsection} ; then
 		echo '    <details>'
 		echo '      <summary>'
-		echo "        <a href='/${section}/${subsection}'>${title}</a>"
+		if test -r ${section}/${subsection}/README.md ; then
+		    echo "        <a href='/${section}/${subsection}'>${title}</a>"
+		else
+		    echo "        ${title}"
+		fi
 		echo '      </summary>'
 		for subsub in $(ls ${section}/${subsection}/ | sort) ; do
 		    case ${subsub} in
