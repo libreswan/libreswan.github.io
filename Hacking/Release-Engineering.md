@@ -1,8 +1,10 @@
-# Before the release
+<!-- file-is-title -->
+
+## Before the release
 
 - review milestone
 
-# During the Release
+## During the Release
 
 - Bump mk/version.mk
 
@@ -40,7 +42,7 @@
 - push commits to github (or wait 15 mins):
     ssh build@vaul.libreswan.org ./bin/github-push.sh
 
-# After the release
+## After the release
 
 - Start new section in CHANGES with x.y+1 (unreleased)
 
@@ -50,7 +52,7 @@
 
 - twitter: announce using libreswan account [no longer done]
 
-## Update GITHUB
+### Update GITHUB
 
 - create a milestone for the next release
 
@@ -66,7 +68,7 @@
 
   see (https://github.com/libreswan/libreswan/releases)[releases]
 
-## Update Distros
+### Update Distros
 
 - Build fedora release
 
@@ -74,13 +76,13 @@
 
 - future: build copr releases for Centos Stream
 
-## rebuild testing.libreswan.org
+### rebuild testing.libreswan.org
 
 Details should be in testing.libreswan.org/README.md under "After a
 Release" but a quick summary is: reboot; update/upgrade machine; save
 -0- result in releases/; delete results/; re-start tester script
 
-## Check for tasks, create bugs
+### Check for tasks, create bugs
 
 - have any of the tested operating systems put out a new release?
 
