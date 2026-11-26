@@ -61,6 +61,7 @@ Registries](https://www.rfc-editor.org/rfc/rfc6890):
   2001:DB8::/32
 
   + already in use, ya!
+  + however, should update to keep consistent
 
 - [Benchmarking Methodology for Network Interconnect
   Devices](https://www.rfc-editor.org/rfc/rfc2544) reserves
@@ -105,9 +106,9 @@ LEFT                                                              RIGHT
                                                 (eth0)
                  ROAD-[eth1]                    NORTH-[eth2]
                 (eth0)                          (eth1)
-     2001:db8:1:3::209/64  OLD ...   2001:db8:1:3::33/64  Owned by: raytheon.com
-           192.1.3.209/24  OLD ...         192.1.3.33/24  Owned by: raytheon.com
+     2001:db8:1:3::209/64  OLD       2001:db8:1:3::33/64  OLD
        2001:db8:3::209/64  NEW         2001:db8:3::33/64  NEW
+           192.1.3.209/24  Owned ...       192.1.3.33/24  Owned by: raytheon.com
           198.18.3.209/24  NEW            198.18.3.33/24  NEW
                   |                               |
                   v                               v
@@ -115,16 +116,16 @@ LEFT                                                              RIGHT
 198.18.3.0/24 ----+-----NICNET-----+----NICNET----+------ 2001:db8:3::/64  NEW
                                    v
                                    |
-                      2001:db8:1:3::254/64  Owned by: raytheon.com
-                            192.1.3.254/24  Owned by: raytheon.com
+                      2001:db8:1:3::254/64  OLD
                         2001:db8:3::254/64  NEW
+                            192.1.3.254/24  Owned by: raytheon.com
                            198.18.3.254/24  NEW
                                  (eth2)
                                   NIC-[eth0]
                                  (eth1)
-                      2001:db8:1:2::254/24  Owned by: raytheon.com
-                            192.1.2.254/64  Owned by: raytheon.com
+                      2001:db8:1:2::254/24  OLD
                         2001:db8:2::254/24  NEW
+                            192.1.2.254/64  Owned by: raytheon.com
                            198.18.2.254/64  NEW
                                    |
                                    ^
@@ -132,16 +133,16 @@ LEFT                                                              RIGHT
 198.18.2.0/24 ----+----------------+------INTERNET------+------- 2001:db8:2::/64  NEW
                   ^                                     ^
                   |                                     |
-     2001:db8:1:2::45/64  OLD ...          2001:db8:1:2::23/64  Owned by: raytheon.com
-           192.1.2.45/24  OLD ...                192.1.2.23/24  Owned by: raytheon.com
+     2001:db8:1:2::45/64  OLD              2001:db8:1:2::23/64  OLD
        2001:db8:2::45/64  NEW                2001:db8:2::23/64  NEW
+           192.1.2.45/24  Owned ...              192.1.2.23/24  Owned by: raytheon.com
           198.18.2.45/24  NEW                   198.18.2.23/24  NEW
                (eth1)                                (eth1)
          [eth2]-WEST-(ipsec)198.18.45.45/24    [eth2]-EAST-(ipsec)198.18.23.23/24
                (eth0)    2001:db8:45::45/64          (eth0)    2001:db8:23::23/64
-     2001:db8:0:1::254/64  OLD ...         2001:db8:0:2::254/64  Owned by: raytheon.com
-           192.0.1.254/24  OLD ...               192.0.2.254/24  Owned by: raytheon.com
+     2001:db8:0:1::254/64  OLD             2001:db8:0:2::254/64  OLD
       2001:db8:40::254/64  NEW               2001:db8:2::254/64  NEW
+           192.0.1.254/24  Owned ...             192.0.2.254/24  Owned by: raytheon.com
          198.18.40.254/24  NEW                 198.182.2.254/24  NEW
                   |                                     |
                   |                                     ^
@@ -153,9 +154,9 @@ LEFT                                                              RIGHT
 198.18.40.0/24 ---+-+- WESTNET--- 2001:db8:40::/64        |
                     ^                                     |
                     |                                     |
-       2001:db8:0:1::15/64  OLD ...          2001:db8:0:2::12/64   Owned by: elevatedcomputing.com TEST-NET-1
-             192.0.1.15/24  OLD ...                192.0.2.12/24   Owned by: elevatedcomputing.com TEST-NET-1
+       2001:db8:0:1::15/64  OLD              2001:db8:0:2::12/64   OLD
         2001:db8:40::15/64  NEW               2001:db8:20::12/64   NEW
+             192.0.1.15/24  Owned ...              192.0.2.12/24   Owned by: elevatedcomputing.com TEST-NET-1
            198.18.40.15/24  NEW                  198.18.20.12/24   NEW
                  (eth1)                                (eth1)
             [eth2]-SET-(ipsec)198.18.15.15/24    [eth2]-RISE-(ipsec)198.18.12.12/24
